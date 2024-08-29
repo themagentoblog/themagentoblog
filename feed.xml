@@ -1,0 +1,1246 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://www.themagentoblog.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.themagentoblog.com/" rel="alternate" type="text/html" /><updated>2024-08-02T00:22:16+05:30</updated><id>https://www.themagentoblog.com/feed.xml</id><title type="html">The Magento Blog - by Manish Joy</title><subtitle>Discover in-depth articles, tutorials, and resources on Magento development at The Magento Blog by Manish Joy. Perfect for developers looking to enhance their skills, stay updated with the latest trends, and implement advanced e-commerce solutions.</subtitle><author><name>{&quot;name&quot;=&gt;nil, &quot;avatar&quot;=&gt;&quot;/assets/images/author/manishjoy-author.png.webp&quot;, &quot;bio&quot;=&gt;&quot;Tech geek. Self Motivated. Love to code, learn new technologies and skills.&quot;, &quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Website&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-link&quot;, &quot;url&quot;=&gt;&quot;https://www.manishjoy.com&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-instagram&quot;, &quot;url&quot;=&gt;&quot;https://instagram.com/oyyejoy&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-youtube&quot;, &quot;url&quot;=&gt;&quot;https://www.youtube.com/@OyyeJoy?sub_confirmation=1&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-linkedin&quot;, &quot;url&quot;=&gt;&quot;https://www.linkedin.com/in/manishjoy/&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook&quot;, &quot;url&quot;=&gt;&quot;https://www.facebook.com/iManishJoy&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;, &quot;url&quot;=&gt;&quot;https://twitter.com/imanishjoy&quot;}, {&quot;label&quot;=&gt;&quot;GitHub&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-github&quot;, &quot;url&quot;=&gt;&quot;https://github.com/manishjoy&quot;}]}</name></author><entry><title type="html">Developing Custom Magento 2 Widgets: A Complete Guide</title><link href="https://www.themagentoblog.com/2024/07/31/developing-custom-magento-2-widgets-a-complete-guide/" rel="alternate" type="text/html" title="Developing Custom Magento 2 Widgets: A Complete Guide" /><published>2024-07-31T12:00:00+05:30</published><updated>2024-07-31T12:00:00+05:30</updated><id>https://www.themagentoblog.com/2024/07/31/developing-custom-magento-2-widgets-a-complete-guide</id><content type="html" xml:base="https://www.themagentoblog.com/2024/07/31/developing-custom-magento-2-widgets-a-complete-guide/"><![CDATA[<p>Widgets in Magento 2 provide a flexible way to add dynamic content to pages and layout updates. Creating custom widgets allows you to extend Magento’s functionality and tailor it to your specific needs. In this guide, we’ll walk you through the process of developing custom widgets in Magento 2, from setting up your module to deploying and managing your widget.</p>
+
+<h2 id="1-introduction-to-magento-2-widgets">1. Introduction to Magento 2 Widgets</h2>
+
+<p>Widgets in Magento 2 are powerful tools that allow you to insert dynamic content into CMS pages and static blocks. They are essentially small blocks of code that can be easily placed and configured within Magento’s content management system.</p>
+
+<h2 id="2-setting-up-your-module">2. Setting Up Your Module</h2>
+
+<p>Before you create a custom widget, you need to set up a new Magento 2 module. Follow these steps:</p>
+
+<h3 id="a-create-module-directory-structure">a. Create Module Directory Structure</h3>
+
+<ol>
+  <li><strong>Create the necessary directories</strong> under <code class="language-plaintext highlighter-rouge">app/code/YourVendor/YourModule</code>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">etc</code></li>
+      <li><code class="language-plaintext highlighter-rouge">view/frontend/ui_component</code></li>
+      <li><code class="language-plaintext highlighter-rouge">view/frontend/templates</code></li>
+      <li><code class="language-plaintext highlighter-rouge">registration.php</code></li>
+      <li><code class="language-plaintext highlighter-rouge">composer.json</code></li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Define the module</strong> in <code class="language-plaintext highlighter-rouge">registration.php</code>:</p>
+
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="nc">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="nf">register</span><span class="p">(</span>
+    <span class="nc">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="no">MODULE</span><span class="p">,</span>
+    <span class="s1">'YourVendor_YourModule'</span><span class="p">,</span>
+    <span class="k">__DIR__</span>
+<span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Create <code class="language-plaintext highlighter-rouge">module.xml</code></strong> in the <code class="language-plaintext highlighter-rouge">etc</code> directory:</p>
+
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Module/etc/module.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"YourVendor_YourModule"</span> <span class="na">setup_version=</span><span class="s">"1.0.0"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="3-creating-widget-types">3. Creating Widget Types</h2>
+
+<p>Widgets are defined in XML configuration files and involve several key components:</p>
+
+<h3 id="a-define-widget-configuration">a. Define Widget Configuration</h3>
+
+<ol>
+  <li>
+    <p><strong>Create <code class="language-plaintext highlighter-rouge">widget.xml</code></strong> in the <code class="language-plaintext highlighter-rouge">etc</code> directory:</p>
+
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Widget/etc/widget.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;widgets&gt;</span>
+        <span class="nt">&lt;widget</span> <span class="na">id=</span><span class="s">"custom_widget"</span> <span class="na">class=</span><span class="s">"YourVendor\YourModule\Block\Widget\CustomWidget"</span> <span class="na">is_enabled=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;name&gt;</span>Custom Widget<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;description&gt;</span>A custom widget for Magento 2<span class="nt">&lt;/description&gt;</span>
+            <span class="nt">&lt;parameters&gt;</span>
+                <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">xsi:type=</span><span class="s">"text"</span> <span class="na">required=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;label&gt;</span>Title<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;/parameter&gt;</span>
+                <span class="c">&lt;!-- Add more parameters as needed --&gt;</span>
+            <span class="nt">&lt;/parameters&gt;</span>
+        <span class="nt">&lt;/widget&gt;</span>
+    <span class="nt">&lt;/widgets&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Create the Widget Block Class</strong> in <code class="language-plaintext highlighter-rouge">Block/Widget/CustomWidget.php</code>:</p>
+
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="kn">namespace</span> <span class="nn">YourVendor\YourModule\Block\Widget</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nc">Magento\Framework\View\Element\Template</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Widget\Block\BlockInterface</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">CustomWidget</span> <span class="kd">extends</span> <span class="nc">Template</span> <span class="kd">implements</span> <span class="nc">BlockInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">_construct</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">parent</span><span class="o">::</span><span class="nf">_construct</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">setTemplate</span><span class="p">(</span><span class="s1">'YourVendor_YourModule::widget.phtml'</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Add custom methods and logic here</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="4-developing-widget-templates">4. Developing Widget Templates</h2>
+
+<p>Widgets use PHTML templates for rendering:</p>
+
+<ol>
+  <li>
+    <p><strong>Create <code class="language-plaintext highlighter-rouge">widget.phtml</code></strong> in <code class="language-plaintext highlighter-rouge">view/frontend/templates</code>:</p>
+
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"custom-widget"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h2&gt;</span><span class="cp">&lt;?php echo $this-&gt;escapeHtml($block-&gt;getData('title')); ?&gt;</span><span class="nt">&lt;/h2&gt;</span>
+    <span class="c">&lt;!-- Add more HTML and PHP as needed --&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="5-adding-widget-configuration-options">5. Adding Widget Configuration Options</h2>
+
+<p>To make your widget configurable:</p>
+
+<ol>
+  <li><strong>Define additional parameters</strong> in the <code class="language-plaintext highlighter-rouge">widget.xml</code> file.</li>
+  <li><strong>Add form fields</strong> to allow users to set values in the Magento admin panel.</li>
+</ol>
+
+<h2 id="6-widget-logic-and-data-handling">6. Widget Logic and Data Handling</h2>
+
+<p>Handle data and logic within your widget block class. Use Magento’s data models and collections to interact with the database.</p>
+
+<h2 id="7-testing-and-debugging">7. Testing and Debugging</h2>
+
+<ol>
+  <li><strong>Test your widget</strong> by adding it to a CMS page or static block.</li>
+  <li><strong>Check for errors</strong> in the Magento logs and debug any issues using standard PHP debugging tools.</li>
+</ol>
+
+<h2 id="8-deploying-and-managing-widgets">8. Deploying and Managing Widgets</h2>
+
+<ol>
+  <li>
+    <p><strong>Deploy your module</strong> by running Magento’s deployment commands:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:upgrade
+bin/magento setup:di:compile
+bin/magento setup:static-content:deploy
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Manage your widgets</strong> via the Magento admin panel and handle any updates as needed.</p>
+  </li>
+</ol>
+
+<p>By following this guide, you can create powerful and flexible custom widgets for your Magento 2 store, enhancing its functionality and improving user experience.</p>]]></content><author><name>Manish Joy</name></author><category term="Magento" /><category term="Magento 2" /><category term="Magento 2 - Tips and Quickies" /><category term="Development" /><category term="magento development" /><category term="magento" /><category term="magento developer" /><category term="magento2" /><category term="php" /><category term="programming" /><category term="tutorial" /><category term="Magento 2" /><category term="Widgets" /><category term="Custom Development" /><summary type="html"><![CDATA[Unlock the power of Magento 2 with our ultimate guide to building and customizing stunning widgets. Learn step-by-step how to create custom widgets, handle data, and enhance your Magento store’s functionality.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.themagentoblog.com/assets/images/blogs/developing-custom-magento-2-widgets-a-complete-guide.jpg" /><media:content medium="image" url="https://www.themagentoblog.com/assets/images/blogs/developing-custom-magento-2-widgets-a-complete-guide.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Optimizing Magento 2 for SEO: Best Practices and Tips</title><link href="https://www.themagentoblog.com/2024/07/31/optimizing-magento-2-for-seo-best-practices-and-tips/" rel="alternate" type="text/html" title="Optimizing Magento 2 for SEO: Best Practices and Tips" /><published>2024-07-31T10:00:00+05:30</published><updated>2024-07-31T10:00:00+05:30</updated><id>https://www.themagentoblog.com/2024/07/31/optimizing-magento-2-for-seo-best-practices-and-tips</id><content type="html" xml:base="https://www.themagentoblog.com/2024/07/31/optimizing-magento-2-for-seo-best-practices-and-tips/"><![CDATA[<p>Search Engine Optimization (SEO) is crucial for any e-commerce store, and Magento 2 provides powerful tools to help you enhance your website’s visibility. In this blog, we’ll explore the best practices and tips for optimizing your Magento 2 store for SEO, ensuring you achieve higher rankings and drive more organic traffic.</p>
+
+<h3 id="why-seo-matters-for-magento-2">Why SEO Matters for Magento 2</h3>
+
+<p>SEO is vital for:</p>
+<ol>
+  <li><strong>Increased Visibility:</strong> Higher search engine rankings lead to more visibility and traffic.</li>
+  <li><strong>Better User Experience:</strong> Well-optimized sites offer a better user experience.</li>
+  <li><strong>Higher Conversion Rates:</strong> SEO helps attract targeted traffic, increasing the likelihood of conversions.</li>
+</ol>
+
+<h3 id="best-practices-for-magento-2-seo">Best Practices for Magento 2 SEO</h3>
+
+<h4 id="1-optimize-urls">1. Optimize URLs</h4>
+
+<p>Ensure your URLs are clean, descriptive, and keyword-rich.</p>
+<ul>
+  <li><strong>Use SEO-friendly URLs:</strong> Navigate to <code class="language-plaintext highlighter-rouge">Stores &gt; Configuration &gt; General &gt; Web &gt; URL Options</code> and enable <code class="language-plaintext highlighter-rouge">Use Web Server Rewrites</code>.</li>
+  <li><strong>Avoid duplicate content:</strong> Use canonical tags to specify the preferred version of a webpage.</li>
+</ul>
+
+<h4 id="2-improve-page-titles-and-meta-descriptions">2. Improve Page Titles and Meta Descriptions</h4>
+
+<p>Page titles and meta descriptions are critical for search engine rankings.</p>
+<ul>
+  <li><strong>Unique Titles:</strong> Ensure each page has a unique, descriptive title.</li>
+  <li><strong>Keyword-rich Descriptions:</strong> Write compelling meta descriptions that include relevant keywords.</li>
+</ul>
+
+<h4 id="3-use-heading-tags-properly">3. Use Heading Tags Properly</h4>
+
+<p>Proper use of heading tags (H1, H2, H3) helps search engines understand the structure of your content.</p>
+<ul>
+  <li><strong>H1 Tags:</strong> Each page should have a single H1 tag that includes the primary keyword.</li>
+  <li><strong>Subheadings:</strong> Use H2 and H3 tags to organize content and include secondary keywords.</li>
+</ul>
+
+<h4 id="4-optimize-product-and-category-pages">4. Optimize Product and Category Pages</h4>
+
+<p>Product and category pages are crucial for e-commerce SEO.</p>
+<ul>
+  <li><strong>Product Titles:</strong> Use clear, descriptive product titles with relevant keywords.</li>
+  <li><strong>Unique Descriptions:</strong> Write unique product descriptions to avoid duplicate content issues.</li>
+  <li><strong>Rich Snippets:</strong> Implement schema markup to enhance search engine listings with rich snippets.</li>
+</ul>
+
+<h4 id="5-enhance-site-speed">5. Enhance Site Speed</h4>
+
+<p>Site speed is a significant ranking factor.</p>
+<ul>
+  <li><strong>Optimize Images:</strong> Compress images to reduce load times.</li>
+  <li><strong>Use Caching:</strong> Enable full-page caching to improve performance.</li>
+  <li><strong>Minify CSS and JavaScript:</strong> Minify CSS and JavaScript files to reduce their size.</li>
+</ul>
+
+<h4 id="6-mobile-optimization">6. Mobile Optimization</h4>
+
+<p>With the increasing number of mobile users, mobile optimization is crucial.</p>
+<ul>
+  <li><strong>Responsive Design:</strong> Ensure your Magento 2 store is mobile-friendly.</li>
+  <li><strong>AMP:</strong> Implement Accelerated Mobile Pages (AMP) for faster loading on mobile devices.</li>
+</ul>
+
+<h4 id="7-leverage-magento-2-seo-extensions">7. Leverage Magento 2 SEO Extensions</h4>
+
+<p>Several Magento 2 SEO extensions can help enhance your store’s SEO.</p>
+<ul>
+  <li><strong>SEO Suite Ultimate:</strong> An all-in-one solution for comprehensive SEO management.</li>
+  <li><strong>Google Rich Snippets:</strong> Helps implement structured data for rich snippets.</li>
+</ul>
+
+<h3 id="actionable-tips-for-magento-2-seo">Actionable Tips for Magento 2 SEO</h3>
+
+<h4 id="1-create-an-xml-sitemap">1. Create an XML Sitemap</h4>
+
+<p>An XML sitemap helps search engines crawl your site more effectively.</p>
+<ul>
+  <li><strong>Generate Sitemap:</strong> Navigate to <code class="language-plaintext highlighter-rouge">Stores &gt; Configuration &gt; Catalog &gt; XML Sitemap</code> and configure the settings.</li>
+  <li><strong>Submit to Google:</strong> Submit your sitemap to Google Search Console.</li>
+</ul>
+
+<h4 id="2-enable-breadcrumbs">2. Enable Breadcrumbs</h4>
+
+<p>Breadcrumbs improve site navigation and help search engines understand your site structure.</p>
+<ul>
+  <li><strong>Enable Breadcrumbs:</strong> Go to <code class="language-plaintext highlighter-rouge">Stores &gt; Configuration &gt; Catalog &gt; Catalog &gt; Breadcrumbs</code> and enable the setting.</li>
+</ul>
+
+<h4 id="3-implement-301-redirects">3. Implement 301 Redirects</h4>
+
+<p>Use 301 redirects to guide users and search engines from old URLs to new ones.</p>
+<ul>
+  <li><strong>Redirects:</strong> Navigate to <code class="language-plaintext highlighter-rouge">Marketing &gt; URL Rewrites</code> to set up redirects.</li>
+</ul>
+
+<h4 id="4-regularly-update-content">4. Regularly Update Content</h4>
+
+<p>Regular content updates signal search engines that your site is active and relevant.</p>
+<ul>
+  <li><strong>Blog:</strong> Maintain a blog with regular posts on relevant topics.</li>
+  <li><strong>Product Updates:</strong> Regularly update product descriptions and add new products.</li>
+</ul>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>Optimizing your Magento 2 store for SEO is essential for achieving higher search engine rankings and driving organic traffic. By following these best practices and tips, you can enhance your store’s visibility, improve user experience, and boost conversion rates.</p>
+
+<p>Feel free to <a href="/contact-me/">contact me</a> if you have any issues or need further assistance.</p>]]></content><author><name>Manish Joy</name></author><category term="Magento" /><category term="Magento 2" /><category term="SEO" /><category term="Tutorial" /><category term="magento development" /><category term="magento" /><category term="magento developer" /><category term="magento2" /><category term="php" /><category term="programming" /><category term="tutorial" /><category term="Magento 2" /><category term="SEO" /><category term="Optimization" /><summary type="html"><![CDATA[Enhance your Magento 2 store's visibility and rankings with our comprehensive guide to SEO optimization. Learn best practices and actionable tips.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.themagentoblog.com/assets/images/blogs/optimizing-magento-2-for-seo-best-practices-and-tips.jpg" /><media:content medium="image" url="https://www.themagentoblog.com/assets/images/blogs/optimizing-magento-2-for-seo-best-practices-and-tips.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Leveraging the Magento 2 Command Line Interface (CLI) for Efficient Development</title><link href="https://www.themagentoblog.com/2024/07/30/leveraging-the-magento-2-command-line-interface-for-efficient-development/" rel="alternate" type="text/html" title="Leveraging the Magento 2 Command Line Interface (CLI) for Efficient Development" /><published>2024-07-30T12:00:00+05:30</published><updated>2024-07-30T12:00:00+05:30</updated><id>https://www.themagentoblog.com/2024/07/30/leveraging-the-magento-2-command-line-interface-for-efficient-development</id><content type="html" xml:base="https://www.themagentoblog.com/2024/07/30/leveraging-the-magento-2-command-line-interface-for-efficient-development/"><![CDATA[<p>The Magento 2 Command Line Interface (CLI) is a powerful tool that can significantly enhance your development workflow. This guide explores the capabilities of the Magento 2 CLI, including essential commands, automation techniques, and how to extend the CLI with custom commands.</p>
+
+<h3 id="why-use-the-magento-2-cli">Why Use the Magento 2 CLI?</h3>
+
+<p>Using the Magento 2 CLI offers several benefits:</p>
+<ol>
+  <li><strong>Efficiency:</strong> Automate repetitive tasks and streamline development processes.</li>
+  <li><strong>Control:</strong> Execute complex commands and manage your store with precision.</li>
+  <li><strong>Flexibility:</strong> Extend the CLI with custom commands tailored to your needs.</li>
+</ol>
+
+<h3 id="essential-magento-2-cli-commands">Essential Magento 2 CLI Commands</h3>
+
+<p>Here are some essential Magento 2 CLI commands every developer should know:</p>
+
+<ol>
+  <li><strong>Setup Upgrade:</strong>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:upgrade
+</code></pre></div>    </div>
+    <p>This command applies database updates and installs new modules.</p>
+  </li>
+  <li><strong>Compile Code:</strong>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:di:compile
+</code></pre></div>    </div>
+    <p>Compiles dependency injection and other generated code.</p>
+  </li>
+  <li><strong>Static Content Deployment:</strong>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:static-content:deploy
+</code></pre></div>    </div>
+    <p>Deploys static content like JavaScript, CSS, and images.</p>
+  </li>
+  <li><strong>Cache Management:</strong>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento cache:clean
+bin/magento cache:flush
+</code></pre></div>    </div>
+    <p>Cleans and flushes the cache to ensure changes are applied.</p>
+  </li>
+  <li><strong>Reindex:</strong>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:reindex
+</code></pre></div>    </div>
+    <p>Reindexes data to improve performance and ensure data consistency.</p>
+  </li>
+</ol>
+
+<h3 id="automating-tasks-with-the-cli">Automating Tasks with the CLI</h3>
+
+<p>The CLI can be used to automate routine tasks, saving time and reducing errors.</p>
+
+<h4 id="example-automating-deployment">Example: Automating Deployment</h4>
+
+<p>Create a deployment script to automate the steps involved in deploying changes:</p>
+
+<p><strong>deploy.sh:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+
+<span class="c"># Put Magento in maintenance mode</span>
+bin/magento maintenance:enable
+
+<span class="c"># Upgrade database and compile code</span>
+bin/magento setup:upgrade
+bin/magento setup:di:compile
+
+<span class="c"># Deploy static content and clean cache</span>
+bin/magento setup:static-content:deploy <span class="nt">-f</span>
+bin/magento cache:clean
+bin/magento cache:flush
+
+<span class="c"># Disable maintenance mode</span>
+bin/magento maintenance:disable
+
+<span class="nb">echo</span> <span class="s2">"Deployment completed successfully!"</span>
+</code></pre></div></div>
+
+<p>Make the script executable:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod</span> +x deploy.sh
+</code></pre></div></div>
+
+<p>Run the</p>
+
+<p>script:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./deploy.sh
+</code></pre></div></div>
+
+<h3 id="extending-the-magento-2-cli">Extending the Magento 2 CLI</h3>
+
+<p>You can extend the Magento 2 CLI with custom commands to meet your specific needs.</p>
+
+<h4 id="example-creating-a-custom-command">Example: Creating a Custom Command</h4>
+
+<ol>
+  <li>
+    <p><strong>Define the Command:</strong>
+Create a new file <code class="language-plaintext highlighter-rouge">CustomCommand.php</code> in your module’s <code class="language-plaintext highlighter-rouge">Console/Command</code> directory.</p>
+
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="kn">namespace</span> <span class="nn">Vendor\Module\Console\Command</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nc">Symfony\Component\Console\Command\Command</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Symfony\Component\Console\Input\InputInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Symfony\Component\Console\Output\OutputInterface</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">CustomCommand</span> <span class="kd">extends</span> <span class="nc">Command</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="n">configure</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">setName</span><span class="p">(</span><span class="s1">'vendor:custom:command'</span><span class="p">)</span>
+            <span class="o">-&gt;</span><span class="nf">setDescription</span><span class="p">(</span><span class="s1">'Custom command description'</span><span class="p">);</span>
+        <span class="k">parent</span><span class="o">::</span><span class="nf">configure</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">protected</span> <span class="k">function</span> <span class="n">execute</span><span class="p">(</span><span class="kt">InputInterface</span> <span class="nv">$input</span><span class="p">,</span> <span class="kt">OutputInterface</span> <span class="nv">$output</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$output</span><span class="o">-&gt;</span><span class="nf">writeln</span><span class="p">(</span><span class="s1">'Hello, this is a custom command!'</span><span class="p">);</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Register the Command:</strong>
+Create a <code class="language-plaintext highlighter-rouge">di.xml</code> file in your module’s <code class="language-plaintext highlighter-rouge">etc</code> directory.</p>
+
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Framework\Console\CommandList"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;arguments&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"commands"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"vendor:custom:command"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Vendor\Module\Console\Command\CustomCommand<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/arguments&gt;</span>
+    <span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>The Magento 2 CLI is an indispensable tool for developers, offering powerful capabilities to automate tasks, manage the store, and extend functionality with custom commands. By mastering the CLI, you can significantly improve your development efficiency and control over your Magento store.</p>]]></content><author><name>Manish Joy</name></author><category term="Magento" /><category term="Magento 2" /><category term="Magento 2 Module Development Series" /><category term="Tutorial" /><category term="magento development" /><category term="magento" /><category term="magento developer" /><category term="magento2" /><category term="php" /><category term="programming" /><category term="tutorial" /><category term="CLI" /><category term="Development" /><category term="Automation" /><category term="Custom Development" /><summary type="html"><![CDATA[Explore the powerful capabilities of the Magento 2 CLI for efficient development. Learn essential commands, automation techniques, and how to extend the CLI with custom commands.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.themagentoblog.com/assets/images/blogs/leveraging-the-magento-2-command-line-interface-for-efficient-development.jpg" /><media:content medium="image" url="https://www.themagentoblog.com/assets/images/blogs/leveraging-the-magento-2-command-line-interface-for-efficient-development.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Building Custom APIs in Magento 2: A Step-by-Step Guide</title><link href="https://www.themagentoblog.com/2024/07/30/building-custom-apis-in-magento-2-a-step-by-step-guide/" rel="alternate" type="text/html" title="Building Custom APIs in Magento 2: A Step-by-Step Guide" /><published>2024-07-30T10:00:00+05:30</published><updated>2024-07-30T10:00:00+05:30</updated><id>https://www.themagentoblog.com/2024/07/30/building-custom-apis-in-magento-2-a-step-by-step-guide</id><content type="html" xml:base="https://www.themagentoblog.com/2024/07/30/building-custom-apis-in-magento-2-a-step-by-step-guide/"><![CDATA[<p>Magento 2’s robust API framework allows developers to create custom APIs, enabling seamless integration with external systems and enhancing the functionality of Magento stores. This guide will walk you through the process of building custom APIs in Magento 2, covering essential components, configuration, and practical examples.</p>
+
+<h3 id="why-custom-apis">Why Custom APIs?</h3>
+
+<p>Custom APIs in Magento 2 allow you to:</p>
+<ol>
+  <li><strong>Extend Functionality:</strong> Add new features to your Magento store.</li>
+  <li><strong>Integrate Systems:</strong> Connect with third-party services and applications.</li>
+  <li><strong>Improve Automation:</strong> Automate processes and data exchanges.</li>
+</ol>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>Before you begin, ensure you have:</p>
+<ul>
+  <li>A Magento 2 installation.</li>
+  <li>Basic knowledge of PHP and Magento 2 module development.</li>
+</ul>
+
+<h3 id="step-1-create-a-new-module">Step 1: Create a New Module</h3>
+
+<p>First, create a new module for your custom API.</p>
+
+<ol>
+  <li><strong>Define Module Structure:</strong>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>app/code/Vendor/Module/
+├── registration.php
+├── etc/module.xml
+</code></pre></div>    </div>
+  </li>
+  <li><strong>registration.php:</strong>
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="nc">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="nf">register</span><span class="p">(</span>
+    <span class="nc">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="no">MODULE</span><span class="p">,</span>
+    <span class="s1">'Vendor_Module'</span><span class="p">,</span>
+    <span class="k">__DIR__</span>
+<span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>module.xml:</strong>
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Module/etc/module.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Vendor_Module"</span> <span class="na">setup_version=</span><span class="s">"1.0.0"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="step-2-define-api-endpoint">Step 2: Define API Endpoint</h3>
+
+<p>Define the API endpoint in <code class="language-plaintext highlighter-rouge">webapi.xml</code>.</p>
+
+<h4 id="understanding-webapixml-elements">Understanding <code class="language-plaintext highlighter-rouge">webapi.xml</code> Elements</h4>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">&lt;route&gt;</code>:</strong> Defines the URL pattern and HTTP method for the API.
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">url</code>:</strong> The URL path for accessing the API.</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">method</code>:</strong> The HTTP method (GET, POST, PUT, DELETE) to be used.</li>
+    </ul>
+  </li>
+  <li><strong><code class="language-plaintext highlighter-rouge">&lt;service&gt;</code>:</strong> Maps the route to a specific PHP class and method.
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">class</code>:</strong> The fully qualified name of the class handling the request.</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">method</code>:</strong> The method within the class to be called.</li>
+    </ul>
+  </li>
+  <li><strong><code class="language-plaintext highlighter-rouge">&lt;resources&gt;</code>:</strong> Specifies the access control for the API.
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">&lt;resource ref&gt;</code>:</strong> Defines which user roles can access the API.</li>
+    </ul>
+  </li>
+</ul>
+
+<ol>
+  <li><strong>webapi.xml:</strong>
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;routes</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Webapi/etc/webapi.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">"/V1/customapi/:id"</span> <span class="na">method=</span><span class="s">"GET"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">"Vendor\Module\Api\CustomApiInterface"</span> <span class="na">method=</span><span class="s">"getById"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;resources&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">"anonymous"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/resources&gt;</span>
+    <span class="nt">&lt;/route&gt;</span>
+<span class="nt">&lt;/routes&gt;</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="step-3-create-api-interface-and-implementation">Step 3: Create API Interface and Implementation</h3>
+
+<p>Create the interface and model for your custom API.</p>
+
+<ol>
+  <li><strong>Api/CustomApiInterface.php:</strong>
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="kn">namespace</span> <span class="nn">Vendor\Module\Api</span><span class="p">;</span>
+
+<span class="kd">interface</span> <span class="nc">CustomApiInterface</span>
+<span class="p">{</span>
+    <span class="cd">/**
+     * Get entity by ID.
+     *
+     * @param int $id
+     * @return \Vendor\Module\Api\Data\CustomEntityInterface
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getById</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Model/CustomApi.php:</strong>
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="kn">namespace</span> <span class="nn">Vendor\Module\Model</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nc">Vendor\Module\Api\CustomApiInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Vendor\Module\Api\Data\CustomEntityInterface</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">CustomApi</span> <span class="kd">implements</span> <span class="nc">CustomApiInterface</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$customEntityFactory</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="nc">\Vendor\Module\Model\CustomEntityFactory</span> <span class="nv">$customEntityFactory</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">customEntityFactory</span> <span class="o">=</span> <span class="nv">$customEntityFactory</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getById</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$entity</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">customEntityFactory</span><span class="o">-&gt;</span><span class="nf">create</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">load</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$entity</span><span class="o">-&gt;</span><span class="nf">getId</span><span class="p">())</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nc">\Magento\Framework\Exception\NoSuchEntityException</span><span class="p">(</span><span class="nf">__</span><span class="p">(</span><span class="s1">'Entity with id "%1" does not exist.'</span><span class="p">,</span> <span class="nv">$id</span><span class="p">));</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nv">$entity</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="step-4-define-data-interface">Step 4: Define Data Interface</h3>
+
+<p>Create a data interface and model to structure the data returned by your API.</p>
+
+<ol>
+  <li><strong>Api/Data/CustomEntityInterface.php:</strong>
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="kn">namespace</span> <span class="nn">Vendor\Module\Api\Data</span><span class="p">;</span>
+
+<span class="kd">interface</span> <span class="nc">CustomEntityInterface</span>
+<span class="p">{</span>
+    <span class="cd">/**
+     * Get ID
+     *
+     * @return int
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getId</span><span class="p">();</span>
+
+    <span class="cd">/**
+     * Get Name
+     *
+     * @return string
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getName</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Model/CustomEntity.php:</strong>
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="kn">namespace</span> <span class="nn">Vendor\Module\Model</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nc">Magento\Framework\Model\AbstractModel</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Vendor\Module\Api\Data\CustomEntityInterface</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">CustomEntity</span> <span class="kd">extends</span> <span class="nc">AbstractModel</span> <span class="kd">implements</span> <span class="nc">CustomEntityInterface</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="n">_construct</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">_init</span><span class="p">(</span><span class="s1">'Vendor\Module\Model\ResourceModel\CustomEntity'</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getId</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getData</span><span class="p">(</span><span class="s1">'entity_id'</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getName</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getData</span><span class="p">(</span><span class="s1">'name'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="step-5-testing-your-custom-api">Step 5: Testing Your Custom API</h3>
+
+<p>With your custom API implemented, you can now test it using tools like Postman or cURL.</p>
+
+<p><strong>Example cURL Command:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> GET <span class="s2">"http://your-magento-site.com/rest/V1/customapi/1"</span> <span class="nt">-H</span> <span class="s2">"accept: application/json"</span>
+</code></pre></div></div>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>By following these steps, you can create custom APIs in Magento 2, enabling powerful integrations and extending the functionality of your Magento store. Whether you’re building new features or integrating third-party services, custom APIs offer a flexible and efficient way to enhance your Magento 2 capabilities.</p>]]></content><author><name>Manish Joy</name></author><category term="Magento" /><category term="Magento 2" /><category term="Magento 2 API Development" /><category term="Tutorial" /><category term="magento development" /><category term="magento" /><category term="magento developer" /><category term="magento2" /><category term="php" /><category term="programming" /><category term="tutorial" /><category term="Custom API" /><category term="Custom Development" /><summary type="html"><![CDATA[Learn how to create custom APIs in Magento 2 with this step-by-step guide. Enhance your Magento store's functionality and integration capabilities.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.themagentoblog.com/assets/images/blogs/building-custom-apis-in-magento-2-a-step-by-step-guide.jpg" /><media:content medium="image" url="https://www.themagentoblog.com/assets/images/blogs/building-custom-apis-in-magento-2-a-step-by-step-guide.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Overriding in Magento 2: Mastering Preferences, Plugins, and Event-Observers</title><link href="https://www.themagentoblog.com/2024/07/26/overriding-in-magento-2-mastering-preferences-plugins-and-event-observers/" rel="alternate" type="text/html" title="Overriding in Magento 2: Mastering Preferences, Plugins, and Event-Observers" /><published>2024-07-26T00:00:00+05:30</published><updated>2024-07-26T00:00:00+05:30</updated><id>https://www.themagentoblog.com/2024/07/26/overriding-in-magento-2-mastering-preferences-plugins-and-event-observers</id><content type="html" xml:base="https://www.themagentoblog.com/2024/07/26/overriding-in-magento-2-mastering-preferences-plugins-and-event-observers/"><![CDATA[<p>Magento 2 offers multiple ways to override and customize its core functionality, including preferences, plugins, and event-observers. Each method has its use cases, advantages, and best practices. This guide will explore these techniques in detail, helping you choose the best approach for your customization needs.</p>
+
+<h3 id="overriding-with-preferences">Overriding with Preferences</h3>
+
+<p><strong>Preferences</strong> allow you to specify which class should be used whenever a particular class or interface is requested.</p>
+
+<h4 id="how-to-use-preferences">How to Use Preferences</h4>
+
+<p>Define a preference in your module’s <code class="language-plaintext highlighter-rouge">di.xml</code> file:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">"Magento\Catalog\Model\Product"</span> <span class="na">type=</span><span class="s">"Vendor\Module\Model\CustomProduct"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
+
+<h4 id="example-custom-product-class">Example: Custom Product Class</h4>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="kn">namespace</span> <span class="nn">Vendor\Module\Model</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">CustomProduct</span> <span class="kd">extends</span> <span class="nc">\Magento\Catalog\Model\Product</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getName</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">'Custom '</span> <span class="mf">.</span> <span class="k">parent</span><span class="o">::</span><span class="nf">getName</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Advantages of Preferences:</strong></p>
+
+<ol>
+  <li><strong>Direct Replacement:</strong> Easy to replace core classes with custom ones.</li>
+  <li><strong>Simplicity:</strong> Straightforward and easy to implement.</li>
+</ol>
+
+<p><strong>Disadvantages of Preferences:</strong></p>
+
+<ol>
+  <li><strong>Global Impact:</strong> Replaces the class globally, affecting all instances.</li>
+  <li><strong>Maintenance:</strong> Can be difficult to manage in large projects with many preferences.</li>
+</ol>
+
+<h3 id="overriding-with-plugins">Overriding with Plugins</h3>
+
+<p><strong>Plugins</strong> (also known as interceptors) allow you to modify the behavior of public methods without directly changing the core code.</p>
+
+<h4 id="types-of-plugins">Types of Plugins</h4>
+
+<ol>
+  <li><strong>Before Plugins:</strong> Execute code before a method.</li>
+  <li><strong>After Plugins:</strong> Execute code after a method.</li>
+  <li><strong>Around Plugins:</strong> Wrap the method call with custom logic.</li>
+</ol>
+
+<h4 id="how-to-use-plugins">How to Use Plugins</h4>
+
+<p>Define a plugin in your module’s <code class="language-plaintext highlighter-rouge">di.xml</code> file:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Catalog\Api\ProductRepositoryInterface"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;plugin</span> <span class="na">name=</span><span class="s">"custom_product_plugin"</span> <span class="na">type=</span><span class="s">"Vendor\Module\Plugin\ProductPlugin"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
+
+<h4 id="example-product-plugin-class">Example: Product Plugin Class</h4>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="kn">namespace</span> <span class="nn">Vendor\Module\Plugin</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">ProductPlugin</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">beforeGetById</span><span class="p">(</span><span class="nc">\Magento\Catalog\Api\ProductRepositoryInterface</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$productId</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Code to execute before getById method</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">afterGetById</span><span class="p">(</span><span class="nc">\Magento\Catalog\Api\ProductRepositoryInterface</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$result</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Code to execute after getById method</span>
+        <span class="k">return</span> <span class="nv">$result</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">aroundGetById</span><span class="p">(</span><span class="nc">\Magento\Catalog\Api\ProductRepositoryInterface</span> <span class="nv">$subject</span><span class="p">,</span> <span class="n">callable</span> <span class="nv">$proceed</span><span class="p">,</span> <span class="nv">$productId</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Code to execute around getById method</span>
+        <span class="nv">$result</span> <span class="o">=</span> <span class="nv">$proceed</span><span class="p">(</span><span class="nv">$productId</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nv">$result</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Advantages of Plugins:</strong></p>
+
+<ol>
+  <li><strong>Granular Control:</strong> Modify specific methods without affecting the entire class.</li>
+  <li><strong>Flexible:</strong> Combine multiple plugins on the same method.</li>
+</ol>
+
+<p><strong>Disadvantages of Plugins:</strong></p>
+
+<ol>
+  <li><strong>Complexity:</strong> Can become complex with many plugins on the same method.</li>
+  <li><strong>Performance:</strong> Overuse can impact performance due to additional method calls.</li>
+</ol>
+
+<h3 id="overriding-with-event-observers">Overriding with Event-Observers</h3>
+
+<p><strong>Event-Observers</strong> allow you to respond to specific events triggered throughout the Magento application.</p>
+
+<h4 id="how-to-use-event-observers">How to Use Event-Observers</h4>
+
+<p>Define an event observer in your module’s <code class="language-plaintext highlighter-rouge">events.xml</code> file:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Event/etc/events.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;event</span> <span class="na">name=</span><span class="s">"catalog_product_save_after"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;observer</span> <span class="na">name=</span><span class="s">"custom_product_save_observer"</span> <span class="na">instance=</span><span class="s">"Vendor\Module\Observer\ProductSaveAfter"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/event&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
+
+<h4 id="example-product-save-observer-class">Example: Product Save Observer Class</h4>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="kn">namespace</span> <span class="nn">Vendor\Module\Observer</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nc">Magento\Framework\Event\Observer</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\Event\ObserverInterface</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">ProductSaveAfter</span> <span class="kd">implements</span> <span class="nc">ObserverInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">execute</span><span class="p">(</span><span class="kt">Observer</span> <span class="nv">$observer</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$product</span> <span class="o">=</span> <span class="nv">$observer</span><span class="o">-&gt;</span><span class="nf">getEvent</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">getProduct</span><span class="p">();</span>
+        <span class="c1">// Custom logic for product save</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Advantages of Event-Observers:</strong></p>
+
+<ol>
+  <li><strong>Event-Driven:</strong> Respond to specific events without altering the core code.</li>
+  <li><strong>Modularity:</strong> Decoupled logic from core functionality.</li>
+</ol>
+
+<p><strong>Disadvantages of Event-Observers:</strong></p>
+
+<ol>
+  <li><strong>Visibility:</strong> Less visible than direct method overrides.</li>
+  <li><strong>Debugging:</strong> Can be harder to debug due to event-driven nature.</li>
+</ol>
+
+<p>Read More Details Here: <strong><a href="/2024/07/21/event-and-observer-in-magento-2-a-comprehensive-guide/">Event and Observer in Magento 2: A Comprehensive Guide</a></strong></p>
+
+<h3 id="best-practices">Best Practices</h3>
+
+<ol>
+  <li><strong>Use Dependency Injection:</strong> Prefer dependency injection over direct ObjectManager usage.</li>
+  <li><strong>Limit Preferences:</strong> Use preferences sparingly to avoid global replacements.</li>
+  <li><strong>Combine Plugins:</strong> Use a combination of plugins and event-observers for granular control.</li>
+  <li><strong>Test Extensively:</strong> Ensure thorough testing to avoid conflicts and performance issues.</li>
+</ol>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>Magento 2 provides multiple methods for overriding core functionality, each with its own strengths and use cases. By understanding and leveraging preferences, plugins, and event-observers, you can create powerful and maintainable customizations for your Magento 2 store.</p>]]></content><author><name>Manish Joy</name></author><category term="Magento" /><category term="Magento 2" /><category term="Magento 2 Module Development Series" /><category term="Tutorial" /><category term="frontend development" /><category term="magento" /><category term="magento developer" /><category term="magento2" /><category term="php" /><category term="programming" /><category term="theme development" /><category term="tutorial" /><category term="web development" /><summary type="html"><![CDATA[A comprehensive guide on overriding in Magento 2 using preferences, plugins, and event-observers. Learn the advantages and best practices for effective custom development.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.themagentoblog.com/assets/images/blogs/overriding-in-magento-2-mastering-preferences-plugins-and-event-observers.jpg" /><media:content medium="image" url="https://www.themagentoblog.com/assets/images/blogs/overriding-in-magento-2-mastering-preferences-plugins-and-event-observers.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Mastering Magento 2’s Dependency Injection: A Developer’s Guide</title><link href="https://www.themagentoblog.com/2024/07/25/mastering-magento-2s-dependency-injection-a-developers-guide/" rel="alternate" type="text/html" title="Mastering Magento 2’s Dependency Injection: A Developer’s Guide" /><published>2024-07-25T00:00:00+05:30</published><updated>2024-07-25T00:00:00+05:30</updated><id>https://www.themagentoblog.com/2024/07/25/mastering-magento-2s-dependency-injection-a-developers-guide</id><content type="html" xml:base="https://www.themagentoblog.com/2024/07/25/mastering-magento-2s-dependency-injection-a-developers-guide/"><![CDATA[<p>Magento 2’s architecture heavily relies on Dependency Injection (DI), a design pattern that allows developers to achieve loose coupling and better manage dependencies within their applications. Understanding and extending Magento 2’s DI framework is crucial for any developer aiming to create robust and maintainable customizations.</p>
+
+<h3 id="what-is-dependency-injection">What is Dependency Injection?</h3>
+
+<p>Dependency Injection is a design pattern used to implement IoC (Inversion of Control), allowing a class to declare its dependencies without creating them. This is achieved by injecting these dependencies, typically through constructors, setters, or interface injection.</p>
+
+<h3 id="why-use-dependency-injection-in-magento-2">Why Use Dependency Injection in Magento 2?</h3>
+
+<ol>
+  <li><strong>Loose Coupling:</strong> DI promotes loose coupling by separating the creation of a dependency from its behavior.</li>
+  <li><strong>Flexibility:</strong> It allows for easy swapping of implementations, which is beneficial for testing and maintenance.</li>
+  <li><strong>Scalability:</strong> Simplifies the management of complex dependencies in large applications.</li>
+</ol>
+
+<h3 id="understanding-magento-2s-di-configuration">Understanding Magento 2’s DI Configuration</h3>
+
+<p>Magento 2 uses XML files to configure DI. These configurations are defined in <code class="language-plaintext highlighter-rouge">di.xml</code> files located in various module directories. The main configuration file can be found in:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>app/code/Vendor/Module/etc/di.xml
+</code></pre></div></div>
+
+<h3 id="defining-dependencies-in-dixml">Defining Dependencies in di.xml</h3>
+
+<p>Dependencies can be defined in the <code class="language-plaintext highlighter-rouge">di.xml</code> file using <code class="language-plaintext highlighter-rouge">&lt;type&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;virtualType&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;preference&gt;</code>, and <code class="language-plaintext highlighter-rouge">&lt;plugin&gt;</code> tags.</p>
+
+<h4 id="example-1-type-configuration">Example 1: Type Configuration</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Vendor\Module\Model\Example"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;arguments&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"dependency"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Vendor\Module\Model\Dependency<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/arguments&gt;</span>
+    <span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
+
+<p>In this example, the <code class="language-plaintext highlighter-rouge">Vendor\Module\Model\Example</code> class declares a dependency on <code class="language-plaintext highlighter-rouge">Vendor\Module\Model\Dependency</code>.</p>
+
+<h4 id="example-2-preference-configuration">Example 2: Preference Configuration</h4>
+
+<p>Preferences allow you to specify an implementation for an interface or a class.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">"Vendor\Module\Api\Data\ExampleInterface"</span> <span class="na">type=</span><span class="s">"Vendor\Module\Model\Example"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
+
+<p>This configuration tells Magento to use <code class="language-plaintext highlighter-rouge">Vendor\Module\Model\Example</code> whenever <code class="language-plaintext highlighter-rouge">Vendor\Module\Api\Data\ExampleInterface</code> is requested.</p>
+
+<h3 id="extending-dependency-injection">Extending Dependency Injection</h3>
+
+<p>To extend the DI configuration, you might want to add plugins, interceptors, or modify existing services.</p>
+
+<h4 id="example-3-adding-a-plugin">Example 3: Adding a Plugin</h4>
+
+<p>Plugins (also known as interceptors) allow you to modify the behavior of public methods in classes.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Catalog\Api\ProductRepositoryInterface"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;plugin</span> <span class="na">name=</span><span class="s">"example_plugin"</span> <span class="na">type=</span><span class="s">"Vendor\Module\Plugin\ProductRepositoryPlugin"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">Vendor\Module\Plugin\ProductRepositoryPlugin</code> class can now intercept method calls on <code class="language-plaintext highlighter-rouge">Magento\Catalog\Api\ProductRepositoryInterface</code>.</p>
+
+<h4 id="example-plugin-class">Example Plugin Class</h4>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="kn">namespace</span> <span class="nn">Vendor\Module\Plugin</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">ProductRepositoryPlugin</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">beforeGetById</span><span class="p">(</span>
+        <span class="nc">\Magento\Catalog\Api\ProductRepositoryInterface</span> <span class="nv">$subject</span><span class="p">,</span>
+        <span class="nv">$productId</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Code to execute before the getById method</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">afterGetById</span><span class="p">(</span>
+        <span class="nc">\Magento\Catalog\Api\ProductRepositoryInterface</span> <span class="nv">$subject</span><span class="p">,</span>
+        <span class="nv">$result</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Code to execute after the getById method</span>
+        <span class="k">return</span> <span class="nv">$result</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">aroundGetById</span><span class="p">(</span>
+        <span class="nc">\Magento\Catalog\Api\ProductRepositoryInterface</span> <span class="nv">$subject</span><span class="p">,</span>
+        <span class="n">callable</span> <span class="nv">$proceed</span><span class="p">,</span>
+        <span class="nv">$productId</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Code to execute around the getById method</span>
+        <span class="nv">$result</span> <span class="o">=</span> <span class="nv">$proceed</span><span class="p">(</span><span class="nv">$productId</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nv">$result</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>Mastering Dependency Injection in Magento 2 is essential for developing scalable, maintainable, and flexible customizations. By understanding how to configure DI through <code class="language-plaintext highlighter-rouge">di.xml</code> and leveraging the power of plugins and preferences, you can significantly enhance the capabilities of your Magento 2 store.</p>]]></content><author><name>Manish Joy</name></author><category term="Magento" /><category term="Magento 2" /><category term="Magento 2 Module Development Series" /><category term="Tutorial" /><category term="magento development" /><category term="magento" /><category term="magento developer" /><category term="magento2" /><category term="php" /><category term="programming" /><category term="tutorial" /><category term="Dependency Injection" /><category term="Custom Development" /><summary type="html"><![CDATA[Explore Magento 2's Dependency Injection framework in detail and learn how to leverage it for custom development. Enhance your Magento 2 store with our comprehensive guide to DI.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.themagentoblog.com/assets/images/blogs/mastering-magento-2s-dependency-injection-a-developers-guide.jpg" /><media:content medium="image" url="https://www.themagentoblog.com/assets/images/blogs/mastering-magento-2s-dependency-injection-a-developers-guide.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Creating a New GraphQL Endpoint in Magento 2</title><link href="https://www.themagentoblog.com/2024/07/24/creating-a-new-graphql-endpoint-in-magento-2/" rel="alternate" type="text/html" title="Creating a New GraphQL Endpoint in Magento 2" /><published>2024-07-24T14:00:00+05:30</published><updated>2024-07-24T14:00:00+05:30</updated><id>https://www.themagentoblog.com/2024/07/24/creating-a-new-graphql-endpoint-in-magento-2</id><content type="html" xml:base="https://www.themagentoblog.com/2024/07/24/creating-a-new-graphql-endpoint-in-magento-2/"><![CDATA[<p>Creating a new GraphQL endpoint in Magento 2 allows you to expand the functionality of your API, making it easier to retrieve and manipulate data. This guide will walk you through the process of creating a new GraphQL endpoint from scratch.</p>
+
+<h3 id="step-by-step-guide-to-creating-a-new-graphql-endpoint">Step-by-Step Guide to Creating a New GraphQL Endpoint</h3>
+
+<h4 id="step-1-create-a-custom-module">Step 1: Create a Custom Module</h4>
+<p>Create a new module, for instance, <code class="language-plaintext highlighter-rouge">Vendor/Module</code>.</p>
+
+<h4 id="step-2-define-the-schema-and-declare-the-resolver">Step 2: Define the Schema and Declare the Resolver</h4>
+<p>Create the <code class="language-plaintext highlighter-rouge">schema.graphqls</code> file in <code class="language-plaintext highlighter-rouge">app/code/Vendor/Module/etc</code>.</p>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">type</span><span class="w"> </span><span class="n">Mutation</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">customMutation</span><span class="p">(</span><span class="n">input</span><span class="p">:</span><span class="w"> </span><span class="n">CustomInput</span><span class="p">!):</span><span class="w"> </span><span class="n">CustomOutput</span><span class="w"> </span><span class="err">@</span><span class="n">resolver</span><span class="p">(</span><span class="n">class</span><span class="p">:</span><span class="w"> </span><span class="err">"</span><span class="n">Vendor</span><span class="err">\\</span><span class="n">Module</span><span class="err">\\</span><span class="n">Model</span><span class="err">\\</span><span class="n">Resolver</span><span class="err">\\</span><span class="n">CustomMutation</span><span class="err">"</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="k">input</span><span class="w"> </span><span class="n">CustomInput</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">data</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">!</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="k">type</span><span class="w"> </span><span class="n">CustomOutput</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">result</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="step-3-implement-the-resolver">Step 3: Implement the Resolver</h4>
+<p>Create a resolver class in <code class="language-plaintext highlighter-rouge">app/code/Vendor/Module/Model/Resolver</code>.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="kn">namespace</span> <span class="nn">Vendor\Module\Model\Resolver</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nc">Magento\Framework\GraphQl\Query\ResolverInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\GraphQl\Schema\Type\ResolveInfo</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\GraphQl\Config\Element\Field</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">CustomMutation</span> <span class="kd">implements</span> <span class="nc">ResolverInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">resolve</span><span class="p">(</span>
+        <span class="kt">Field</span> <span class="nv">$field</span><span class="p">,</span>
+        <span class="nv">$context</span><span class="p">,</span>
+        <span class="kt">ResolveInfo</span> <span class="nv">$info</span><span class="p">,</span>
+        <span class="kt">array</span> <span class="nv">$value</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="kt">array</span> <span class="nv">$args</span> <span class="o">=</span> <span class="kc">null</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s1">'result'</span> <span class="o">=&gt;</span> <span class="s1">'Mutation executed successfully with data: '</span> <span class="mf">.</span> <span class="nv">$args</span><span class="p">[</span><span class="s1">'input'</span><span class="p">][</span><span class="s1">'data'</span><span class="p">]];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="testing-the-new-endpoint">Testing the New Endpoint</h3>
+
+<p>Use a tool like GraphiQL or Postman to test your new mutation endpoint. Here’s an example mutation query:</p>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">customMutation</span><span class="p">(</span><span class="n">input</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">data</span><span class="p">:</span><span class="w"> </span><span class="s2">"test data"</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">result</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>Creating a new GraphQL endpoint in Magento 2 involves defining a schema, implementing resolvers, and declaring them in the dependency injection configuration. By following these steps, you can create powerful new endpoints to extend your Magento 2 store’s functionality.</p>
+
+<h3 id="related-blogs">Related Blogs</h3>
+
+<p>For more information on using and extending GraphQL in Magento 2, check out the previous parts of this series:</p>
+
+<ul>
+  <li><a href="/2024/07/24/harnessing-the-power-of-graphql-in-magento-2-introduction-and-basics/">⇒ Harnessing the Power of GraphQL in Magento 2: A Developer-Friendly Guide</a></li>
+  <li><a href="/2024/07/24/extending-graphql-in-magento-2-custom-queries-and-mutations/">⇒ Extending GraphQL in Magento 2: Custom Queries and Mutations</a></li>
+</ul>]]></content><author><name>Manish Joy</name></author><category term="Magento" /><category term="Magento 2" /><category term="Magento 2 API Development" /><category term="Tutorial" /><category term="Magento 2 GraphQL Development" /><category term="magento development" /><category term="magento" /><category term="magento developer" /><category term="magento2" /><category term="php" /><category term="programming" /><category term="tutorial" /><category term="web development" /><category term="GraphQL" /><category term="API Development" /><summary type="html"><![CDATA[Step-by-step guide to creating a new GraphQL endpoint in Magento 2. Learn how to build and customize endpoints for your eCommerce store.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.themagentoblog.com/assets/images/blogs/creating-a-new-graphql-endpoint-in-magento-2.jpg" /><media:content medium="image" url="https://www.themagentoblog.com/assets/images/blogs/creating-a-new-graphql-endpoint-in-magento-2.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Extending GraphQL in Magento 2: Custom Queries and Mutations</title><link href="https://www.themagentoblog.com/2024/07/24/extending-graphql-in-magento-2-custom-queries-and-mutations/" rel="alternate" type="text/html" title="Extending GraphQL in Magento 2: Custom Queries and Mutations" /><published>2024-07-24T12:00:00+05:30</published><updated>2024-07-24T12:00:00+05:30</updated><id>https://www.themagentoblog.com/2024/07/24/extending-graphql-in-magento-2-custom-queries-and-mutations</id><content type="html" xml:base="https://www.themagentoblog.com/2024/07/24/extending-graphql-in-magento-2-custom-queries-and-mutations/"><![CDATA[<p>Magento 2’s GraphQL API is powerful, but sometimes you need to extend it to meet specific business requirements. This blog will guide you through the process of extending GraphQL in Magento 2 by creating custom queries and mutations.</p>
+
+<h3 id="extending-graphql-in-magento-2">Extending GraphQL in Magento 2</h3>
+
+<p>Magento 2 allows you to extend the GraphQL schema to include custom queries and mutations.</p>
+
+<h4 id="step-1-create-a-custom-module">Step 1: Create a Custom Module</h4>
+<p>Start by creating a new module, for instance, <code class="language-plaintext highlighter-rouge">Vendor/Module</code>.</p>
+
+<h4 id="step-2-define-the-schema-and-declare-the-resolver">Step 2: Define the Schema and Declare the Resolver</h4>
+<p>Create the <code class="language-plaintext highlighter-rouge">schema.graphqls</code> file in <code class="language-plaintext highlighter-rouge">app/code/Vendor/Module/etc</code>.</p>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">type</span><span class="w"> </span><span class="n">Query</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">customQuery</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="w"> </span><span class="err">@</span><span class="n">resolver</span><span class="p">(</span><span class="n">class</span><span class="p">:</span><span class="w"> </span><span class="err">"</span><span class="n">Vendor</span><span class="err">\\</span><span class="n">Module</span><span class="err">\\</span><span class="n">Model</span><span class="err">\\</span><span class="n">Resolver</span><span class="err">\\</span><span class="n">CustomQuery</span><span class="err">"</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="step-3-implement-the-resolver">Step 3: Implement the Resolver</h4>
+<p>Create a resolver class in <code class="language-plaintext highlighter-rouge">app/code/Vendor/Module/Model/Resolver</code>.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="kn">namespace</span> <span class="nn">Vendor\Module\Model\Resolver</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nc">Magento\Framework\GraphQl\Query\ResolverInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\GraphQl\Schema\Type\ResolveInfo</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\GraphQl\Config\Element\Field</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">CustomQuery</span> <span class="kd">implements</span> <span class="nc">ResolverInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">resolve</span><span class="p">(</span>
+        <span class="kt">Field</span> <span class="nv">$field</span><span class="p">,</span>
+        <span class="nv">$context</span><span class="p">,</span>
+        <span class="kt">ResolveInfo</span> <span class="nv">$info</span><span class="p">,</span>
+        <span class="kt">array</span> <span class="nv">$value</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="kt">array</span> <span class="nv">$args</span> <span class="o">=</span> <span class="kc">null</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">'Hello, this is a custom GraphQL query!'</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>By following these steps, you can extend the capabilities of Magento 2’s GraphQL API to include custom queries and mutations. This flexibility allows you to tailor the API to meet your specific needs, making your Magento 2 store even more powerful and adaptable.</p>
+
+<h3 id="next-steps">Next Steps</h3>
+
+<p>Ready to create a new GraphQL endpoint in Magento 2? Check out the final part of this series for a step-by-step guide:</p>
+
+<p><a href="/2024/07/24/creating-a-new-graphql-endpoint-in-magento-2/">⇒ Creating a New GraphQL Endpoint in Magento 2</a></p>]]></content><author><name>Manish Joy</name></author><category term="Magento" /><category term="Magento 2" /><category term="Magento 2 API Development" /><category term="Tutorial" /><category term="Magento 2 GraphQL Development" /><category term="magento development" /><category term="magento" /><category term="magento developer" /><category term="magento2" /><category term="php" /><category term="programming" /><category term="tutorial" /><category term="web development" /><category term="GraphQL" /><category term="API Development" /><summary type="html"><![CDATA[Learn how to extend Magento 2's GraphQL capabilities by creating custom queries and mutations. Follow our step-by-step guide for advanced customization.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.themagentoblog.com/assets/images/blogs/extending-graphql-in-magento-2-custom-queries-and-mutations.jpg" /><media:content medium="image" url="https://www.themagentoblog.com/assets/images/blogs/extending-graphql-in-magento-2-custom-queries-and-mutations.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Harnessing the Power of GraphQL in Magento 2: A Developer-Friendly Guide</title><link href="https://www.themagentoblog.com/2024/07/24/harnessing-the-power-of-graphql-in-magento-2-introduction-and-basics/" rel="alternate" type="text/html" title="Harnessing the Power of GraphQL in Magento 2: A Developer-Friendly Guide" /><published>2024-07-24T10:00:00+05:30</published><updated>2024-07-24T10:00:00+05:30</updated><id>https://www.themagentoblog.com/2024/07/24/harnessing-the-power-of-graphql-in-magento-2-introduction-and-basics</id><content type="html" xml:base="https://www.themagentoblog.com/2024/07/24/harnessing-the-power-of-graphql-in-magento-2-introduction-and-basics/"><![CDATA[<p>Magento 2 has embraced GraphQL as a powerful alternative to REST and SOAP APIs. GraphQL offers efficient, flexible, and faster queries, allowing developers to request exactly what they need. This guide will walk you through the essentials of using GraphQL in Magento 2, from setup to basic usage.</p>
+
+<h3 id="why-use-graphql-in-magento-2">Why Use GraphQL in Magento 2?</h3>
+
+<p>GraphQL provides several advantages over traditional APIs:</p>
+<ol>
+  <li><strong>Efficiency:</strong> Fetch only the data you need in a single request.</li>
+  <li><strong>Flexibility:</strong> Query multiple resources in a single call.</li>
+  <li><strong>Performance:</strong> Reduce the number of requests and improve load times.</li>
+</ol>
+
+<h3 id="setting-up-graphql-in-magento-2">Setting Up GraphQL in Magento 2</h3>
+
+<p>Magento 2 comes with GraphQL support out-of-the-box. To enable and test it, follow these steps:</p>
+
+<ol>
+  <li>
+    <p><strong>Verify GraphQL Endpoint:</strong>
+The default GraphQL endpoint in Magento 2 is <code class="language-plaintext highlighter-rouge">/graphql</code>. You can test this endpoint using tools like GraphiQL or Postman.</p>
+  </li>
+  <li>
+    <p><strong>Access GraphiQL Interface:</strong>
+Open your browser and navigate to:</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://your-magento-site/graphql
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="basic-graphql-queries-in-magento-2">Basic GraphQL Queries in Magento 2</h3>
+
+<p>Let’s start with some basic queries to get product information.</p>
+
+<h4 id="fetching-product-details">Fetching Product Details</h4>
+
+<p>Here’s a simple query to fetch product details by SKU:</p>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="n">products</span><span class="p">(</span><span class="n">filter</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">sku</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">eq</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MB01"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">items</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+      </span><span class="n">name</span><span class="w">
+      </span><span class="n">sku</span><span class="w">
+      </span><span class="n">price</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">regularPrice</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="n">amount</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="n">value</span><span class="w">
+            </span><span class="n">currency</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="advanced-graphql-queries">Advanced GraphQL Queries</h3>
+
+<p>GraphQL’s true power lies in its ability to combine multiple queries and handle complex data structures.</p>
+
+<h4 id="fetching-categories-and-products">Fetching Categories and Products</h4>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="n">category</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">name</span><span class="w">
+    </span><span class="n">products</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">items</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">id</span><span class="w">
+        </span><span class="n">name</span><span class="w">
+        </span><span class="n">sku</span><span class="w">
+        </span><span class="n">price</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="n">regularPrice</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="n">amount</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="n">value</span><span class="w">
+              </span><span class="n">currency</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="mutations-in-graphql">Mutations in GraphQL</h3>
+
+<p>Mutations in GraphQL allow you to modify data on the server. For example, adding a product to the cart:</p>
+
+<h4 id="adding-a-product-to-the-cart">Adding a Product to the Cart</h4>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">addSimpleProductsToCart</span><span class="p">(</span><span class="w">
+    </span><span class="n">input</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">cart_id</span><span class="p">:</span><span class="w"> </span><span class="s2">"cartId"</span><span class="w">
+      </span><span class="n">cart_items</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="n">data</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="n">quantity</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="n">sku</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MB01"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">cart</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">items</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">id</span><span class="w">
+        </span><span class="n">product</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="n">name</span><span class="w">
+          </span><span class="n">sku</span><span class="w">
+          </span><span class="n">price</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="n">regularPrice</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="n">amount</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="n">value</span><span class="w">
+                </span><span class="n">currency</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="n">quantity</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>GraphQL in Magento 2 offers a robust and flexible way to interact with your store’s data. By understanding the basics and leveraging advanced queries and mutations, you can significantly improve the performance and efficiency of your Magento 2 applications.</p>
+
+<h3 id="next-steps">Next Steps</h3>
+
+<p>Once you’ve grasped the basics of GraphQL in Magento 2, it’s time to extend its capabilities. Check out the next part of this series for a detailed guide on extending GraphQL in Magento 2:</p>
+
+<p><a href="/2024/07/24/extending-graphql-in-magento-2-custom-queries-and-mutations/">⇒ Extending GraphQL in Magento 2: Custom Queries and Mutations</a></p>]]></content><author><name>Manish Joy</name></author><category term="Magento" /><category term="Magento 2" /><category term="Magento 2 API Development" /><category term="Magento 2 GraphQL Development" /><category term="Tutorial" /><category term="magento development" /><category term="magento" /><category term="magento developer" /><category term="magento2" /><category term="php" /><category term="programming" /><category term="tutorial" /><category term="web development" /><category term="GraphQL" /><category term="API Development" /><summary type="html"><![CDATA[Discover the basics of GraphQL in Magento 2. Learn about its benefits, setup, and basic queries to enhance your eCommerce store's efficiency and flexibility.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.themagentoblog.com/assets/images/blogs/harnessing-the-power-of-graphql-in-magento-2-introduction-and-basics.jpg" /><media:content medium="image" url="https://www.themagentoblog.com/assets/images/blogs/harnessing-the-power-of-graphql-in-magento-2-introduction-and-basics.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Crafting Custom Admin Routes and Menus in Magento 2: A Complete Guide</title><link href="https://www.themagentoblog.com/2024/07/24/crafting-custom-admin-routes-and-menus-in-magento-2-a-complete-guide/" rel="alternate" type="text/html" title="Crafting Custom Admin Routes and Menus in Magento 2: A Complete Guide" /><published>2024-07-24T00:00:00+05:30</published><updated>2024-07-24T00:00:00+05:30</updated><id>https://www.themagentoblog.com/2024/07/24/crafting-custom-admin-routes-and-menus-in-magento-2-a-complete-guide</id><content type="html" xml:base="https://www.themagentoblog.com/2024/07/24/crafting-custom-admin-routes-and-menus-in-magento-2-a-complete-guide/"><![CDATA[<p>Creating custom admin routes and menus in Magento 2 is essential for extending the admin panel with new functionalities. This guide will walk you through the process of setting up custom admin routes, adding menu items, and configuring ACL (Access Control List) to manage permissions effectively.</p>
+
+<p><strong>Why Customize Admin Routes and Menus?</strong></p>
+<ol>
+  <li><strong>Enhance Functionality:</strong> Add new features and tools directly to the Magento admin panel.</li>
+  <li><strong>Improve Usability:</strong> Customize the admin interface to better suit business needs.</li>
+  <li><strong>Secure Access:</strong> Use ACL to ensure that only authorized users can access certain features.</li>
+</ol>
+
+<p><strong>Step-by-Step Guide to Creating Admin Routes and Menus:</strong></p>
+
+<h3 id="step-1-define-admin-route-routesxml">Step 1: Define Admin Route (routes.xml)</h3>
+<p>Create the <code class="language-plaintext highlighter-rouge">etc/adminhtml/routes.xml</code> file:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:App/etc/routes.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;router</span> <span class="na">id=</span><span class="s">"admin"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;route</span> <span class="na">id=</span><span class="s">"custom_admin"</span> <span class="na">frontName=</span><span class="s">"customadmin"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Vendor_Module"</span> <span class="na">before=</span><span class="s">"Magento_Backend"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/route&gt;</span>
+    <span class="nt">&lt;/router&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
+
+<h3 id="step-2-create-admin-controller">Step 2: Create Admin Controller</h3>
+<p>Create the <code class="language-plaintext highlighter-rouge">Controller/Adminhtml/Index/Index.php</code> file:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="kn">namespace</span> <span class="nn">Vendor\Module\Controller\Adminhtml\Index</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nc">Magento\Backend\App\Action</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Backend\App\Action\Context</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\View\Result\PageFactory</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">Index</span> <span class="kd">extends</span> <span class="nc">Action</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$resultPageFactory</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">Context</span> <span class="nv">$context</span><span class="p">,</span> <span class="kt">PageFactory</span> <span class="nv">$resultPageFactory</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">parent</span><span class="o">::</span><span class="nf">__construct</span><span class="p">(</span><span class="nv">$context</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">resultPageFactory</span> <span class="o">=</span> <span class="nv">$resultPageFactory</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">execute</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$resultPage</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">resultPageFactory</span><span class="o">-&gt;</span><span class="nf">create</span><span class="p">();</span>
+        <span class="nv">$resultPage</span><span class="o">-&gt;</span><span class="nf">getConfig</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">getTitle</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">prepend</span><span class="p">(</span><span class="nf">__</span><span class="p">(</span><span class="s1">'Custom Admin Page'</span><span class="p">));</span>
+        <span class="k">return</span> <span class="nv">$resultPage</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="step-3-add-admin-menu-item-menuxml">Step 3: Add Admin Menu Item (menu.xml)</h3>
+<p>Create the <code class="language-plaintext highlighter-rouge">etc/adminhtml/menu.xml</code> file:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Menu/etc/menu.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;menu&gt;</span>
+        <span class="nt">&lt;add</span> <span class="na">id=</span><span class="s">"Vendor_Module::main_menu"</span> <span class="na">title=</span><span class="s">"Custom Menu"</span> <span class="na">module=</span><span class="s">"Vendor_Module"</span> <span class="na">sortOrder=</span><span class="s">"100"</span> <span class="na">parent=</span><span class="s">"Magento_Backend::content"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;add</span> <span class="na">id=</span><span class="s">"Vendor_Module::submenu"</span> <span class="na">title=</span><span class="s">"Sub Menu"</span> <span class="na">module=</span><span class="s">"Vendor_Module"</span> <span class="na">sortOrder=</span><span class="s">"10"</span> <span class="na">action=</span><span class="s">"customadmin/index/index"</span> <span class="na">resource=</span><span class="s">"Vendor_Module::submenu"</span> <span class="na">parent=</span><span class="s">"Vendor_Module::main_menu"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/menu&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
+
+<h3 id="step-4-define-acl-aclxml">Step 4: Define ACL (acl.xml)</h3>
+<p>Create the <code class="language-plaintext highlighter-rouge">etc/acl.xml</code> file to manage permissions:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;acl</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Acl/etc/acl.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;resources&gt;</span>
+        <span class="nt">&lt;resource</span> <span class="na">id=</span><span class="s">"Magento_Backend::admin"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">id=</span><span class="s">"Vendor_Module::main_menu"</span> <span class="na">title=</span><span class="s">"Custom Menu"</span> <span class="na">sortOrder=</span><span class="s">"100"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">id=</span><span class="s">"Vendor_Module::submenu"</span> <span class="na">title=</span><span class="s">"Sub Menu"</span> <span class="na">sortOrder=</span><span class="s">"10"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/resource&gt;</span>
+    <span class="nt">&lt;/resources&gt;</span>
+<span class="nt">&lt;/acl&gt;</span>
+</code></pre></div></div>
+
+<h3 id="step-5-create-layout-and-view-files">Step 5: Create Layout and View Files</h3>
+<p>Create the <code class="language-plaintext highlighter-rouge">view/adminhtml/layout/customadmin_index_index.xml</code> file for layout configuration:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Vendor\Module\Block\Adminhtml\Index"</span> <span class="na">name=</span><span class="s">"custom_admin_page"</span> <span class="na">template=</span><span class="s">"Vendor_Module::index.phtml"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/referenceContainer&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/page&gt;</span>
+</code></pre></div></div>
+
+<p>Create the <code class="language-plaintext highlighter-rouge">Block/Adminhtml/Index.php</code> file:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="kn">namespace</span> <span class="nn">Vendor\Module\Block\Adminhtml</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nc">Magento\Backend\Block\Template</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">Index</span> <span class="kd">extends</span> <span class="nc">Template</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="n">_prepareLayout</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">pageConfig</span><span class="o">-&gt;</span><span class="nf">getTitle</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">set</span><span class="p">(</span><span class="nf">__</span><span class="p">(</span><span class="s1">'Custom Admin Page'</span><span class="p">));</span>
+        <span class="k">return</span> <span class="k">parent</span><span class="o">::</span><span class="nf">_prepareLayout</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Create the <code class="language-plaintext highlighter-rouge">view/adminhtml/templates/index.phtml</code> file for the template:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1&gt;</span><span class="cp">&lt;?= /* @noEscape */ __('Welcome to Custom Admin Page!') ?&gt;</span><span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;p&gt;</span><span class="cp">&lt;?= __('This is a custom admin page created in Magento 2.') ?&gt;</span><span class="nt">&lt;/p&gt;</span>
+</code></pre></div></div>
+
+<h3 id="step-6-verify-and-test">Step 6: Verify and Test</h3>
+<ol>
+  <li>Clear the cache and log in to the Magento admin panel.</li>
+  <li>Navigate to <code class="language-plaintext highlighter-rouge">Content &gt; Custom Menu &gt; Sub Menu</code>.</li>
+  <li>You should see the custom admin page with the content defined in <code class="language-plaintext highlighter-rouge">index.phtml</code>.</li>
+</ol>
+
+<p><strong>Conclusion:</strong>
+Creating custom admin routes and menus in Magento 2 allows you to extend the functionality of the admin panel, making it more tailored to your specific needs. By following this guide, you can add new features, improve usability, and ensure secure access with ACL configurations.</p>]]></content><author><name>Manish Joy</name></author><category term="Magento" /><category term="Magento 2" /><category term="Magento 2 Admin Development Series" /><category term="Tutorial" /><category term="magento development" /><category term="magento" /><category term="magento developer" /><category term="magento2" /><category term="php" /><category term="programming" /><category term="tutorial" /><category term="web development" /><category term="Admin Routes" /><summary type="html"><![CDATA[Learn how to create custom admin routes and menus in Magento 2 with our comprehensive guide, including ACL configurations for secure access control.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.themagentoblog.com/assets/images/blogs/crafting-custom-admin-routes-and-menus-in-magento-2-a-complete-guide.jpg" /><media:content medium="image" url="https://www.themagentoblog.com/assets/images/blogs/crafting-custom-admin-routes-and-menus-in-magento-2-a-complete-guide.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
