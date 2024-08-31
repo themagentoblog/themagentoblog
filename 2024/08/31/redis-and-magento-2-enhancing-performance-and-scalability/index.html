@@ -10,43 +10,41 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Coding Tips - page 4 - The Magento Blog - by Manish Joy - Page 4</title><meta name="description" content="Discover in-depth articles, tutorials, and resources on Magento development at The Magento Blog by Manish Joy. Perfect for developers looking to enhance their skills, stay updated with the latest trends, and implement advanced e-commerce solutions.">
+<!-- begin _includes/seo.html --><title>How to Optimize Magento 2 Performance with Redis Caching - The Magento Blog - by Manish Joy</title><meta name="description" content="Discover how to boost Magento 2 performance using Redis caching. Learn what Redis is, how it works, and how to configure it for enhanced speed and scalability in your Magento 2 store.">
+
+
+  <meta name="keywords" content="Magento 2, Redis, Magento 2 caching, Redis installation, Magento 2 performance">
 
 
 
 
-
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="The Magento Blog - by Manish Joy">
-<meta property="og:title" content="Coding Tips - page 4">
-<meta property="og:url" content="https://www.themagentoblog.com/categories/coding-tips/page/4/">
+<meta property="og:title" content="How to Optimize Magento 2 Performance with Redis Caching">
+<meta property="og:url" content="https://www.themagentoblog.com/2024/08/31/redis-and-magento-2-enhancing-performance-and-scalability/">
 
 
-  <meta property="og:description" content="Discover in-depth articles, tutorials, and resources on Magento development at The Magento Blog by Manish Joy. Perfect for developers looking to enhance their skills, stay updated with the latest trends, and implement advanced e-commerce solutions.">
+  <meta property="og:description" content="Discover how to boost Magento 2 performance using Redis caching. Learn what Redis is, how it works, and how to configure it for enhanced speed and scalability in your Magento 2 store.">
 
 
 
-  
-  <meta property="og:image" content="https://www.themagentoblog.com/wp-content/uploads/2023/09/the-magento-blog-header-logo.png">
-  
-
+  <meta property="og:image" content="https://www.themagentoblog.com/assets/images/blogs/2024-08-31-redis-and-magento-2-enhancing-performance-and-scalability.png">
 
 
 
 
 
+  <meta property="article:published_time" content="2024-08-31T11:00:00+05:30">
 
 
 
 
-<link rel="canonical" href="https://www.themagentoblog.com/categories/coding-tips/page/4/">
 
 
-  <link rel="prev" href="https://www.themagentoblog.com/categories/coding-tips/page/3/">
+<link rel="canonical" href="https://www.themagentoblog.com/2024/08/31/redis-and-magento-2-enhancing-performance-and-scalability/">
 
 
-  <link rel="next" href="https://www.themagentoblog.com/categories/coding-tips/page/5/">
 
 
 
@@ -105,7 +103,7 @@
 </script>
   </head>
 
-  <body class="layout--category">
+  <body class="layout--post">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -207,6 +205,25 @@
 
 
 <div id="main" role="main">
+  
+    
+
+
+
+
+
+
+
+<div class="page__hero page__hero-header-image"
+  style=" background-image: url('');"
+>
+  
+    <img src="/assets/images/blogs/2024-08-31-redis-and-magento-2-enhancing-performance-and-scalability.png" alt="How to Optimize Magento 2 Performance with Redis Caching" class="page__hero-image">
+  
+  
+</div>
+
+  
   <div class="sidebar">
   <div class="author-widget-box widget widget_block">
     <div id="admania_aboutus_widgets-3" class="widget_admania_aboutus_widgets">
@@ -274,260 +291,204 @@
     </div>
   </div>
 </div>
-
-  <div class="archive">
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="How to Optimize Magento 2 Performance with Redis Caching">
+    <meta itemprop="description" content="In the world of eCommerce, speed and scalability are critical for providing an optimal user experience. Magento 2, a robust platform for online stores, offers various tools and technologies to enhance performance. One of the most powerful tools in this arsenal is Redis.">
+    <meta itemprop="datePublished" content="2024-08-31T11:00:00+05:30">
     
-      <h1 id="page-title" class="page__title">Coding Tips - page 4</h1>
-    
-    
 
-
-<div class="entries-list">
-  
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <div class="page__inner-wrap">
       
-        <a href="/2024/07/21/jekyll-vs-wordpress-which-platform-is-best-for-bloggers/" rel="permalink">Jekyll vs WordPress: Which Platform is Best for Bloggers?
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="https://www.themagentoblog.com/2024/08/31/redis-and-magento-2-enhancing-performance-and-scalability/" itemprop="url">How to Optimize Magento 2 Performance with Redis Caching
 </a>
+          </h1>
+          
+
+
+        </header>
       
-    </h2>
-    
+
+      <section class="page__content" itemprop="text">
+        
+        <p>In the world of eCommerce, speed and scalability are critical for providing an optimal user experience. Magento 2, a robust platform for online stores, offers various tools and technologies to enhance performance. One of the most powerful tools in this arsenal is <strong>Redis</strong>.</p>
+
+<p>In this blog, we’ll dive into what Redis is, how it works, and how you can use it to supercharge your Magento 2 store.</p>
+
+<h2 id="what-is-redis">What is Redis?</h2>
+
+<p><strong>Redis</strong> (Remote Dictionary Server) is an open-source, in-memory data structure store that can be used as a database, cache, and message broker. It supports various data structures such as strings, hashes, lists, sets, and more. Redis is known for its speed and efficiency, making it an ideal choice for caching and real-time analytics.</p>
+
+<h3 id="key-features-of-redis">Key Features of Redis:</h3>
+
+<ul>
+  <li><strong>In-memory storage</strong>: Redis stores data in memory, leading to extremely fast read and write operations.</li>
+  <li><strong>Data Persistence</strong>: Redis provides options for persisting data to disk, ensuring data durability.</li>
+  <li><strong>Scalability</strong>: Redis can handle millions of requests per second, making it highly scalable for large applications.</li>
+  <li><strong>Flexibility</strong>: Supports multiple data structures, providing flexibility in how data is managed.</li>
+</ul>
+
+<h2 id="how-redis-works">How Redis Works</h2>
+
+<p>Redis operates primarily in memory, making it incredibly fast compared to traditional databases. Here’s a simplified view of how it works:</p>
+
+<ol>
+  <li><strong>Data Storage</strong>: Data is stored in memory as key-value pairs. For example, you can store session data, configuration settings, or full web pages.</li>
+  <li><strong>Persistence</strong>: Although Redis is an in-memory store, it supports persistence by writing data to disk. This ensures that data isn’t lost in case of a server restart.</li>
+  <li><strong>Replication</strong>: Redis supports master-slave replication, allowing you to create multiple replicas of your data for high availability and load balancing.</li>
+  <li><strong>Pub/Sub Messaging</strong>: Redis can also be used as a message broker with its publish/subscribe messaging system, which is useful for real-time communication between different parts of your application.</li>
+</ol>
+
+<h2 id="using-redis-with-magento-2">Using Redis with Magento 2</h2>
+
+<p>Integrating Redis with Magento 2 can significantly improve the performance of your online store. Here’s how Redis can be used in Magento 2:</p>
+
+<ul>
+  <li>
+    <p><strong>Caching</strong>: Redis can be used as a cache backend for Magento 2. By caching frequently accessed data like product information, categories, and configuration settings, Redis reduces the load on your database and speeds up page load times.</p>
+  </li>
+  <li>
+    <p><strong>Session Storage</strong>: Redis can also be used to store session data. This is particularly useful for large stores with high traffic, as Redis can handle a large number of simultaneous sessions efficiently.</p>
+  </li>
+  <li>
+    <p><strong>Full Page Cache (FPC)</strong>: Magento 2 supports Redis for full-page caching, which can drastically reduce server response times and improve the overall user experience.</p>
+  </li>
+</ul>
+
+<h3 id="configuration-steps">Configuration Steps:</h3>
+
+<p>To use Redis with Magento 2, you’ll need to modify your <code class="language-plaintext highlighter-rouge">env.php</code> configuration file. Here’s a basic setup:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'cache'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="s1">'frontend'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">'default'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'backend'</span> <span class="o">=&gt;</span> <span class="s1">'Cm_Cache_Backend_Redis'</span><span class="p">,</span>
+            <span class="s1">'backend_options'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="s1">'server'</span> <span class="o">=&gt;</span> <span class="s1">'127.0.0.1'</span><span class="p">,</span>
+                <span class="s1">'port'</span> <span class="o">=&gt;</span> <span class="s1">'6379'</span><span class="p">,</span>
+                <span class="s1">'persistent'</span> <span class="o">=&gt;</span> <span class="s1">''</span><span class="p">,</span>
+                <span class="s1">'database'</span> <span class="o">=&gt;</span> <span class="s1">'0'</span><span class="p">,</span>
+                <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="s1">''</span><span class="p">,</span>
+                <span class="s1">'force_standalone'</span> <span class="o">=&gt;</span> <span class="s1">'0'</span><span class="p">,</span>
+                <span class="s1">'connect_retries'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
+                <span class="s1">'read_timeout'</span> <span class="o">=&gt;</span> <span class="s1">'10'</span><span class="p">,</span>
+                <span class="s1">'automatic_cleaning_factor'</span> <span class="o">=&gt;</span> <span class="s1">'0'</span><span class="p">,</span>
+                <span class="s1">'compress_data'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
+                <span class="s1">'compress_tags'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
+                <span class="s1">'compress_threshold'</span> <span class="o">=&gt;</span> <span class="s1">'20480'</span><span class="p">,</span>
+                <span class="s1">'compression_lib'</span> <span class="o">=&gt;</span> <span class="s1">'gzip'</span><span class="p">,</span>
+            <span class="p">],</span>
+        <span class="p">],</span>
+    <span class="p">],</span>
+<span class="p">],</span>
+<span class="s1">'session'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="s1">'save'</span> <span class="o">=&gt;</span> <span class="s1">'redis'</span><span class="p">,</span>
+    <span class="s1">'redis'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">'host'</span> <span class="o">=&gt;</span> <span class="s1">'127.0.0.1'</span><span class="p">,</span>
+        <span class="s1">'port'</span> <span class="o">=&gt;</span> <span class="s1">'6379'</span><span class="p">,</span>
+        <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="s1">''</span><span class="p">,</span>
+        <span class="s1">'timeout'</span> <span class="o">=&gt;</span> <span class="s1">'2.5'</span><span class="p">,</span>
+        <span class="s1">'persistent_identifier'</span> <span class="o">=&gt;</span> <span class="s1">''</span><span class="p">,</span>
+        <span class="s1">'database'</span> <span class="o">=&gt;</span> <span class="s1">'2'</span><span class="p">,</span>
+        <span class="s1">'compression_threshold'</span> <span class="o">=&gt;</span> <span class="s1">'2048'</span><span class="p">,</span>
+        <span class="s1">'compression_library'</span> <span class="o">=&gt;</span> <span class="s1">'gzip'</span><span class="p">,</span>
+        <span class="s1">'log_level'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
+        <span class="s1">'max_concurrency'</span> <span class="o">=&gt;</span> <span class="s1">'6'</span><span class="p">,</span>
+        <span class="s1">'break_after_frontend'</span> <span class="o">=&gt;</span> <span class="s1">'5'</span><span class="p">,</span>
+        <span class="s1">'break_after_adminhtml'</span> <span class="o">=&gt;</span> <span class="s1">'30'</span><span class="p">,</span>
+        <span class="s1">'first_lifetime'</span> <span class="o">=&gt;</span> <span class="s1">'600'</span><span class="p">,</span>
+        <span class="s1">'bot_first_lifetime'</span> <span class="o">=&gt;</span> <span class="s1">'60'</span><span class="p">,</span>
+        <span class="s1">'bot_lifetime'</span> <span class="o">=&gt;</span> <span class="s1">'7200'</span><span class="p">,</span>
+        <span class="s1">'disable_locking'</span> <span class="o">=&gt;</span> <span class="s1">'0'</span><span class="p">,</span>
+        <span class="s1">'min_lifetime'</span> <span class="o">=&gt;</span> <span class="s1">'60'</span><span class="p">,</span>
+        <span class="s1">'max_lifetime'</span> <span class="o">=&gt;</span> <span class="s1">'2592000'</span>
+    <span class="p">]</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<p>This configuration sets Redis as the cache backend and session storage for your Magento 2 store.</p>
+
+<h2 id="verifying-redis-configuration-in-magento-2">Verifying Redis Configuration in Magento 2</h2>
+
+<p>After configuring Redis with Magento 2, it’s essential to verify that everything is working correctly. Here’s how you can do that:</p>
+
+<h3 id="1-check-redis-connection">1. Check Redis Connection</h3>
+
+<p>You can use the <code class="language-plaintext highlighter-rouge">redis-cli</code> command to ensure that Redis is running and accepting connections:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>redis-cli ping
+</code></pre></div></div>
+
+<p>If Redis is working correctly, it should return <code class="language-plaintext highlighter-rouge">PONG</code>.</p>
+
+<h3 id="2-verify-magento-2-cache-backend">2. Verify Magento 2 Cache Backend</h3>
+
+<p>To verify that Magento 2 is using Redis as the cache backend, you can use the Magento CLI:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento cache:status
+</code></pre></div></div>
+
+<p>This command will display the status of the cache types. If Redis is configured correctly, the cache types should be active and managed by Redis.</p>
+
+<h3 id="3-monitor-redis-activity">3. Monitor Redis Activity</h3>
+
+<p>Redis provides built-in monitoring tools to check the current activity. You can monitor the real-time activity of Redis using:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>redis-cli monitor
+</code></pre></div></div>
+
+<p>This will show you the commands that Redis is currently processing. If Magento 2 is actively using Redis, you should see entries related to cache reads and writes.</p>
+
+<h3 id="4-inspect-redis-data">4. Inspect Redis Data</h3>
+
+<p>To inspect the keys stored in Redis by Magento 2, you can use:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>redis-cli keys <span class="s1">'*'</span>
+</code></pre></div></div>
+
+<p>This command will display all the keys currently stored in Redis. Magento 2-related keys usually have prefixes like <code class="language-plaintext highlighter-rouge">mage-cache</code> or <code class="language-plaintext highlighter-rouge">sess</code>.</p>
+
+<h3 id="5-clear-magento-cache-and-recheck">5. Clear Magento Cache and Recheck</h3>
+
+<p>Finally, clear Magento’s cache and then monitor Redis to see if new cache entries are created:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento cache:clean
+</code></pre></div></div>
+
+<p>After clearing the cache, run <code class="language-plaintext highlighter-rouge">redis-cli monitor</code> again to see Redis activity as Magento repopulates the cache.</p>
+
+<p>If all these checks confirm Redis is being utilized, your Magento 2 setup is successfully using Redis.</p>
+
+<h1 id="installing-redis-on-ubuntu">Installing Redis on Ubuntu</h1>
+
+<p>To get started with Redis on your Ubuntu server, you’ll need to install it first. For a detailed guide on how to install Redis on Ubuntu, please refer to <a href="#">this blog post</a>.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Redis is a powerful tool that can significantly enhance the performance and scalability of your Magento 2 store. By leveraging Redis for caching, session storage, and full-page caching, you can provide a faster and more reliable experience for your customers.</p>
+
+<p>Stay tuned for the next part of this series, where we’ll cover the detailed steps on how to install Redis on an Ubuntu server.</p>
+
+<hr />
+
+<p><em>Looking for more Magento 2 tips? Check out our other <strong><a href="/categories/magento-development-guide">Magento Development Guide</a></strong>.</em></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
 
 
-    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2024-07-21T00:00:00+05:30">July 21, 2024</time></p>
-    
-      <p class="archive__item-excerpt" itemprop="description">When it comes to starting a blog, choosing the right platform is crucial. Two popular options for bloggers are Jekyll and WordPress. Each has its own strengt...</p>
-    
-  </article>
-</div>
+        
 
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-08-31T11:00:00+05:30">August 31, 2024</time></p>
 
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+      </footer>
       
-        <a href="/2023/07/17/switch-vs-match-in-php-choosing-the-right-control-structure-for-your-code/" rel="permalink">Switch vs Match in PHP: Choosing the Right Control Structure for Your Code
-</a>
-      
-    </h2>
-    
-
-
-    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2023-07-17T10:00:00+05:30">July 17, 2023</time></p>
-    
-      <p class="archive__item-excerpt" itemprop="description">When it comes to writing efficient and readable code in PHP, selecting the appropriate control structure is crucial. In PHP 8, two new control structures wer...</p>
-    
-  </article>
-</div>
-
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/2023/05/21/what-is-rabbitmq-and-how-to-install-it-on-ubuntu/" rel="permalink">What is RabbitMQ and How to Install It on Ubuntu?
-</a>
-      
-    </h2>
-    
-
-
-    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2023-05-21T00:45:22+05:30">May 21, 2023</time></p>
-    
-      <p class="archive__item-excerpt" itemprop="description">RabbitMQ, a robust and flexible open-source message broker, plays a crucial role in enabling efficient communication between distributed systems. It provides...</p>
-    
-  </article>
-</div>
-
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/2023/05/20/how-to-install-elasticsearch-in-ubuntu-for-enhanced-search-capabilities/" rel="permalink">How to Install Elasticsearch in Ubuntu for Enhanced Search Capabilities
-</a>
-      
-    </h2>
-    
-
-
-    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2023-05-20T23:40:17+05:30">May 20, 2023</time></p>
-    
-      <p class="archive__item-excerpt" itemprop="description">Elasticsearch is a powerful open-source search and analytics engine that offers efficient searching, indexing, and data analysis. By installing Elasticsearch...</p>
-    
-  </article>
-</div>
-
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/2023/05/20/how-to-install-composer-simplify-your-php-development/" rel="permalink">How to Install Composer: Simplify Your PHP Development
-</a>
-      
-    </h2>
-    
-
-
-    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2023-05-20T13:06:25+05:30">May 20, 2023</time></p>
-    
-      <p class="archive__item-excerpt" itemprop="description">Composer is a powerful dependency management tool for PHP that has revolutionized the way developers handle libraries and packages in their projects. By auto...</p>
-    
-  </article>
-</div>
-
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/2023/05/20/how-to-install-lemp-on-ubuntu-for-high-performance-websites/" rel="permalink">How to Install LEMP (Linux, Nginx, MySQL, PHP) on Ubuntu for High-Performance Websites?
-</a>
-      
-    </h2>
-    
-
-
-    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2023-05-20T11:00:00+05:30">May 20, 2023</time></p>
-    
-      <p class="archive__item-excerpt" itemprop="description">Are you looking to set up a robust web server that can handle high-traffic websites with lightning-fast performance? Look no further! In this tutorial, we’ll...</p>
-    
-  </article>
-</div>
-
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/2023/05/02/how-to-install-wsl-and-ubuntu-on-windows/" rel="permalink">Step-by-Step Guide: How to Install WSL and Ubuntu on Windows for Hassle-Free Linux Integration
-</a>
-      
-    </h2>
-    
-
-
-    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2023-05-02T11:53:25+05:30">May 2, 2023</time></p>
-    
-      <p class="archive__item-excerpt" itemprop="description">Learn how to install Windows Subsystem for Linux (WSL) and Ubuntu on Windows with our step-by-step guide. Start running Linux commands on your Windows machin...</p>
-    
-  </article>
-</div>
-
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/2022/04/03/7-useful-html-attributes-that-every-web-developer-must-know/" rel="permalink">7 Useful HTML Attributes That Every Web Developer Must Know
-</a>
-      
-    </h2>
-    
-
-
-    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2022-04-03T00:06:07+05:30">April 3, 2022</time></p>
-    
-      <p class="archive__item-excerpt" itemprop="description">As you already know about HTML is the building block of a web page. HTML attributes allow you to perform more several complex operations on the web page itse...</p>
-    
-  </article>
-</div>
-
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/2021/12/08/why-php-is-best-for-web-development/" rel="permalink">Why PHP Is Best For Web Development
-</a>
-      
-    </h2>
-    
-
-
-    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2021-12-08T14:51:57+05:30">December 8, 2021</time></p>
-    
-      <p class="archive__item-excerpt" itemprop="description">While working on any website of web application, the first question that comes in mind is which programming language is best. If you ask programmers, they mi...</p>
-    
-  </article>
-</div>
-
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/2021/12/08/5-tips-to-code-like-a-pro/" rel="permalink">5 Tips To Code Like A Pro
-</a>
-      
-    </h2>
-    
-
-
-    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2021-12-08T12:44:40+05:30">December 8, 2021</time></p>
-    
-      <p class="archive__item-excerpt" itemprop="description">Writing code for a web app or software is the most important part of Development Life Cycle. The coder needs to organize everything from the beginning – espe...</p>
-    
-  </article>
-</div>
-
-</div>
-
-    <div class="footer-author-separator"></div>
-<section class="footer-author post-author-details">
+      <section class="post-author-details">
     <h3 class="post-author-details-heading">About Author</h3>
     <div class="post-author-details-content">
         <div class="author__avatar-1">
@@ -576,7 +537,171 @@
     </div>
 
 </section>
+
+      
+
+<section class="page__share">
+  <p>Liked the post, share with others:</p>
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=How+to+Optimize+Magento+2+Performance+with+Redis+Caching%20https%3A%2F%2Fwww.themagentoblog.com%2F2024%2F08%2F31%2Fredis-and-magento-2-enhancing-performance-and-scalability%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.themagentoblog.com%2F2024%2F08%2F31%2Fredis-and-magento-2-enhancing-performance-and-scalability%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.themagentoblog.com/2024/08/31/redis-and-magento-2-enhancing-performance-and-scalability/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+
+  <a href="https://api.whatsapp.com/send?text=How+to+Optimize+Magento+2+Performance+with+Redis+Caching+https%3A%2F%2Fwww.themagentoblog.com%2F2024%2F08%2F31%2Fredis-and-magento-2-enhancing-performance-and-scalability%2F" class="btn btn--whatsapp" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on WhatsApp"><i class="fab fa-fw fa-whatsapp" aria-hidden="true"></i><span> WhatsApp</span></a>
+</section>
+
+
+      
+  <nav class="pagination post-pagination">
+    
+      <a href="/2024/07/31/developing-custom-magento-2-widgets-a-complete-guide/" class="pagination--pager" title="Developing Custom Magento 2 Widgets: A Complete Guide
+">
+        <span class="meta-nav">&#8592; Previous</span>
+        <span class="post-title">Developing Custom Magento 2 Widgets: A Complete Guide</span>
+      </a>
+    
+    
+      <a href="/2024/08/31/installing-redis-on-ubuntu/" class="pagination--pager" title="Installing Redis on Ubuntu: A Step-by-Step Guide
+">
+        <span class="meta-nav">Next &#8594;</span>
+        <span class="post-title">Installing Redis on Ubuntu: A Step-by-Step Guide</span>
+      </a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You may also like</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024/08/31/installing-redis-on-ubuntu/" rel="permalink">Installing Redis on Ubuntu: A Step-by-Step Guide
+</a>
+      
+    </h2>
+    
+
+
+    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2024-08-31T11:40:00+05:30">August 31, 2024</time></p>
+    
+      <p class="archive__item-excerpt" itemprop="description">Step-by-step guide to installing Redis on Ubuntu. Learn how to set up Redis on your Ubuntu server for optimal performance and caching.
+</p>
+    
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024/07/31/developing-custom-magento-2-widgets-a-complete-guide/" rel="permalink">Developing Custom Magento 2 Widgets: A Complete Guide
+</a>
+      
+    </h2>
+    
+
+
+    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2024-07-31T12:00:00+05:30">July 31, 2024</time></p>
+    
+      <p class="archive__item-excerpt" itemprop="description">Unlock the power of Magento 2 with our ultimate guide to building and customizing stunning widgets. Learn step-by-step how to create custom widgets, handle d...</p>
+    
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024/07/31/optimizing-magento-2-for-seo-best-practices-and-tips/" rel="permalink">Optimizing Magento 2 for SEO: Best Practices and Tips
+</a>
+      
+    </h2>
+    
+
+
+    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2024-07-31T10:00:00+05:30">July 31, 2024</time></p>
+    
+      <p class="archive__item-excerpt" itemprop="description">Enhance your Magento 2 store’s visibility and rankings with our comprehensive guide to SEO optimization. Learn best practices and actionable tips.
+</p>
+    
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024/07/30/leveraging-the-magento-2-command-line-interface-for-efficient-development/" rel="permalink">Leveraging the Magento 2 Command Line Interface (CLI) for Efficient Development
+</a>
+      
+    </h2>
+    
+
+
+    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2024-07-30T12:00:00+05:30">July 30, 2024</time></p>
+    
+      <p class="archive__item-excerpt" itemprop="description">Explore the powerful capabilities of the Magento 2 CLI for efficient development. Learn essential commands, automation techniques, and how to extend the CLI ...</p>
+    
+  </article>
+</div>
+
+    
   </div>
+</div>
+
+  
+  
 </div>
 
       

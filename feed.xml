@@ -1,4 +1,251 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://www.themagentoblog.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.themagentoblog.com/" rel="alternate" type="text/html" /><updated>2024-08-02T00:22:16+05:30</updated><id>https://www.themagentoblog.com/feed.xml</id><title type="html">The Magento Blog - by Manish Joy</title><subtitle>Discover in-depth articles, tutorials, and resources on Magento development at The Magento Blog by Manish Joy. Perfect for developers looking to enhance their skills, stay updated with the latest trends, and implement advanced e-commerce solutions.</subtitle><author><name>{&quot;name&quot;=&gt;nil, &quot;avatar&quot;=&gt;&quot;/assets/images/author/manishjoy-author.png.webp&quot;, &quot;bio&quot;=&gt;&quot;Tech geek. Self Motivated. Love to code, learn new technologies and skills.&quot;, &quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Website&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-link&quot;, &quot;url&quot;=&gt;&quot;https://www.manishjoy.com&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-instagram&quot;, &quot;url&quot;=&gt;&quot;https://instagram.com/oyyejoy&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-youtube&quot;, &quot;url&quot;=&gt;&quot;https://www.youtube.com/@OyyeJoy?sub_confirmation=1&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-linkedin&quot;, &quot;url&quot;=&gt;&quot;https://www.linkedin.com/in/manishjoy/&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook&quot;, &quot;url&quot;=&gt;&quot;https://www.facebook.com/iManishJoy&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;, &quot;url&quot;=&gt;&quot;https://twitter.com/imanishjoy&quot;}, {&quot;label&quot;=&gt;&quot;GitHub&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-github&quot;, &quot;url&quot;=&gt;&quot;https://github.com/manishjoy&quot;}]}</name></author><entry><title type="html">Developing Custom Magento 2 Widgets: A Complete Guide</title><link href="https://www.themagentoblog.com/2024/07/31/developing-custom-magento-2-widgets-a-complete-guide/" rel="alternate" type="text/html" title="Developing Custom Magento 2 Widgets: A Complete Guide" /><published>2024-07-31T12:00:00+05:30</published><updated>2024-07-31T12:00:00+05:30</updated><id>https://www.themagentoblog.com/2024/07/31/developing-custom-magento-2-widgets-a-complete-guide</id><content type="html" xml:base="https://www.themagentoblog.com/2024/07/31/developing-custom-magento-2-widgets-a-complete-guide/"><![CDATA[<p>Widgets in Magento 2 provide a flexible way to add dynamic content to pages and layout updates. Creating custom widgets allows you to extend Magento’s functionality and tailor it to your specific needs. In this guide, we’ll walk you through the process of developing custom widgets in Magento 2, from setting up your module to deploying and managing your widget.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://www.themagentoblog.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.themagentoblog.com/" rel="alternate" type="text/html" /><updated>2024-08-31T20:28:28+05:30</updated><id>https://www.themagentoblog.com/feed.xml</id><title type="html">The Magento Blog - by Manish Joy</title><subtitle>Discover in-depth articles, tutorials, and resources on Magento development at The Magento Blog by Manish Joy. Perfect for developers looking to enhance their skills, stay updated with the latest trends, and implement advanced e-commerce solutions.</subtitle><author><name>{&quot;name&quot;=&gt;nil, &quot;avatar&quot;=&gt;&quot;/assets/images/author/manishjoy-author.png.webp&quot;, &quot;bio&quot;=&gt;&quot;Tech geek. Self Motivated. Love to code, learn new technologies and skills.&quot;, &quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Website&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-link&quot;, &quot;url&quot;=&gt;&quot;https://www.manishjoy.com&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-instagram&quot;, &quot;url&quot;=&gt;&quot;https://instagram.com/oyyejoy&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-youtube&quot;, &quot;url&quot;=&gt;&quot;https://www.youtube.com/@OyyeJoy?sub_confirmation=1&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-linkedin&quot;, &quot;url&quot;=&gt;&quot;https://www.linkedin.com/in/manishjoy/&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook&quot;, &quot;url&quot;=&gt;&quot;https://www.facebook.com/iManishJoy&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;, &quot;url&quot;=&gt;&quot;https://twitter.com/imanishjoy&quot;}, {&quot;label&quot;=&gt;&quot;GitHub&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-github&quot;, &quot;url&quot;=&gt;&quot;https://github.com/manishjoy&quot;}]}</name></author><entry><title type="html">Installing Redis on Ubuntu: A Step-by-Step Guide</title><link href="https://www.themagentoblog.com/2024/08/31/installing-redis-on-ubuntu/" rel="alternate" type="text/html" title="Installing Redis on Ubuntu: A Step-by-Step Guide" /><published>2024-08-31T11:40:00+05:30</published><updated>2024-08-31T11:40:00+05:30</updated><id>https://www.themagentoblog.com/2024/08/31/installing-redis-on-ubuntu</id><content type="html" xml:base="https://www.themagentoblog.com/2024/08/31/installing-redis-on-ubuntu/"><![CDATA[<p>Redis is a powerful in-memory data structure store that can be used as a cache, database, and message broker. In this guide, we will walk you through the steps to install Redis on an Ubuntu server. Whether you’re setting up Redis for the first time or need a refresher, this tutorial will help you get Redis up and running quickly.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Before you begin, ensure that you have:</p>
+
+<ul>
+  <li>A server running Ubuntu 20.04 or later</li>
+  <li>A user with sudo privileges</li>
+</ul>
+
+<h2 id="step-1-update-your-package-index">Step 1: Update Your Package Index</h2>
+
+<p>First, update your package index to ensure you have the latest information about available packages:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get update
+</code></pre></div></div>
+
+<h2 id="step-2-install-redis">Step 2: Install Redis</h2>
+
+<p>Install Redis by running the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>redis-server
+</code></pre></div></div>
+
+<p>This command will install Redis along with any necessary dependencies.</p>
+
+<h2 id="step-3-configure-redis">Step 3: Configure Redis</h2>
+
+<p>Once Redis is installed, you’ll want to make some basic configuration changes to optimize its performance. The Redis configuration file is located at <code class="language-plaintext highlighter-rouge">/etc/redis/redis.conf</code>.</p>
+
+<h3 id="enable-persistence">Enable Persistence</h3>
+
+<p>To ensure data persistence, you can configure Redis to save snapshots of your data to disk periodically. To do this, open the configuration file:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nano /etc/redis/redis.conf
+</code></pre></div></div>
+
+<p>Find the following lines and adjust them as needed:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>save 900 1
+save 300 10
+save 60 10000
+</code></pre></div></div>
+
+<p>These lines specify the frequency of saving data to disk.</p>
+
+<h3 id="set-maximum-memory-usage">Set Maximum Memory Usage</h3>
+
+<p>If you’re using Redis primarily as a cache, you may want to set a maximum memory limit. To do this, locate the <code class="language-plaintext highlighter-rouge">maxmemory</code> directive in the configuration file and set it to a suitable value:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>maxmemory 256mb
+maxmemory-policy allkeys-lru
+</code></pre></div></div>
+
+<p>This configuration tells Redis to use up to 256MB of memory and to evict the least recently used keys when the limit is reached.</p>
+
+<p>Save and close the file when you’re done.</p>
+
+<h2 id="step-4-start-and-enable-redis">Step 4: Start and Enable Redis</h2>
+
+<p>Start the Redis service and enable it to start on boot:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl start redis
+<span class="nb">sudo </span>systemctl <span class="nb">enable </span>redis
+</code></pre></div></div>
+
+<h2 id="step-5-verify-redis-installation">Step 5: Verify Redis Installation</h2>
+
+<p>To verify that Redis is working correctly, use the <code class="language-plaintext highlighter-rouge">redis-cli</code> command to ping the server:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>redis-cli ping
+</code></pre></div></div>
+
+<p>If everything is working, Redis will respond with <code class="language-plaintext highlighter-rouge">PONG</code>.</p>
+
+<p>You can also check the status of the Redis service:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl status redis
+</code></pre></div></div>
+
+<p>This command will display the current status of the Redis service.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>You have successfully installed and configured Redis on your Ubuntu server. Redis is now ready to be used for caching, session management, or any other purpose you need. Be sure to tune the configuration settings according to your specific use case to get the best performance.</p>
+
+<p>For more tips on using Redis with Magento 2, check out our <a href="/2024/08/31/redis-and-magento-2-enhancing-performance-and-scalability/">other blog on Redis and Magento 2</a>.</p>]]></content><author><name>Manish Joy</name></author><category term="Ubuntu" /><category term="Server Setup" /><category term="Tutorial" /><category term="Caching" /><category term="backend development" /><category term="server" /><category term="Redis" /><category term="Ubuntu" /><category term="Caching" /><category term="installation" /><category term="troubleshooting" /><summary type="html"><![CDATA[Step-by-step guide to installing Redis on Ubuntu. Learn how to set up Redis on your Ubuntu server for optimal performance and caching.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.themagentoblog.com/assets/images/blogs/2024-08-31-installing-redis-on-ubuntu.png" /><media:content medium="image" url="https://www.themagentoblog.com/assets/images/blogs/2024-08-31-installing-redis-on-ubuntu.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">How to Optimize Magento 2 Performance with Redis Caching</title><link href="https://www.themagentoblog.com/2024/08/31/redis-and-magento-2-enhancing-performance-and-scalability/" rel="alternate" type="text/html" title="How to Optimize Magento 2 Performance with Redis Caching" /><published>2024-08-31T11:00:00+05:30</published><updated>2024-08-31T11:00:00+05:30</updated><id>https://www.themagentoblog.com/2024/08/31/redis-and-magento-2-enhancing-performance-and-scalability</id><content type="html" xml:base="https://www.themagentoblog.com/2024/08/31/redis-and-magento-2-enhancing-performance-and-scalability/"><![CDATA[<p>In the world of eCommerce, speed and scalability are critical for providing an optimal user experience. Magento 2, a robust platform for online stores, offers various tools and technologies to enhance performance. One of the most powerful tools in this arsenal is <strong>Redis</strong>.</p>
+
+<p>In this blog, we’ll dive into what Redis is, how it works, and how you can use it to supercharge your Magento 2 store.</p>
+
+<h2 id="what-is-redis">What is Redis?</h2>
+
+<p><strong>Redis</strong> (Remote Dictionary Server) is an open-source, in-memory data structure store that can be used as a database, cache, and message broker. It supports various data structures such as strings, hashes, lists, sets, and more. Redis is known for its speed and efficiency, making it an ideal choice for caching and real-time analytics.</p>
+
+<h3 id="key-features-of-redis">Key Features of Redis:</h3>
+
+<ul>
+  <li><strong>In-memory storage</strong>: Redis stores data in memory, leading to extremely fast read and write operations.</li>
+  <li><strong>Data Persistence</strong>: Redis provides options for persisting data to disk, ensuring data durability.</li>
+  <li><strong>Scalability</strong>: Redis can handle millions of requests per second, making it highly scalable for large applications.</li>
+  <li><strong>Flexibility</strong>: Supports multiple data structures, providing flexibility in how data is managed.</li>
+</ul>
+
+<h2 id="how-redis-works">How Redis Works</h2>
+
+<p>Redis operates primarily in memory, making it incredibly fast compared to traditional databases. Here’s a simplified view of how it works:</p>
+
+<ol>
+  <li><strong>Data Storage</strong>: Data is stored in memory as key-value pairs. For example, you can store session data, configuration settings, or full web pages.</li>
+  <li><strong>Persistence</strong>: Although Redis is an in-memory store, it supports persistence by writing data to disk. This ensures that data isn’t lost in case of a server restart.</li>
+  <li><strong>Replication</strong>: Redis supports master-slave replication, allowing you to create multiple replicas of your data for high availability and load balancing.</li>
+  <li><strong>Pub/Sub Messaging</strong>: Redis can also be used as a message broker with its publish/subscribe messaging system, which is useful for real-time communication between different parts of your application.</li>
+</ol>
+
+<h2 id="using-redis-with-magento-2">Using Redis with Magento 2</h2>
+
+<p>Integrating Redis with Magento 2 can significantly improve the performance of your online store. Here’s how Redis can be used in Magento 2:</p>
+
+<ul>
+  <li>
+    <p><strong>Caching</strong>: Redis can be used as a cache backend for Magento 2. By caching frequently accessed data like product information, categories, and configuration settings, Redis reduces the load on your database and speeds up page load times.</p>
+  </li>
+  <li>
+    <p><strong>Session Storage</strong>: Redis can also be used to store session data. This is particularly useful for large stores with high traffic, as Redis can handle a large number of simultaneous sessions efficiently.</p>
+  </li>
+  <li>
+    <p><strong>Full Page Cache (FPC)</strong>: Magento 2 supports Redis for full-page caching, which can drastically reduce server response times and improve the overall user experience.</p>
+  </li>
+</ul>
+
+<h3 id="configuration-steps">Configuration Steps:</h3>
+
+<p>To use Redis with Magento 2, you’ll need to modify your <code class="language-plaintext highlighter-rouge">env.php</code> configuration file. Here’s a basic setup:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'cache'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="s1">'frontend'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">'default'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'backend'</span> <span class="o">=&gt;</span> <span class="s1">'Cm_Cache_Backend_Redis'</span><span class="p">,</span>
+            <span class="s1">'backend_options'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="s1">'server'</span> <span class="o">=&gt;</span> <span class="s1">'127.0.0.1'</span><span class="p">,</span>
+                <span class="s1">'port'</span> <span class="o">=&gt;</span> <span class="s1">'6379'</span><span class="p">,</span>
+                <span class="s1">'persistent'</span> <span class="o">=&gt;</span> <span class="s1">''</span><span class="p">,</span>
+                <span class="s1">'database'</span> <span class="o">=&gt;</span> <span class="s1">'0'</span><span class="p">,</span>
+                <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="s1">''</span><span class="p">,</span>
+                <span class="s1">'force_standalone'</span> <span class="o">=&gt;</span> <span class="s1">'0'</span><span class="p">,</span>
+                <span class="s1">'connect_retries'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
+                <span class="s1">'read_timeout'</span> <span class="o">=&gt;</span> <span class="s1">'10'</span><span class="p">,</span>
+                <span class="s1">'automatic_cleaning_factor'</span> <span class="o">=&gt;</span> <span class="s1">'0'</span><span class="p">,</span>
+                <span class="s1">'compress_data'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
+                <span class="s1">'compress_tags'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
+                <span class="s1">'compress_threshold'</span> <span class="o">=&gt;</span> <span class="s1">'20480'</span><span class="p">,</span>
+                <span class="s1">'compression_lib'</span> <span class="o">=&gt;</span> <span class="s1">'gzip'</span><span class="p">,</span>
+            <span class="p">],</span>
+        <span class="p">],</span>
+    <span class="p">],</span>
+<span class="p">],</span>
+<span class="s1">'session'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="s1">'save'</span> <span class="o">=&gt;</span> <span class="s1">'redis'</span><span class="p">,</span>
+    <span class="s1">'redis'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">'host'</span> <span class="o">=&gt;</span> <span class="s1">'127.0.0.1'</span><span class="p">,</span>
+        <span class="s1">'port'</span> <span class="o">=&gt;</span> <span class="s1">'6379'</span><span class="p">,</span>
+        <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="s1">''</span><span class="p">,</span>
+        <span class="s1">'timeout'</span> <span class="o">=&gt;</span> <span class="s1">'2.5'</span><span class="p">,</span>
+        <span class="s1">'persistent_identifier'</span> <span class="o">=&gt;</span> <span class="s1">''</span><span class="p">,</span>
+        <span class="s1">'database'</span> <span class="o">=&gt;</span> <span class="s1">'2'</span><span class="p">,</span>
+        <span class="s1">'compression_threshold'</span> <span class="o">=&gt;</span> <span class="s1">'2048'</span><span class="p">,</span>
+        <span class="s1">'compression_library'</span> <span class="o">=&gt;</span> <span class="s1">'gzip'</span><span class="p">,</span>
+        <span class="s1">'log_level'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
+        <span class="s1">'max_concurrency'</span> <span class="o">=&gt;</span> <span class="s1">'6'</span><span class="p">,</span>
+        <span class="s1">'break_after_frontend'</span> <span class="o">=&gt;</span> <span class="s1">'5'</span><span class="p">,</span>
+        <span class="s1">'break_after_adminhtml'</span> <span class="o">=&gt;</span> <span class="s1">'30'</span><span class="p">,</span>
+        <span class="s1">'first_lifetime'</span> <span class="o">=&gt;</span> <span class="s1">'600'</span><span class="p">,</span>
+        <span class="s1">'bot_first_lifetime'</span> <span class="o">=&gt;</span> <span class="s1">'60'</span><span class="p">,</span>
+        <span class="s1">'bot_lifetime'</span> <span class="o">=&gt;</span> <span class="s1">'7200'</span><span class="p">,</span>
+        <span class="s1">'disable_locking'</span> <span class="o">=&gt;</span> <span class="s1">'0'</span><span class="p">,</span>
+        <span class="s1">'min_lifetime'</span> <span class="o">=&gt;</span> <span class="s1">'60'</span><span class="p">,</span>
+        <span class="s1">'max_lifetime'</span> <span class="o">=&gt;</span> <span class="s1">'2592000'</span>
+    <span class="p">]</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<p>This configuration sets Redis as the cache backend and session storage for your Magento 2 store.</p>
+
+<h2 id="verifying-redis-configuration-in-magento-2">Verifying Redis Configuration in Magento 2</h2>
+
+<p>After configuring Redis with Magento 2, it’s essential to verify that everything is working correctly. Here’s how you can do that:</p>
+
+<h3 id="1-check-redis-connection">1. Check Redis Connection</h3>
+
+<p>You can use the <code class="language-plaintext highlighter-rouge">redis-cli</code> command to ensure that Redis is running and accepting connections:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>redis-cli ping
+</code></pre></div></div>
+
+<p>If Redis is working correctly, it should return <code class="language-plaintext highlighter-rouge">PONG</code>.</p>
+
+<h3 id="2-verify-magento-2-cache-backend">2. Verify Magento 2 Cache Backend</h3>
+
+<p>To verify that Magento 2 is using Redis as the cache backend, you can use the Magento CLI:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento cache:status
+</code></pre></div></div>
+
+<p>This command will display the status of the cache types. If Redis is configured correctly, the cache types should be active and managed by Redis.</p>
+
+<h3 id="3-monitor-redis-activity">3. Monitor Redis Activity</h3>
+
+<p>Redis provides built-in monitoring tools to check the current activity. You can monitor the real-time activity of Redis using:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>redis-cli monitor
+</code></pre></div></div>
+
+<p>This will show you the commands that Redis is currently processing. If Magento 2 is actively using Redis, you should see entries related to cache reads and writes.</p>
+
+<h3 id="4-inspect-redis-data">4. Inspect Redis Data</h3>
+
+<p>To inspect the keys stored in Redis by Magento 2, you can use:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>redis-cli keys <span class="s1">'*'</span>
+</code></pre></div></div>
+
+<p>This command will display all the keys currently stored in Redis. Magento 2-related keys usually have prefixes like <code class="language-plaintext highlighter-rouge">mage-cache</code> or <code class="language-plaintext highlighter-rouge">sess</code>.</p>
+
+<h3 id="5-clear-magento-cache-and-recheck">5. Clear Magento Cache and Recheck</h3>
+
+<p>Finally, clear Magento’s cache and then monitor Redis to see if new cache entries are created:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento cache:clean
+</code></pre></div></div>
+
+<p>After clearing the cache, run <code class="language-plaintext highlighter-rouge">redis-cli monitor</code> again to see Redis activity as Magento repopulates the cache.</p>
+
+<p>If all these checks confirm Redis is being utilized, your Magento 2 setup is successfully using Redis.</p>
+
+<h1 id="installing-redis-on-ubuntu">Installing Redis on Ubuntu</h1>
+
+<p>To get started with Redis on your Ubuntu server, you’ll need to install it first. For a detailed guide on how to install Redis on Ubuntu, please refer to <a href="#">this blog post</a>.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Redis is a powerful tool that can significantly enhance the performance and scalability of your Magento 2 store. By leveraging Redis for caching, session storage, and full-page caching, you can provide a faster and more reliable experience for your customers.</p>
+
+<p>Stay tuned for the next part of this series, where we’ll cover the detailed steps on how to install Redis on an Ubuntu server.</p>
+
+<hr />
+
+<p><em>Looking for more Magento 2 tips? Check out our other <strong><a href="/categories/magento-development-guide">Magento Development Guide</a></strong>.</em></p>]]></content><author><name>Manish Joy</name></author><category term="Magento" /><category term="Magento 2" /><category term="Performance" /><category term="Tutorial" /><category term="Caching" /><category term="backend development" /><category term="coding" /><category term="hosting" /><category term="Redis" /><category term="Caching" /><category term="Performance" /><category term="programming" /><category term="server" /><category term="troubleshooting" /><summary type="html"><![CDATA[Discover how to boost Magento 2 performance using Redis caching. Learn what Redis is, how it works, and how to configure it for enhanced speed and scalability in your Magento 2 store.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.themagentoblog.com/assets/images/blogs/2024-08-31-redis-and-magento-2-enhancing-performance-and-scalability.png" /><media:content medium="image" url="https://www.themagentoblog.com/assets/images/blogs/2024-08-31-redis-and-magento-2-enhancing-performance-and-scalability.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Developing Custom Magento 2 Widgets: A Complete Guide</title><link href="https://www.themagentoblog.com/2024/07/31/developing-custom-magento-2-widgets-a-complete-guide/" rel="alternate" type="text/html" title="Developing Custom Magento 2 Widgets: A Complete Guide" /><published>2024-07-31T12:00:00+05:30</published><updated>2024-07-31T12:00:00+05:30</updated><id>https://www.themagentoblog.com/2024/07/31/developing-custom-magento-2-widgets-a-complete-guide</id><content type="html" xml:base="https://www.themagentoblog.com/2024/07/31/developing-custom-magento-2-widgets-a-complete-guide/"><![CDATA[<p>Widgets in Magento 2 provide a flexible way to add dynamic content to pages and layout updates. Creating custom widgets allows you to extend Magento’s functionality and tailor it to your specific needs. In this guide, we’ll walk you through the process of developing custom widgets in Magento 2, from setting up your module to deploying and managing your widget.</p>
 
 <h2 id="1-introduction-to-magento-2-widgets">1. Introduction to Magento 2 Widgets</h2>
 
@@ -986,261 +1233,4 @@ Create a <code class="language-plaintext highlighter-rouge">di.xml</code> file i
 
 <p>Ready to create a new GraphQL endpoint in Magento 2? Check out the final part of this series for a step-by-step guide:</p>
 
-<p><a href="/2024/07/24/creating-a-new-graphql-endpoint-in-magento-2/">⇒ Creating a New GraphQL Endpoint in Magento 2</a></p>]]></content><author><name>Manish Joy</name></author><category term="Magento" /><category term="Magento 2" /><category term="Magento 2 API Development" /><category term="Tutorial" /><category term="Magento 2 GraphQL Development" /><category term="magento development" /><category term="magento" /><category term="magento developer" /><category term="magento2" /><category term="php" /><category term="programming" /><category term="tutorial" /><category term="web development" /><category term="GraphQL" /><category term="API Development" /><summary type="html"><![CDATA[Learn how to extend Magento 2's GraphQL capabilities by creating custom queries and mutations. Follow our step-by-step guide for advanced customization.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.themagentoblog.com/assets/images/blogs/extending-graphql-in-magento-2-custom-queries-and-mutations.jpg" /><media:content medium="image" url="https://www.themagentoblog.com/assets/images/blogs/extending-graphql-in-magento-2-custom-queries-and-mutations.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Harnessing the Power of GraphQL in Magento 2: A Developer-Friendly Guide</title><link href="https://www.themagentoblog.com/2024/07/24/harnessing-the-power-of-graphql-in-magento-2-introduction-and-basics/" rel="alternate" type="text/html" title="Harnessing the Power of GraphQL in Magento 2: A Developer-Friendly Guide" /><published>2024-07-24T10:00:00+05:30</published><updated>2024-07-24T10:00:00+05:30</updated><id>https://www.themagentoblog.com/2024/07/24/harnessing-the-power-of-graphql-in-magento-2-introduction-and-basics</id><content type="html" xml:base="https://www.themagentoblog.com/2024/07/24/harnessing-the-power-of-graphql-in-magento-2-introduction-and-basics/"><![CDATA[<p>Magento 2 has embraced GraphQL as a powerful alternative to REST and SOAP APIs. GraphQL offers efficient, flexible, and faster queries, allowing developers to request exactly what they need. This guide will walk you through the essentials of using GraphQL in Magento 2, from setup to basic usage.</p>
-
-<h3 id="why-use-graphql-in-magento-2">Why Use GraphQL in Magento 2?</h3>
-
-<p>GraphQL provides several advantages over traditional APIs:</p>
-<ol>
-  <li><strong>Efficiency:</strong> Fetch only the data you need in a single request.</li>
-  <li><strong>Flexibility:</strong> Query multiple resources in a single call.</li>
-  <li><strong>Performance:</strong> Reduce the number of requests and improve load times.</li>
-</ol>
-
-<h3 id="setting-up-graphql-in-magento-2">Setting Up GraphQL in Magento 2</h3>
-
-<p>Magento 2 comes with GraphQL support out-of-the-box. To enable and test it, follow these steps:</p>
-
-<ol>
-  <li>
-    <p><strong>Verify GraphQL Endpoint:</strong>
-The default GraphQL endpoint in Magento 2 is <code class="language-plaintext highlighter-rouge">/graphql</code>. You can test this endpoint using tools like GraphiQL or Postman.</p>
-  </li>
-  <li>
-    <p><strong>Access GraphiQL Interface:</strong>
-Open your browser and navigate to:</p>
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://your-magento-site/graphql
-</code></pre></div>    </div>
-  </li>
-</ol>
-
-<h3 id="basic-graphql-queries-in-magento-2">Basic GraphQL Queries in Magento 2</h3>
-
-<p>Let’s start with some basic queries to get product information.</p>
-
-<h4 id="fetching-product-details">Fetching Product Details</h4>
-
-<p>Here’s a simple query to fetch product details by SKU:</p>
-
-<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="n">products</span><span class="p">(</span><span class="n">filter</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">sku</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">eq</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MB01"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="n">items</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="n">id</span><span class="w">
-      </span><span class="n">name</span><span class="w">
-      </span><span class="n">sku</span><span class="w">
-      </span><span class="n">price</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="n">regularPrice</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="n">amount</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="n">value</span><span class="w">
-            </span><span class="n">currency</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-<h3 id="advanced-graphql-queries">Advanced GraphQL Queries</h3>
-
-<p>GraphQL’s true power lies in its ability to combine multiple queries and handle complex data structures.</p>
-
-<h4 id="fetching-categories-and-products">Fetching Categories and Products</h4>
-
-<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="n">category</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="n">id</span><span class="w">
-    </span><span class="n">name</span><span class="w">
-    </span><span class="n">products</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="n">items</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="n">id</span><span class="w">
-        </span><span class="n">name</span><span class="w">
-        </span><span class="n">sku</span><span class="w">
-        </span><span class="n">price</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="n">regularPrice</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="n">amount</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="n">value</span><span class="w">
-              </span><span class="n">currency</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-<h3 id="mutations-in-graphql">Mutations in GraphQL</h3>
-
-<p>Mutations in GraphQL allow you to modify data on the server. For example, adding a product to the cart:</p>
-
-<h4 id="adding-a-product-to-the-cart">Adding a Product to the Cart</h4>
-
-<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="n">addSimpleProductsToCart</span><span class="p">(</span><span class="w">
-    </span><span class="n">input</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="n">cart_id</span><span class="p">:</span><span class="w"> </span><span class="s2">"cartId"</span><span class="w">
-      </span><span class="n">cart_items</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="n">data</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="n">quantity</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-            </span><span class="n">sku</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MB01"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="n">cart</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="n">items</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="n">id</span><span class="w">
-        </span><span class="n">product</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="n">name</span><span class="w">
-          </span><span class="n">sku</span><span class="w">
-          </span><span class="n">price</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="n">regularPrice</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="n">amount</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="n">value</span><span class="w">
-                </span><span class="n">currency</span><span class="w">
-              </span><span class="p">}</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-        </span><span class="n">quantity</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-<h3 id="conclusion">Conclusion</h3>
-
-<p>GraphQL in Magento 2 offers a robust and flexible way to interact with your store’s data. By understanding the basics and leveraging advanced queries and mutations, you can significantly improve the performance and efficiency of your Magento 2 applications.</p>
-
-<h3 id="next-steps">Next Steps</h3>
-
-<p>Once you’ve grasped the basics of GraphQL in Magento 2, it’s time to extend its capabilities. Check out the next part of this series for a detailed guide on extending GraphQL in Magento 2:</p>
-
-<p><a href="/2024/07/24/extending-graphql-in-magento-2-custom-queries-and-mutations/">⇒ Extending GraphQL in Magento 2: Custom Queries and Mutations</a></p>]]></content><author><name>Manish Joy</name></author><category term="Magento" /><category term="Magento 2" /><category term="Magento 2 API Development" /><category term="Magento 2 GraphQL Development" /><category term="Tutorial" /><category term="magento development" /><category term="magento" /><category term="magento developer" /><category term="magento2" /><category term="php" /><category term="programming" /><category term="tutorial" /><category term="web development" /><category term="GraphQL" /><category term="API Development" /><summary type="html"><![CDATA[Discover the basics of GraphQL in Magento 2. Learn about its benefits, setup, and basic queries to enhance your eCommerce store's efficiency and flexibility.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.themagentoblog.com/assets/images/blogs/harnessing-the-power-of-graphql-in-magento-2-introduction-and-basics.jpg" /><media:content medium="image" url="https://www.themagentoblog.com/assets/images/blogs/harnessing-the-power-of-graphql-in-magento-2-introduction-and-basics.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Crafting Custom Admin Routes and Menus in Magento 2: A Complete Guide</title><link href="https://www.themagentoblog.com/2024/07/24/crafting-custom-admin-routes-and-menus-in-magento-2-a-complete-guide/" rel="alternate" type="text/html" title="Crafting Custom Admin Routes and Menus in Magento 2: A Complete Guide" /><published>2024-07-24T00:00:00+05:30</published><updated>2024-07-24T00:00:00+05:30</updated><id>https://www.themagentoblog.com/2024/07/24/crafting-custom-admin-routes-and-menus-in-magento-2-a-complete-guide</id><content type="html" xml:base="https://www.themagentoblog.com/2024/07/24/crafting-custom-admin-routes-and-menus-in-magento-2-a-complete-guide/"><![CDATA[<p>Creating custom admin routes and menus in Magento 2 is essential for extending the admin panel with new functionalities. This guide will walk you through the process of setting up custom admin routes, adding menu items, and configuring ACL (Access Control List) to manage permissions effectively.</p>
-
-<p><strong>Why Customize Admin Routes and Menus?</strong></p>
-<ol>
-  <li><strong>Enhance Functionality:</strong> Add new features and tools directly to the Magento admin panel.</li>
-  <li><strong>Improve Usability:</strong> Customize the admin interface to better suit business needs.</li>
-  <li><strong>Secure Access:</strong> Use ACL to ensure that only authorized users can access certain features.</li>
-</ol>
-
-<p><strong>Step-by-Step Guide to Creating Admin Routes and Menus:</strong></p>
-
-<h3 id="step-1-define-admin-route-routesxml">Step 1: Define Admin Route (routes.xml)</h3>
-<p>Create the <code class="language-plaintext highlighter-rouge">etc/adminhtml/routes.xml</code> file:</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:App/etc/routes.xsd"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;router</span> <span class="na">id=</span><span class="s">"admin"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;route</span> <span class="na">id=</span><span class="s">"custom_admin"</span> <span class="na">frontName=</span><span class="s">"customadmin"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Vendor_Module"</span> <span class="na">before=</span><span class="s">"Magento_Backend"</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;/route&gt;</span>
-    <span class="nt">&lt;/router&gt;</span>
-<span class="nt">&lt;/config&gt;</span>
-</code></pre></div></div>
-
-<h3 id="step-2-create-admin-controller">Step 2: Create Admin Controller</h3>
-<p>Create the <code class="language-plaintext highlighter-rouge">Controller/Adminhtml/Index/Index.php</code> file:</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-<span class="kn">namespace</span> <span class="nn">Vendor\Module\Controller\Adminhtml\Index</span><span class="p">;</span>
-
-<span class="kn">use</span> <span class="nc">Magento\Backend\App\Action</span><span class="p">;</span>
-<span class="kn">use</span> <span class="nc">Magento\Backend\App\Action\Context</span><span class="p">;</span>
-<span class="kn">use</span> <span class="nc">Magento\Framework\View\Result\PageFactory</span><span class="p">;</span>
-
-<span class="kd">class</span> <span class="nc">Index</span> <span class="kd">extends</span> <span class="nc">Action</span>
-<span class="p">{</span>
-    <span class="k">protected</span> <span class="nv">$resultPageFactory</span><span class="p">;</span>
-
-    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">Context</span> <span class="nv">$context</span><span class="p">,</span> <span class="kt">PageFactory</span> <span class="nv">$resultPageFactory</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">parent</span><span class="o">::</span><span class="nf">__construct</span><span class="p">(</span><span class="nv">$context</span><span class="p">);</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">resultPageFactory</span> <span class="o">=</span> <span class="nv">$resultPageFactory</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">public</span> <span class="k">function</span> <span class="n">execute</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="nv">$resultPage</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">resultPageFactory</span><span class="o">-&gt;</span><span class="nf">create</span><span class="p">();</span>
-        <span class="nv">$resultPage</span><span class="o">-&gt;</span><span class="nf">getConfig</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">getTitle</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">prepend</span><span class="p">(</span><span class="nf">__</span><span class="p">(</span><span class="s1">'Custom Admin Page'</span><span class="p">));</span>
-        <span class="k">return</span> <span class="nv">$resultPage</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h3 id="step-3-add-admin-menu-item-menuxml">Step 3: Add Admin Menu Item (menu.xml)</h3>
-<p>Create the <code class="language-plaintext highlighter-rouge">etc/adminhtml/menu.xml</code> file:</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Menu/etc/menu.xsd"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;menu&gt;</span>
-        <span class="nt">&lt;add</span> <span class="na">id=</span><span class="s">"Vendor_Module::main_menu"</span> <span class="na">title=</span><span class="s">"Custom Menu"</span> <span class="na">module=</span><span class="s">"Vendor_Module"</span> <span class="na">sortOrder=</span><span class="s">"100"</span> <span class="na">parent=</span><span class="s">"Magento_Backend::content"</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;add</span> <span class="na">id=</span><span class="s">"Vendor_Module::submenu"</span> <span class="na">title=</span><span class="s">"Sub Menu"</span> <span class="na">module=</span><span class="s">"Vendor_Module"</span> <span class="na">sortOrder=</span><span class="s">"10"</span> <span class="na">action=</span><span class="s">"customadmin/index/index"</span> <span class="na">resource=</span><span class="s">"Vendor_Module::submenu"</span> <span class="na">parent=</span><span class="s">"Vendor_Module::main_menu"</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;/menu&gt;</span>
-<span class="nt">&lt;/config&gt;</span>
-</code></pre></div></div>
-
-<h3 id="step-4-define-acl-aclxml">Step 4: Define ACL (acl.xml)</h3>
-<p>Create the <code class="language-plaintext highlighter-rouge">etc/acl.xml</code> file to manage permissions:</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
-<span class="nt">&lt;acl</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Acl/etc/acl.xsd"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;resources&gt;</span>
-        <span class="nt">&lt;resource</span> <span class="na">id=</span><span class="s">"Magento_Backend::admin"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;resource</span> <span class="na">id=</span><span class="s">"Vendor_Module::main_menu"</span> <span class="na">title=</span><span class="s">"Custom Menu"</span> <span class="na">sortOrder=</span><span class="s">"100"</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;resource</span> <span class="na">id=</span><span class="s">"Vendor_Module::submenu"</span> <span class="na">title=</span><span class="s">"Sub Menu"</span> <span class="na">sortOrder=</span><span class="s">"10"</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;/resource&gt;</span>
-    <span class="nt">&lt;/resources&gt;</span>
-<span class="nt">&lt;/acl&gt;</span>
-</code></pre></div></div>
-
-<h3 id="step-5-create-layout-and-view-files">Step 5: Create Layout and View Files</h3>
-<p>Create the <code class="language-plaintext highlighter-rouge">view/adminhtml/layout/customadmin_index_index.xml</code> file for layout configuration:</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
-<span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;body&gt;</span>
-        <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">"content"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Vendor\Module\Block\Adminhtml\Index"</span> <span class="na">name=</span><span class="s">"custom_admin_page"</span> <span class="na">template=</span><span class="s">"Vendor_Module::index.phtml"</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;/referenceContainer&gt;</span>
-    <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/page&gt;</span>
-</code></pre></div></div>
-
-<p>Create the <code class="language-plaintext highlighter-rouge">Block/Adminhtml/Index.php</code> file:</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-<span class="kn">namespace</span> <span class="nn">Vendor\Module\Block\Adminhtml</span><span class="p">;</span>
-
-<span class="kn">use</span> <span class="nc">Magento\Backend\Block\Template</span><span class="p">;</span>
-
-<span class="kd">class</span> <span class="nc">Index</span> <span class="kd">extends</span> <span class="nc">Template</span>
-<span class="p">{</span>
-    <span class="k">protected</span> <span class="k">function</span> <span class="n">_prepareLayout</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">pageConfig</span><span class="o">-&gt;</span><span class="nf">getTitle</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">set</span><span class="p">(</span><span class="nf">__</span><span class="p">(</span><span class="s1">'Custom Admin Page'</span><span class="p">));</span>
-        <span class="k">return</span> <span class="k">parent</span><span class="o">::</span><span class="nf">_prepareLayout</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>Create the <code class="language-plaintext highlighter-rouge">view/adminhtml/templates/index.phtml</code> file for the template:</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1&gt;</span><span class="cp">&lt;?= /* @noEscape */ __('Welcome to Custom Admin Page!') ?&gt;</span><span class="nt">&lt;/h1&gt;</span>
-<span class="nt">&lt;p&gt;</span><span class="cp">&lt;?= __('This is a custom admin page created in Magento 2.') ?&gt;</span><span class="nt">&lt;/p&gt;</span>
-</code></pre></div></div>
-
-<h3 id="step-6-verify-and-test">Step 6: Verify and Test</h3>
-<ol>
-  <li>Clear the cache and log in to the Magento admin panel.</li>
-  <li>Navigate to <code class="language-plaintext highlighter-rouge">Content &gt; Custom Menu &gt; Sub Menu</code>.</li>
-  <li>You should see the custom admin page with the content defined in <code class="language-plaintext highlighter-rouge">index.phtml</code>.</li>
-</ol>
-
-<p><strong>Conclusion:</strong>
-Creating custom admin routes and menus in Magento 2 allows you to extend the functionality of the admin panel, making it more tailored to your specific needs. By following this guide, you can add new features, improve usability, and ensure secure access with ACL configurations.</p>]]></content><author><name>Manish Joy</name></author><category term="Magento" /><category term="Magento 2" /><category term="Magento 2 Admin Development Series" /><category term="Tutorial" /><category term="magento development" /><category term="magento" /><category term="magento developer" /><category term="magento2" /><category term="php" /><category term="programming" /><category term="tutorial" /><category term="web development" /><category term="Admin Routes" /><summary type="html"><![CDATA[Learn how to create custom admin routes and menus in Magento 2 with our comprehensive guide, including ACL configurations for secure access control.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.themagentoblog.com/assets/images/blogs/crafting-custom-admin-routes-and-menus-in-magento-2-a-complete-guide.jpg" /><media:content medium="image" url="https://www.themagentoblog.com/assets/images/blogs/crafting-custom-admin-routes-and-menus-in-magento-2-a-complete-guide.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<p><a href="/2024/07/24/creating-a-new-graphql-endpoint-in-magento-2/">⇒ Creating a New GraphQL Endpoint in Magento 2</a></p>]]></content><author><name>Manish Joy</name></author><category term="Magento" /><category term="Magento 2" /><category term="Magento 2 API Development" /><category term="Tutorial" /><category term="Magento 2 GraphQL Development" /><category term="magento development" /><category term="magento" /><category term="magento developer" /><category term="magento2" /><category term="php" /><category term="programming" /><category term="tutorial" /><category term="web development" /><category term="GraphQL" /><category term="API Development" /><summary type="html"><![CDATA[Learn how to extend Magento 2's GraphQL capabilities by creating custom queries and mutations. Follow our step-by-step guide for advanced customization.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.themagentoblog.com/assets/images/blogs/extending-graphql-in-magento-2-custom-queries-and-mutations.jpg" /><media:content medium="image" url="https://www.themagentoblog.com/assets/images/blogs/extending-graphql-in-magento-2-custom-queries-and-mutations.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

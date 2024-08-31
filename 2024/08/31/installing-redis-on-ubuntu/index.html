@@ -10,43 +10,41 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Coding Tips - page 4 - The Magento Blog - by Manish Joy - Page 4</title><meta name="description" content="Discover in-depth articles, tutorials, and resources on Magento development at The Magento Blog by Manish Joy. Perfect for developers looking to enhance their skills, stay updated with the latest trends, and implement advanced e-commerce solutions.">
+<!-- begin _includes/seo.html --><title>Installing Redis on Ubuntu: A Step-by-Step Guide - The Magento Blog - by Manish Joy</title><meta name="description" content="Step-by-step guide to installing Redis on Ubuntu. Learn how to set up Redis on your Ubuntu server for optimal performance and caching.">
+
+
+  <meta name="keywords" content="Redis, Ubuntu, Install Redis on Ubuntu, Redis installation, Ubuntu server setup">
 
 
 
 
-
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="The Magento Blog - by Manish Joy">
-<meta property="og:title" content="Coding Tips - page 4">
-<meta property="og:url" content="https://www.themagentoblog.com/categories/coding-tips/page/4/">
+<meta property="og:title" content="Installing Redis on Ubuntu: A Step-by-Step Guide">
+<meta property="og:url" content="https://www.themagentoblog.com/2024/08/31/installing-redis-on-ubuntu/">
 
 
-  <meta property="og:description" content="Discover in-depth articles, tutorials, and resources on Magento development at The Magento Blog by Manish Joy. Perfect for developers looking to enhance their skills, stay updated with the latest trends, and implement advanced e-commerce solutions.">
+  <meta property="og:description" content="Step-by-step guide to installing Redis on Ubuntu. Learn how to set up Redis on your Ubuntu server for optimal performance and caching.">
 
 
 
-  
-  <meta property="og:image" content="https://www.themagentoblog.com/wp-content/uploads/2023/09/the-magento-blog-header-logo.png">
-  
-
+  <meta property="og:image" content="https://www.themagentoblog.com/assets/images/blogs/2024-08-31-installing-redis-on-ubuntu.png">
 
 
 
 
 
+  <meta property="article:published_time" content="2024-08-31T11:40:00+05:30">
 
 
 
 
-<link rel="canonical" href="https://www.themagentoblog.com/categories/coding-tips/page/4/">
 
 
-  <link rel="prev" href="https://www.themagentoblog.com/categories/coding-tips/page/3/">
+<link rel="canonical" href="https://www.themagentoblog.com/2024/08/31/installing-redis-on-ubuntu/">
 
 
-  <link rel="next" href="https://www.themagentoblog.com/categories/coding-tips/page/5/">
 
 
 
@@ -105,7 +103,7 @@
 </script>
   </head>
 
-  <body class="layout--category">
+  <body class="layout--post">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -207,6 +205,25 @@
 
 
 <div id="main" role="main">
+  
+    
+
+
+
+
+
+
+
+<div class="page__hero page__hero-header-image"
+  style=" background-image: url('');"
+>
+  
+    <img src="/assets/images/blogs/2024-08-31-installing-redis-on-ubuntu.png" alt="Installing Redis on Ubuntu: A Step-by-Step Guide" class="page__hero-image">
+  
+  
+</div>
+
+  
   <div class="sidebar">
   <div class="author-widget-box widget widget_block">
     <div id="admania_aboutus_widgets-3" class="widget_admania_aboutus_widgets">
@@ -274,260 +291,131 @@
     </div>
   </div>
 </div>
-
-  <div class="archive">
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Installing Redis on Ubuntu: A Step-by-Step Guide">
+    <meta itemprop="description" content="Redis is a powerful in-memory data structure store that can be used as a cache, database, and message broker. In this guide, we will walk you through the steps to install Redis on an Ubuntu server. Whether you’re setting up Redis for the first time or need a refresher, this tutorial will help you get Redis up and running quickly.">
+    <meta itemprop="datePublished" content="2024-08-31T11:40:00+05:30">
     
-      <h1 id="page-title" class="page__title">Coding Tips - page 4</h1>
-    
-    
 
-
-<div class="entries-list">
-  
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <div class="page__inner-wrap">
       
-        <a href="/2024/07/21/jekyll-vs-wordpress-which-platform-is-best-for-bloggers/" rel="permalink">Jekyll vs WordPress: Which Platform is Best for Bloggers?
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="https://www.themagentoblog.com/2024/08/31/installing-redis-on-ubuntu/" itemprop="url">Installing Redis on Ubuntu: A Step-by-Step Guide
 </a>
+          </h1>
+          
+
+
+        </header>
       
-    </h2>
-    
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Redis is a powerful in-memory data structure store that can be used as a cache, database, and message broker. In this guide, we will walk you through the steps to install Redis on an Ubuntu server. Whether you’re setting up Redis for the first time or need a refresher, this tutorial will help you get Redis up and running quickly.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Before you begin, ensure that you have:</p>
+
+<ul>
+  <li>A server running Ubuntu 20.04 or later</li>
+  <li>A user with sudo privileges</li>
+</ul>
+
+<h2 id="step-1-update-your-package-index">Step 1: Update Your Package Index</h2>
+
+<p>First, update your package index to ensure you have the latest information about available packages:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get update
+</code></pre></div></div>
+
+<h2 id="step-2-install-redis">Step 2: Install Redis</h2>
+
+<p>Install Redis by running the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>redis-server
+</code></pre></div></div>
+
+<p>This command will install Redis along with any necessary dependencies.</p>
+
+<h2 id="step-3-configure-redis">Step 3: Configure Redis</h2>
+
+<p>Once Redis is installed, you’ll want to make some basic configuration changes to optimize its performance. The Redis configuration file is located at <code class="language-plaintext highlighter-rouge">/etc/redis/redis.conf</code>.</p>
+
+<h3 id="enable-persistence">Enable Persistence</h3>
+
+<p>To ensure data persistence, you can configure Redis to save snapshots of your data to disk periodically. To do this, open the configuration file:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nano /etc/redis/redis.conf
+</code></pre></div></div>
+
+<p>Find the following lines and adjust them as needed:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>save 900 1
+save 300 10
+save 60 10000
+</code></pre></div></div>
+
+<p>These lines specify the frequency of saving data to disk.</p>
+
+<h3 id="set-maximum-memory-usage">Set Maximum Memory Usage</h3>
+
+<p>If you’re using Redis primarily as a cache, you may want to set a maximum memory limit. To do this, locate the <code class="language-plaintext highlighter-rouge">maxmemory</code> directive in the configuration file and set it to a suitable value:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>maxmemory 256mb
+maxmemory-policy allkeys-lru
+</code></pre></div></div>
+
+<p>This configuration tells Redis to use up to 256MB of memory and to evict the least recently used keys when the limit is reached.</p>
+
+<p>Save and close the file when you’re done.</p>
+
+<h2 id="step-4-start-and-enable-redis">Step 4: Start and Enable Redis</h2>
+
+<p>Start the Redis service and enable it to start on boot:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl start redis
+<span class="nb">sudo </span>systemctl <span class="nb">enable </span>redis
+</code></pre></div></div>
+
+<h2 id="step-5-verify-redis-installation">Step 5: Verify Redis Installation</h2>
+
+<p>To verify that Redis is working correctly, use the <code class="language-plaintext highlighter-rouge">redis-cli</code> command to ping the server:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>redis-cli ping
+</code></pre></div></div>
+
+<p>If everything is working, Redis will respond with <code class="language-plaintext highlighter-rouge">PONG</code>.</p>
+
+<p>You can also check the status of the Redis service:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl status redis
+</code></pre></div></div>
+
+<p>This command will display the current status of the Redis service.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>You have successfully installed and configured Redis on your Ubuntu server. Redis is now ready to be used for caching, session management, or any other purpose you need. Be sure to tune the configuration settings according to your specific use case to get the best performance.</p>
+
+<p>For more tips on using Redis with Magento 2, check out our <a href="/2024/08/31/redis-and-magento-2-enhancing-performance-and-scalability/">other blog on Redis and Magento 2</a>.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
 
 
-    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2024-07-21T00:00:00+05:30">July 21, 2024</time></p>
-    
-      <p class="archive__item-excerpt" itemprop="description">When it comes to starting a blog, choosing the right platform is crucial. Two popular options for bloggers are Jekyll and WordPress. Each has its own strengt...</p>
-    
-  </article>
-</div>
+        
 
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-08-31T11:40:00+05:30">August 31, 2024</time></p>
 
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+      </footer>
       
-        <a href="/2023/07/17/switch-vs-match-in-php-choosing-the-right-control-structure-for-your-code/" rel="permalink">Switch vs Match in PHP: Choosing the Right Control Structure for Your Code
-</a>
-      
-    </h2>
-    
-
-
-    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2023-07-17T10:00:00+05:30">July 17, 2023</time></p>
-    
-      <p class="archive__item-excerpt" itemprop="description">When it comes to writing efficient and readable code in PHP, selecting the appropriate control structure is crucial. In PHP 8, two new control structures wer...</p>
-    
-  </article>
-</div>
-
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/2023/05/21/what-is-rabbitmq-and-how-to-install-it-on-ubuntu/" rel="permalink">What is RabbitMQ and How to Install It on Ubuntu?
-</a>
-      
-    </h2>
-    
-
-
-    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2023-05-21T00:45:22+05:30">May 21, 2023</time></p>
-    
-      <p class="archive__item-excerpt" itemprop="description">RabbitMQ, a robust and flexible open-source message broker, plays a crucial role in enabling efficient communication between distributed systems. It provides...</p>
-    
-  </article>
-</div>
-
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/2023/05/20/how-to-install-elasticsearch-in-ubuntu-for-enhanced-search-capabilities/" rel="permalink">How to Install Elasticsearch in Ubuntu for Enhanced Search Capabilities
-</a>
-      
-    </h2>
-    
-
-
-    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2023-05-20T23:40:17+05:30">May 20, 2023</time></p>
-    
-      <p class="archive__item-excerpt" itemprop="description">Elasticsearch is a powerful open-source search and analytics engine that offers efficient searching, indexing, and data analysis. By installing Elasticsearch...</p>
-    
-  </article>
-</div>
-
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/2023/05/20/how-to-install-composer-simplify-your-php-development/" rel="permalink">How to Install Composer: Simplify Your PHP Development
-</a>
-      
-    </h2>
-    
-
-
-    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2023-05-20T13:06:25+05:30">May 20, 2023</time></p>
-    
-      <p class="archive__item-excerpt" itemprop="description">Composer is a powerful dependency management tool for PHP that has revolutionized the way developers handle libraries and packages in their projects. By auto...</p>
-    
-  </article>
-</div>
-
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/2023/05/20/how-to-install-lemp-on-ubuntu-for-high-performance-websites/" rel="permalink">How to Install LEMP (Linux, Nginx, MySQL, PHP) on Ubuntu for High-Performance Websites?
-</a>
-      
-    </h2>
-    
-
-
-    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2023-05-20T11:00:00+05:30">May 20, 2023</time></p>
-    
-      <p class="archive__item-excerpt" itemprop="description">Are you looking to set up a robust web server that can handle high-traffic websites with lightning-fast performance? Look no further! In this tutorial, we’ll...</p>
-    
-  </article>
-</div>
-
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/2023/05/02/how-to-install-wsl-and-ubuntu-on-windows/" rel="permalink">Step-by-Step Guide: How to Install WSL and Ubuntu on Windows for Hassle-Free Linux Integration
-</a>
-      
-    </h2>
-    
-
-
-    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2023-05-02T11:53:25+05:30">May 2, 2023</time></p>
-    
-      <p class="archive__item-excerpt" itemprop="description">Learn how to install Windows Subsystem for Linux (WSL) and Ubuntu on Windows with our step-by-step guide. Start running Linux commands on your Windows machin...</p>
-    
-  </article>
-</div>
-
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/2022/04/03/7-useful-html-attributes-that-every-web-developer-must-know/" rel="permalink">7 Useful HTML Attributes That Every Web Developer Must Know
-</a>
-      
-    </h2>
-    
-
-
-    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2022-04-03T00:06:07+05:30">April 3, 2022</time></p>
-    
-      <p class="archive__item-excerpt" itemprop="description">As you already know about HTML is the building block of a web page. HTML attributes allow you to perform more several complex operations on the web page itse...</p>
-    
-  </article>
-</div>
-
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/2021/12/08/why-php-is-best-for-web-development/" rel="permalink">Why PHP Is Best For Web Development
-</a>
-      
-    </h2>
-    
-
-
-    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2021-12-08T14:51:57+05:30">December 8, 2021</time></p>
-    
-      <p class="archive__item-excerpt" itemprop="description">While working on any website of web application, the first question that comes in mind is which programming language is best. If you ask programmers, they mi...</p>
-    
-  </article>
-</div>
-
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/2021/12/08/5-tips-to-code-like-a-pro/" rel="permalink">5 Tips To Code Like A Pro
-</a>
-      
-    </h2>
-    
-
-
-    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2021-12-08T12:44:40+05:30">December 8, 2021</time></p>
-    
-      <p class="archive__item-excerpt" itemprop="description">Writing code for a web app or software is the most important part of Development Life Cycle. The coder needs to organize everything from the beginning – espe...</p>
-    
-  </article>
-</div>
-
-</div>
-
-    <div class="footer-author-separator"></div>
-<section class="footer-author post-author-details">
+      <section class="post-author-details">
     <h3 class="post-author-details-heading">About Author</h3>
     <div class="post-author-details-content">
         <div class="author__avatar-1">
@@ -576,7 +464,166 @@
     </div>
 
 </section>
+
+      
+
+<section class="page__share">
+  <p>Liked the post, share with others:</p>
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Installing+Redis+on+Ubuntu%3A+A+Step-by-Step+Guide%20https%3A%2F%2Fwww.themagentoblog.com%2F2024%2F08%2F31%2Finstalling-redis-on-ubuntu%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.themagentoblog.com%2F2024%2F08%2F31%2Finstalling-redis-on-ubuntu%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.themagentoblog.com/2024/08/31/installing-redis-on-ubuntu/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+
+  <a href="https://api.whatsapp.com/send?text=Installing+Redis+on+Ubuntu%3A+A+Step-by-Step+Guide+https%3A%2F%2Fwww.themagentoblog.com%2F2024%2F08%2F31%2Finstalling-redis-on-ubuntu%2F" class="btn btn--whatsapp" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on WhatsApp"><i class="fab fa-fw fa-whatsapp" aria-hidden="true"></i><span> WhatsApp</span></a>
+</section>
+
+
+      
+  <nav class="pagination post-pagination">
+    
+      <a href="/2024/08/31/redis-and-magento-2-enhancing-performance-and-scalability/" class="pagination--pager" title="How to Optimize Magento 2 Performance with Redis Caching
+">
+        <span class="meta-nav">&#8592; Previous</span>
+        <span class="post-title">How to Optimize Magento 2 Performance with Redis Caching</span>
+      </a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next &#8594;</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You may also like</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024/08/31/redis-and-magento-2-enhancing-performance-and-scalability/" rel="permalink">How to Optimize Magento 2 Performance with Redis Caching
+</a>
+      
+    </h2>
+    
+
+
+    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2024-08-31T11:00:00+05:30">August 31, 2024</time></p>
+    
+      <p class="archive__item-excerpt" itemprop="description">Discover how to boost Magento 2 performance using Redis caching. Learn what Redis is, how it works, and how to configure it for enhanced speed and scalabilit...</p>
+    
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024/07/31/developing-custom-magento-2-widgets-a-complete-guide/" rel="permalink">Developing Custom Magento 2 Widgets: A Complete Guide
+</a>
+      
+    </h2>
+    
+
+
+    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2024-07-31T12:00:00+05:30">July 31, 2024</time></p>
+    
+      <p class="archive__item-excerpt" itemprop="description">Unlock the power of Magento 2 with our ultimate guide to building and customizing stunning widgets. Learn step-by-step how to create custom widgets, handle d...</p>
+    
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024/07/31/optimizing-magento-2-for-seo-best-practices-and-tips/" rel="permalink">Optimizing Magento 2 for SEO: Best Practices and Tips
+</a>
+      
+    </h2>
+    
+
+
+    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2024-07-31T10:00:00+05:30">July 31, 2024</time></p>
+    
+      <p class="archive__item-excerpt" itemprop="description">Enhance your Magento 2 store’s visibility and rankings with our comprehensive guide to SEO optimization. Learn best practices and actionable tips.
+</p>
+    
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024/07/30/leveraging-the-magento-2-command-line-interface-for-efficient-development/" rel="permalink">Leveraging the Magento 2 Command Line Interface (CLI) for Efficient Development
+</a>
+      
+    </h2>
+    
+
+
+    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2024-07-30T12:00:00+05:30">July 30, 2024</time></p>
+    
+      <p class="archive__item-excerpt" itemprop="description">Explore the powerful capabilities of the Magento 2 CLI for efficient development. Learn essential commands, automation techniques, and how to extend the CLI ...</p>
+    
+  </article>
+</div>
+
+    
   </div>
+</div>
+
+  
+  
 </div>
 
       
