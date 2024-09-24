@@ -617,7 +617,7 @@ audio:not([controls]) {
 }
 
 a {
-  color: #020202;
+  color: #52527a;
   text-decoration: none;
 }
 
@@ -850,10 +850,10 @@ blockquote cite:before {
 
 /* links */
 a:visited {
-  color: #282828;
+  color: #6c6c8e;
 }
 a:hover {
-  color: #020202;
+  color: #3e3e5c;
   outline: 0;
 }
 
@@ -949,7 +949,7 @@ figcaption a {
   transition: all 0.2s ease-in-out;
 }
 figcaption a:hover {
-  color: #020202;
+  color: #3e3e5c;
 }
 
 /* Fix IE9 SVG bug */
@@ -2136,7 +2136,7 @@ blockquote.notice--danger {
   border-radius: 0;
 }
 .pagination li a:hover {
-  color: #020202;
+  color: #3e3e5c;
 }
 .pagination li a.current, .pagination li a.current.disabled {
   color: #fff;
@@ -4000,7 +4000,7 @@ body {
 }
 .page__taxonomy-item:hover {
   text-decoration: none;
-  color: #020202;
+  color: #3e3e5c;
 }
 
 .taxonomy__section {

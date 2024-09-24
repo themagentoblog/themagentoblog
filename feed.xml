@@ -1,4 +1,183 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://www.themagentoblog.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.themagentoblog.com/" rel="alternate" type="text/html" /><updated>2024-08-31T20:28:28+05:30</updated><id>https://www.themagentoblog.com/feed.xml</id><title type="html">The Magento Blog - by Manish Joy</title><subtitle>Discover in-depth articles, tutorials, and resources on Magento development at The Magento Blog by Manish Joy. Perfect for developers looking to enhance their skills, stay updated with the latest trends, and implement advanced e-commerce solutions.</subtitle><author><name>{&quot;name&quot;=&gt;nil, &quot;avatar&quot;=&gt;&quot;/assets/images/author/manishjoy-author.png.webp&quot;, &quot;bio&quot;=&gt;&quot;Tech geek. Self Motivated. Love to code, learn new technologies and skills.&quot;, &quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Website&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-link&quot;, &quot;url&quot;=&gt;&quot;https://www.manishjoy.com&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-instagram&quot;, &quot;url&quot;=&gt;&quot;https://instagram.com/oyyejoy&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-youtube&quot;, &quot;url&quot;=&gt;&quot;https://www.youtube.com/@OyyeJoy?sub_confirmation=1&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-linkedin&quot;, &quot;url&quot;=&gt;&quot;https://www.linkedin.com/in/manishjoy/&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook&quot;, &quot;url&quot;=&gt;&quot;https://www.facebook.com/iManishJoy&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;, &quot;url&quot;=&gt;&quot;https://twitter.com/imanishjoy&quot;}, {&quot;label&quot;=&gt;&quot;GitHub&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-github&quot;, &quot;url&quot;=&gt;&quot;https://github.com/manishjoy&quot;}]}</name></author><entry><title type="html">Installing Redis on Ubuntu: A Step-by-Step Guide</title><link href="https://www.themagentoblog.com/2024/08/31/installing-redis-on-ubuntu/" rel="alternate" type="text/html" title="Installing Redis on Ubuntu: A Step-by-Step Guide" /><published>2024-08-31T11:40:00+05:30</published><updated>2024-08-31T11:40:00+05:30</updated><id>https://www.themagentoblog.com/2024/08/31/installing-redis-on-ubuntu</id><content type="html" xml:base="https://www.themagentoblog.com/2024/08/31/installing-redis-on-ubuntu/"><![CDATA[<p>Redis is a powerful in-memory data structure store that can be used as a cache, database, and message broker. In this guide, we will walk you through the steps to install Redis on an Ubuntu server. Whether you’re setting up Redis for the first time or need a refresher, this tutorial will help you get Redis up and running quickly.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://www.themagentoblog.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.themagentoblog.com/" rel="alternate" type="text/html" /><updated>2024-09-24T16:57:07+05:30</updated><id>https://www.themagentoblog.com/feed.xml</id><title type="html">The Magento Blog - by Manish Joy</title><subtitle>Discover in-depth articles, tutorials, and resources on Magento development at The Magento Blog by Manish Joy. Perfect for developers looking to enhance their skills, stay updated with the latest trends, and implement advanced e-commerce solutions.</subtitle><author><name>{&quot;name&quot;=&gt;nil, &quot;avatar&quot;=&gt;&quot;/assets/images/author/manishjoy-author.png.webp&quot;, &quot;bio&quot;=&gt;&quot;Tech geek. Self Motivated. Love to code, learn new technologies and skills.&quot;, &quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Website&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-link&quot;, &quot;url&quot;=&gt;&quot;https://www.manishjoy.com&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-instagram&quot;, &quot;url&quot;=&gt;&quot;https://instagram.com/oyyejoy&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-youtube&quot;, &quot;url&quot;=&gt;&quot;https://www.youtube.com/@OyyeJoy?sub_confirmation=1&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-linkedin&quot;, &quot;url&quot;=&gt;&quot;https://www.linkedin.com/in/manishjoy/&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook&quot;, &quot;url&quot;=&gt;&quot;https://www.facebook.com/iManishJoy&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;, &quot;url&quot;=&gt;&quot;https://twitter.com/imanishjoy&quot;}, {&quot;label&quot;=&gt;&quot;GitHub&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-github&quot;, &quot;url&quot;=&gt;&quot;https://github.com/manishjoy&quot;}]}</name></author><entry><title type="html">Choosing Between Plugins and Observers in Magento 2: A Developer’s Guide</title><link href="https://www.themagentoblog.com/2024/09/23/observers-vs-plugins-in-magento-2/" rel="alternate" type="text/html" title="Choosing Between Plugins and Observers in Magento 2: A Developer’s Guide" /><published>2024-09-23T00:00:00+05:30</published><updated>2024-09-23T00:00:00+05:30</updated><id>https://www.themagentoblog.com/2024/09/23/observers-vs-plugins-in-magento-2</id><content type="html" xml:base="https://www.themagentoblog.com/2024/09/23/observers-vs-plugins-in-magento-2/"><![CDATA[<p>If you’re familiar with Magento 2’s architecture, you likely know that there are multiple ways to modify core functionality without changing the core code. The two most commonly used methods are <strong>Observers</strong> and <strong>Plugins</strong>. Both play vital roles in extending and customizing Magento 2, but knowing when to use each can sometimes be challenging.</p>
+
+<p>Before diving into this comparison, make sure you’ve read our previous blog on <a href="/overriding-in-magento-2-mastering-preferences-plugins-and-event-observers/">Overriding in Magento 2: Mastering Preferences, Plugins, and Event Observers</a> to understand the foundational concepts of Magento 2 customization.</p>
+
+<p>Now, let’s explore the key differences between Observers and Plugins, along with their best use cases in Magento 2.</p>
+
+<h3 id="what-are-observers-in-magento-2">What Are Observers in Magento 2?</h3>
+
+<p>Observers in Magento 2 are part of the <strong>Event-Observer</strong> design pattern. They are triggered when specific events occur within the system. You can think of them as “listeners” that react to various Magento events (like “checkout”, “order creation”, etc.).</p>
+
+<h4 id="key-characteristics-of-observers">Key Characteristics of Observers:</h4>
+<ol>
+  <li><strong>Event-based:</strong> Observers react to pre-defined events in Magento.</li>
+  <li><strong>Global in Scope:</strong> Observers can listen to core Magento events as well as custom events.</li>
+  <li><strong>No Return Modification:</strong> Observers do not modify the return value of a function, they just execute additional logic based on the event.</li>
+  <li><strong>Multiple Observers per Event:</strong> Multiple observers can respond to a single event.</li>
+</ol>
+
+<h4 id="example-use-case">Example Use Case:</h4>
+<p>An observer can be used to perform an action after an order is placed, like sending a custom email notification.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- events.xml --&gt;</span>
+<span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Event/etc/events.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;event</span> <span class="na">name=</span><span class="s">"checkout_submit_all_after"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;observer</span> <span class="na">name=</span><span class="s">"custom_order_observer"</span> <span class="na">instance=</span><span class="s">"Vendor\Module\Observer\OrderObserver"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/event&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="kn">namespace</span> <span class="nn">Vendor\Module\Observer</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nc">Magento\Framework\Event\ObserverInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\Event\Observer</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">OrderObserver</span> <span class="kd">implements</span> <span class="nc">ObserverInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">execute</span><span class="p">(</span><span class="kt">Observer</span> <span class="nv">$observer</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Add your custom logic here</span>
+        <span class="nv">$order</span> <span class="o">=</span> <span class="nv">$observer</span><span class="o">-&gt;</span><span class="nf">getEvent</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">getOrder</span><span class="p">();</span>
+        <span class="c1">// Do something with the order data</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="what-are-plugins-in-magento-2">What Are Plugins in Magento 2?</h3>
+
+<p>Plugins, also known as <strong>Interceptors</strong>, allow you to modify or extend the behavior of public methods in Magento classes without overriding them directly. Plugins work at the method level, giving you the flexibility to control the flow of code before, after, or around the method execution.</p>
+
+<h4 id="key-characteristics-of-plugins">Key Characteristics of Plugins:</h4>
+<ol>
+  <li><strong>Method-Level Customization:</strong> Plugins work at the method level, allowing fine-tuned control.</li>
+  <li><strong>Three Types:</strong>
+    <ul>
+      <li><strong>Before Method:</strong> Runs before the original method.</li>
+      <li><strong>After Method:</strong> Executes after the original method has run.</li>
+      <li><strong>Around Method:</strong> Wraps around the original method to modify its behavior entirely.</li>
+    </ul>
+  </li>
+  <li><strong>Return Value Modification:</strong> Plugins can modify the return values of the original method.</li>
+  <li><strong>Order of Execution Matters:</strong> Plugins can be executed in a specific order using the <code class="language-plaintext highlighter-rouge">sortOrder</code> attribute.</li>
+</ol>
+
+<h4 id="example-use-case-1">Example Use Case:</h4>
+<p>A plugin can be used to modify the price of a product when it’s added to the cart.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- di.xml --&gt;</span>
+<span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Catalog\Model\Product"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;plugin</span> <span class="na">name=</span><span class="s">"custom_product_plugin"</span> <span class="na">type=</span><span class="s">"Vendor\Module\Plugin\ProductPlugin"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/type&gt;</span>
+</code></pre></div></div>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="kn">namespace</span> <span class="nn">Vendor\Module\Plugin</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">ProductPlugin</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">beforeGetPrice</span><span class="p">(</span><span class="nc">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Modify price before the original method executes</span>
+        <span class="k">return</span> <span class="p">[</span><span class="nv">$subject</span><span class="o">-&gt;</span><span class="nf">getPrice</span><span class="p">()</span> <span class="o">*</span> <span class="mf">1.10</span><span class="p">];</span> <span class="c1">// Increase price by 10%</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">afterGetPrice</span><span class="p">(</span><span class="nc">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$result</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Modify the result after the original method executes</span>
+        <span class="k">return</span> <span class="nv">$result</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">// Add $5 to the original price</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">aroundGetPrice</span><span class="p">(</span><span class="nc">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="n">callable</span> <span class="nv">$proceed</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Completely override the original method's functionality</span>
+        <span class="k">return</span> <span class="mi">100</span><span class="p">;</span> <span class="c1">// Return a fixed price of $100</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="observers-vs-plugins-key-differences">Observers vs Plugins: Key Differences</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th><strong>Observers</strong></th>
+      <th><strong>Plugins</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Trigger</strong></td>
+      <td>Reacts to system or custom events</td>
+      <td>Hooks into specific methods</td>
+    </tr>
+    <tr>
+      <td><strong>Customization Scope</strong></td>
+      <td>Event-level</td>
+      <td>Method-level</td>
+    </tr>
+    <tr>
+      <td><strong>Return Value Modification</strong></td>
+      <td>Cannot modify return values</td>
+      <td>Can modify return values</td>
+    </tr>
+    <tr>
+      <td><strong>When to Use</strong></td>
+      <td>For broad actions that respond to an event</td>
+      <td>For fine-grained control over a class’s method execution</td>
+    </tr>
+    <tr>
+      <td><strong>Order of Execution</strong></td>
+      <td>No control over the order of execution</td>
+      <td>Control via <code class="language-plaintext highlighter-rouge">sortOrder</code></td>
+    </tr>
+    <tr>
+      <td><strong>Multiple Customizations</strong></td>
+      <td>Multiple observers for the same event</td>
+      <td>Multiple plugins for the same method with execution order</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="when-to-use-observers">When to Use Observers</h3>
+
+<ul>
+  <li>Use observers when you need to execute code in response to a system event.</li>
+  <li>Great for adding global functionality that doesn’t require modifying method execution.</li>
+  <li>Ideal for broad actions such as logging events, sending notifications, or dispatching custom functionality during the checkout process.</li>
+</ul>
+
+<h3 id="when-to-use-plugins">When to Use Plugins</h3>
+
+<ul>
+  <li>Plugins are the go-to choice for fine-tuning the behavior of specific methods.</li>
+  <li>Use them when you need to modify the input or output of a function.</li>
+  <li>Best suited for scenarios where core Magento functionality needs modification at the method level without rewriting the entire class.</li>
+</ul>
+
+<h3 id="which-is-better">Which is Better?</h3>
+
+<p>It’s not about which is better, but about which is more appropriate for your use case. If you need to listen for an event and perform an action, observers are ideal. However, if you want to modify how specific methods work, plugins offer more flexibility.</p>
+
+<p>In general:</p>
+<ul>
+  <li><strong>Use plugins</strong> when you need precise control over method execution.</li>
+  <li><strong>Use observers</strong> when you need to react to events that occur within the system or an extension.</li>
+</ul>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>Magento 2 offers robust customization options through both observers and plugins. While observers allow you to listen and respond to system events, plugins provide detailed control over individual methods. Depending on your customization needs, choose the appropriate method to ensure your Magento 2 store runs smoothly and efficiently.</p>
+
+<p>If you need more information on how to override Magento 2 core functionality using preferences, plugins, or event observers, check out our previous blog post <a href="/overriding-in-magento-2-mastering-preferences-plugins-and-event-observers/">here</a>.</p>
+
+<p>For any questions or further assistance, feel free to <a href="/contact-me">contact us</a>!</p>
+
+<hr />
+
+<p><em>Looking for more Magento 2 tips? Check out our other <strong><a href="/categories/magento-development-guide">Magento Development Guide</a></strong>.</em></p>]]></content><author><name>Manish Joy</name></author><category term="Magento" /><category term="Magento 2" /><category term="Magento 2 Module Development Series" /><category term="Tutorial" /><category term="frontend development" /><category term="magento" /><category term="magento developer" /><category term="magento2" /><category term="php" /><category term="programming" /><category term="theme development" /><category term="tutorial" /><category term="web development" /><summary type="html"><![CDATA[Learn the differences between observers and plugins in Magento 2, and understand when to use each for customization. A comprehensive guide for developers.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.themagentoblog.com/assets/images/blogs/choosing-between-plugins-and-observers-in-magento-2-a-developers-guide.jpg" /><media:content medium="image" url="https://www.themagentoblog.com/assets/images/blogs/choosing-between-plugins-and-observers-in-magento-2-a-developers-guide.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Installing Redis on Ubuntu: A Step-by-Step Guide</title><link href="https://www.themagentoblog.com/2024/08/31/installing-redis-on-ubuntu/" rel="alternate" type="text/html" title="Installing Redis on Ubuntu: A Step-by-Step Guide" /><published>2024-08-31T11:40:00+05:30</published><updated>2024-08-31T11:40:00+05:30</updated><id>https://www.themagentoblog.com/2024/08/31/installing-redis-on-ubuntu</id><content type="html" xml:base="https://www.themagentoblog.com/2024/08/31/installing-redis-on-ubuntu/"><![CDATA[<p>Redis is a powerful in-memory data structure store that can be used as a cache, database, and message broker. In this guide, we will walk you through the steps to install Redis on an Ubuntu server. Whether you’re setting up Redis for the first time or need a refresher, this tutorial will help you get Redis up and running quickly.</p>
 
 <h2 id="prerequisites">Prerequisites</h2>
 
@@ -1184,53 +1363,4 @@ Create a <code class="language-plaintext highlighter-rouge">di.xml</code> file i
 <ul>
   <li><a href="/2024/07/24/harnessing-the-power-of-graphql-in-magento-2-introduction-and-basics/">⇒ Harnessing the Power of GraphQL in Magento 2: A Developer-Friendly Guide</a></li>
   <li><a href="/2024/07/24/extending-graphql-in-magento-2-custom-queries-and-mutations/">⇒ Extending GraphQL in Magento 2: Custom Queries and Mutations</a></li>
-</ul>]]></content><author><name>Manish Joy</name></author><category term="Magento" /><category term="Magento 2" /><category term="Magento 2 API Development" /><category term="Tutorial" /><category term="Magento 2 GraphQL Development" /><category term="magento development" /><category term="magento" /><category term="magento developer" /><category term="magento2" /><category term="php" /><category term="programming" /><category term="tutorial" /><category term="web development" /><category term="GraphQL" /><category term="API Development" /><summary type="html"><![CDATA[Step-by-step guide to creating a new GraphQL endpoint in Magento 2. Learn how to build and customize endpoints for your eCommerce store.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.themagentoblog.com/assets/images/blogs/creating-a-new-graphql-endpoint-in-magento-2.jpg" /><media:content medium="image" url="https://www.themagentoblog.com/assets/images/blogs/creating-a-new-graphql-endpoint-in-magento-2.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Extending GraphQL in Magento 2: Custom Queries and Mutations</title><link href="https://www.themagentoblog.com/2024/07/24/extending-graphql-in-magento-2-custom-queries-and-mutations/" rel="alternate" type="text/html" title="Extending GraphQL in Magento 2: Custom Queries and Mutations" /><published>2024-07-24T12:00:00+05:30</published><updated>2024-07-24T12:00:00+05:30</updated><id>https://www.themagentoblog.com/2024/07/24/extending-graphql-in-magento-2-custom-queries-and-mutations</id><content type="html" xml:base="https://www.themagentoblog.com/2024/07/24/extending-graphql-in-magento-2-custom-queries-and-mutations/"><![CDATA[<p>Magento 2’s GraphQL API is powerful, but sometimes you need to extend it to meet specific business requirements. This blog will guide you through the process of extending GraphQL in Magento 2 by creating custom queries and mutations.</p>
-
-<h3 id="extending-graphql-in-magento-2">Extending GraphQL in Magento 2</h3>
-
-<p>Magento 2 allows you to extend the GraphQL schema to include custom queries and mutations.</p>
-
-<h4 id="step-1-create-a-custom-module">Step 1: Create a Custom Module</h4>
-<p>Start by creating a new module, for instance, <code class="language-plaintext highlighter-rouge">Vendor/Module</code>.</p>
-
-<h4 id="step-2-define-the-schema-and-declare-the-resolver">Step 2: Define the Schema and Declare the Resolver</h4>
-<p>Create the <code class="language-plaintext highlighter-rouge">schema.graphqls</code> file in <code class="language-plaintext highlighter-rouge">app/code/Vendor/Module/etc</code>.</p>
-
-<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">type</span><span class="w"> </span><span class="n">Query</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="n">customQuery</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="w"> </span><span class="err">@</span><span class="n">resolver</span><span class="p">(</span><span class="n">class</span><span class="p">:</span><span class="w"> </span><span class="err">"</span><span class="n">Vendor</span><span class="err">\\</span><span class="n">Module</span><span class="err">\\</span><span class="n">Model</span><span class="err">\\</span><span class="n">Resolver</span><span class="err">\\</span><span class="n">CustomQuery</span><span class="err">"</span><span class="p">)</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-<h4 id="step-3-implement-the-resolver">Step 3: Implement the Resolver</h4>
-<p>Create a resolver class in <code class="language-plaintext highlighter-rouge">app/code/Vendor/Module/Model/Resolver</code>.</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-<span class="kn">namespace</span> <span class="nn">Vendor\Module\Model\Resolver</span><span class="p">;</span>
-
-<span class="kn">use</span> <span class="nc">Magento\Framework\GraphQl\Query\ResolverInterface</span><span class="p">;</span>
-<span class="kn">use</span> <span class="nc">Magento\Framework\GraphQl\Schema\Type\ResolveInfo</span><span class="p">;</span>
-<span class="kn">use</span> <span class="nc">Magento\Framework\GraphQl\Config\Element\Field</span><span class="p">;</span>
-
-<span class="kd">class</span> <span class="nc">CustomQuery</span> <span class="kd">implements</span> <span class="nc">ResolverInterface</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="n">resolve</span><span class="p">(</span>
-        <span class="kt">Field</span> <span class="nv">$field</span><span class="p">,</span>
-        <span class="nv">$context</span><span class="p">,</span>
-        <span class="kt">ResolveInfo</span> <span class="nv">$info</span><span class="p">,</span>
-        <span class="kt">array</span> <span class="nv">$value</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="kt">array</span> <span class="nv">$args</span> <span class="o">=</span> <span class="kc">null</span>
-    <span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s1">'Hello, this is a custom GraphQL query!'</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h3 id="conclusion">Conclusion</h3>
-
-<p>By following these steps, you can extend the capabilities of Magento 2’s GraphQL API to include custom queries and mutations. This flexibility allows you to tailor the API to meet your specific needs, making your Magento 2 store even more powerful and adaptable.</p>
-
-<h3 id="next-steps">Next Steps</h3>
-
-<p>Ready to create a new GraphQL endpoint in Magento 2? Check out the final part of this series for a step-by-step guide:</p>
-
-<p><a href="/2024/07/24/creating-a-new-graphql-endpoint-in-magento-2/">⇒ Creating a New GraphQL Endpoint in Magento 2</a></p>]]></content><author><name>Manish Joy</name></author><category term="Magento" /><category term="Magento 2" /><category term="Magento 2 API Development" /><category term="Tutorial" /><category term="Magento 2 GraphQL Development" /><category term="magento development" /><category term="magento" /><category term="magento developer" /><category term="magento2" /><category term="php" /><category term="programming" /><category term="tutorial" /><category term="web development" /><category term="GraphQL" /><category term="API Development" /><summary type="html"><![CDATA[Learn how to extend Magento 2's GraphQL capabilities by creating custom queries and mutations. Follow our step-by-step guide for advanced customization.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.themagentoblog.com/assets/images/blogs/extending-graphql-in-magento-2-custom-queries-and-mutations.jpg" /><media:content medium="image" url="https://www.themagentoblog.com/assets/images/blogs/extending-graphql-in-magento-2-custom-queries-and-mutations.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ul>]]></content><author><name>Manish Joy</name></author><category term="Magento" /><category term="Magento 2" /><category term="Magento 2 API Development" /><category term="Tutorial" /><category term="Magento 2 GraphQL Development" /><category term="magento development" /><category term="magento" /><category term="magento developer" /><category term="magento2" /><category term="php" /><category term="programming" /><category term="tutorial" /><category term="web development" /><category term="GraphQL" /><category term="API Development" /><summary type="html"><![CDATA[Step-by-step guide to creating a new GraphQL endpoint in Magento 2. Learn how to build and customize endpoints for your eCommerce store.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.themagentoblog.com/assets/images/blogs/creating-a-new-graphql-endpoint-in-magento-2.jpg" /><media:content medium="image" url="https://www.themagentoblog.com/assets/images/blogs/creating-a-new-graphql-endpoint-in-magento-2.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
