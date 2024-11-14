@@ -10,10 +10,10 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>How to Optimize Magento 2 Performance with Redis Caching - The Magento Blog - by Manish Joy</title><meta name="description" content="Discover how to boost Magento 2 performance using Redis caching. Learn what Redis is, how it works, and how to configure it for enhanced speed and scalability in your Magento 2 store.">
+<!-- begin _includes/seo.html --><title>Magento 2 Shipping Methods: A Step-by-Step Guide to Custom Shipping Options - The Magento Blog - by Manish Joy</title><meta name="description" content="Learn how to create custom shipping methods in Magento 2 with this step-by-step developer’s guide. Enhance your Magento store with personalized shipping options.">
 
 
-  <meta name="keywords" content="Magento 2, Redis, Magento 2 caching, Redis installation, Magento 2 performance">
+  <meta name="keywords" content="Magento 2 custom shipping method, Magento shipping customization, Magento 2 shipping development">
 
 
 
@@ -21,28 +21,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="The Magento Blog - by Manish Joy">
-<meta property="og:title" content="How to Optimize Magento 2 Performance with Redis Caching">
-<meta property="og:url" content="https://www.themagentoblog.com/2024/08/31/redis-and-magento-2-enhancing-performance-and-scalability/">
+<meta property="og:title" content="Magento 2 Shipping Methods: A Step-by-Step Guide to Custom Shipping Options">
+<meta property="og:url" content="https://www.themagentoblog.com/2024/09/30/magento-2-custom-shipping-method-guide/">
 
 
-  <meta property="og:description" content="Discover how to boost Magento 2 performance using Redis caching. Learn what Redis is, how it works, and how to configure it for enhanced speed and scalability in your Magento 2 store.">
-
-
-
-  <meta property="og:image" content="https://www.themagentoblog.com/assets/images/blogs/2024-08-31-redis-and-magento-2-enhancing-performance-and-scalability.png">
+  <meta property="og:description" content="Learn how to create custom shipping methods in Magento 2 with this step-by-step developer’s guide. Enhance your Magento store with personalized shipping options.">
 
 
 
-
-
-  <meta property="article:published_time" content="2024-08-31T11:00:00+05:30">
+  <meta property="og:image" content="https://www.themagentoblog.com/assets/images/blogs/magento-2-shipping-methods.jpg">
 
 
 
 
 
+  <meta property="article:published_time" content="2024-09-30T00:00:00+05:30">
 
-<link rel="canonical" href="https://www.themagentoblog.com/2024/08/31/redis-and-magento-2-enhancing-performance-and-scalability/">
+
+
+
+
+
+<link rel="canonical" href="https://www.themagentoblog.com/2024/09/30/magento-2-custom-shipping-method-guide/">
 
 
 
@@ -218,7 +218,7 @@
   style=" background-image: url('');"
 >
   
-    <img src="/assets/images/blogs/2024-08-31-redis-and-magento-2-enhancing-performance-and-scalability.png" alt="How to Optimize Magento 2 Performance with Redis Caching" class="page__hero-image">
+    <img src="/assets/images/blogs/magento-2-shipping-methods.jpg" alt="Magento 2 Shipping Methods: A Step-by-Step Guide to Custom Shipping Options" class="page__hero-image">
   
   
 </div>
@@ -292,16 +292,16 @@
   </div>
 </div>
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="How to Optimize Magento 2 Performance with Redis Caching">
-    <meta itemprop="description" content="In the world of eCommerce, speed and scalability are critical for providing an optimal user experience. Magento 2, a robust platform for online stores, offers various tools and technologies to enhance performance. One of the most powerful tools in this arsenal is Redis.">
-    <meta itemprop="datePublished" content="2024-08-31T11:00:00+05:30">
+    <meta itemprop="headline" content="Magento 2 Shipping Methods: A Step-by-Step Guide to Custom Shipping Options">
+    <meta itemprop="description" content="Shipping is a vital aspect of any eCommerce store, and in Magento 2, you can easily customize shipping methods to suit your business needs. This blog post will guide you through the steps required to create custom shipping methods in Magento 2, making it possible for your store to offer unique shipping options tailored to your products and customers.">
+    <meta itemprop="datePublished" content="2024-09-30T00:00:00+05:30">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title" itemprop="headline">
-            <a href="https://www.themagentoblog.com/2024/08/31/redis-and-magento-2-enhancing-performance-and-scalability/" itemprop="url">How to Optimize Magento 2 Performance with Redis Caching
+            <a href="https://www.themagentoblog.com/2024/09/30/magento-2-custom-shipping-method-guide/" itemprop="url">Magento 2 Shipping Methods: A Step-by-Step Guide to Custom Shipping Options
 </a>
           </h1>
           
@@ -312,163 +312,162 @@
 
       <section class="page__content" itemprop="text">
         
-        <p>In the world of eCommerce, speed and scalability are critical for providing an optimal user experience. Magento 2, a robust platform for online stores, offers various tools and technologies to enhance performance. One of the most powerful tools in this arsenal is <strong>Redis</strong>.</p>
+        <p>Shipping is a vital aspect of any eCommerce store, and in Magento 2, you can easily customize shipping methods to suit your business needs. This blog post will guide you through the steps required to create custom shipping methods in Magento 2, making it possible for your store to offer unique shipping options tailored to your products and customers.</p>
 
-<p>In this blog, we’ll dive into what Redis is, how it works, and how you can use it to supercharge your Magento 2 store.</p>
+<p>In this tutorial, we’ll cover everything from module setup to configuring your custom shipping method.</p>
 
-<h2 id="what-is-redis">What is Redis?</h2>
+<h3 id="why-create-custom-shipping-methods-in-magento-2">Why Create Custom Shipping Methods in Magento 2?</h3>
 
-<p><strong>Redis</strong> (Remote Dictionary Server) is an open-source, in-memory data structure store that can be used as a database, cache, and message broker. It supports various data structures such as strings, hashes, lists, sets, and more. Redis is known for its speed and efficiency, making it an ideal choice for caching and real-time analytics.</p>
-
-<h3 id="key-features-of-redis">Key Features of Redis:</h3>
-
+<p>Default Magento 2 shipping methods (like Flat Rate, Free Shipping, or Table Rates) work well for standard use cases. However, in some instances, you may need more flexibility or specific functionality. Custom shipping methods allow you to:</p>
 <ul>
-  <li><strong>In-memory storage</strong>: Redis stores data in memory, leading to extremely fast read and write operations.</li>
-  <li><strong>Data Persistence</strong>: Redis provides options for persisting data to disk, ensuring data durability.</li>
-  <li><strong>Scalability</strong>: Redis can handle millions of requests per second, making it highly scalable for large applications.</li>
-  <li><strong>Flexibility</strong>: Supports multiple data structures, providing flexibility in how data is managed.</li>
+  <li>Offer unique shipping rates based on product type, location, or customer groups.</li>
+  <li>Create advanced shipping logic based on store-specific requirements.</li>
+  <li>Add dynamic shipping rates or integrate with third-party logistics.</li>
 </ul>
 
-<h2 id="how-redis-works">How Redis Works</h2>
+<h3 id="step-1-module-setup">Step 1: Module Setup</h3>
 
-<p>Redis operates primarily in memory, making it incredibly fast compared to traditional databases. Here’s a simplified view of how it works:</p>
+<p>Before creating a custom shipping method, you need a basic module setup in Magento 2. If you’re already familiar with module creation, you can skip this step, but for those who need a refresher, here’s a quick outline:</p>
 
 <ol>
-  <li><strong>Data Storage</strong>: Data is stored in memory as key-value pairs. For example, you can store session data, configuration settings, or full web pages.</li>
-  <li><strong>Persistence</strong>: Although Redis is an in-memory store, it supports persistence by writing data to disk. This ensures that data isn’t lost in case of a server restart.</li>
-  <li><strong>Replication</strong>: Redis supports master-slave replication, allowing you to create multiple replicas of your data for high availability and load balancing.</li>
-  <li><strong>Pub/Sub Messaging</strong>: Redis can also be used as a message broker with its publish/subscribe messaging system, which is useful for real-time communication between different parts of your application.</li>
+  <li><strong>Create module directory structure:</strong>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>app/code/Vendor/CustomShipping
+├── etc
+├── Model
+├── Setup
+└── view
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Define module.xml</strong>:
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- app/code/Vendor/CustomShipping/etc/module.xml --&gt;</span>
+<span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Module/etc/module.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Vendor_CustomShipping"</span> <span class="na">setup_version=</span><span class="s">"1.0.0"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Register the module</strong> in <code class="language-plaintext highlighter-rouge">registration.php</code>:
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="nc">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="nf">register</span><span class="p">(</span>
+    <span class="nc">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="no">MODULE</span><span class="p">,</span>
+    <span class="s1">'Vendor_CustomShipping'</span><span class="p">,</span>
+    <span class="k">__DIR__</span>
+<span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
 </ol>
 
-<h2 id="using-redis-with-magento-2">Using Redis with Magento 2</h2>
+<h3 id="step-2-configure-systemxml-for-backend-settings">Step 2: Configure <code class="language-plaintext highlighter-rouge">system.xml</code> for Backend Settings</h3>
 
-<p>Integrating Redis with Magento 2 can significantly improve the performance of your online store. Here’s how Redis can be used in Magento 2:</p>
+<p>To make your shipping method configurable from the admin panel, you need to define settings using the <code class="language-plaintext highlighter-rouge">system.xml</code> file.</p>
 
-<ul>
-  <li>
-    <p><strong>Caching</strong>: Redis can be used as a cache backend for Magento 2. By caching frequently accessed data like product information, categories, and configuration settings, Redis reduces the load on your database and speeds up page load times.</p>
-  </li>
-  <li>
-    <p><strong>Session Storage</strong>: Redis can also be used to store session data. This is particularly useful for large stores with high traffic, as Redis can handle a large number of simultaneous sessions efficiently.</p>
-  </li>
-  <li>
-    <p><strong>Full Page Cache (FPC)</strong>: Magento 2 supports Redis for full-page caching, which can drastically reduce server response times and improve the overall user experience.</p>
-  </li>
-</ul>
-
-<h3 id="configuration-steps">Configuration Steps:</h3>
-
-<p>To use Redis with Magento 2, you’ll need to modify your <code class="language-plaintext highlighter-rouge">env.php</code> configuration file. Here’s a basic setup:</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'cache'</span> <span class="o">=&gt;</span> <span class="p">[</span>
-    <span class="s1">'frontend'</span> <span class="o">=&gt;</span> <span class="p">[</span>
-        <span class="s1">'default'</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">'backend'</span> <span class="o">=&gt;</span> <span class="s1">'Cm_Cache_Backend_Redis'</span><span class="p">,</span>
-            <span class="s1">'backend_options'</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                <span class="s1">'server'</span> <span class="o">=&gt;</span> <span class="s1">'127.0.0.1'</span><span class="p">,</span>
-                <span class="s1">'port'</span> <span class="o">=&gt;</span> <span class="s1">'6379'</span><span class="p">,</span>
-                <span class="s1">'persistent'</span> <span class="o">=&gt;</span> <span class="s1">''</span><span class="p">,</span>
-                <span class="s1">'database'</span> <span class="o">=&gt;</span> <span class="s1">'0'</span><span class="p">,</span>
-                <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="s1">''</span><span class="p">,</span>
-                <span class="s1">'force_standalone'</span> <span class="o">=&gt;</span> <span class="s1">'0'</span><span class="p">,</span>
-                <span class="s1">'connect_retries'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
-                <span class="s1">'read_timeout'</span> <span class="o">=&gt;</span> <span class="s1">'10'</span><span class="p">,</span>
-                <span class="s1">'automatic_cleaning_factor'</span> <span class="o">=&gt;</span> <span class="s1">'0'</span><span class="p">,</span>
-                <span class="s1">'compress_data'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
-                <span class="s1">'compress_tags'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
-                <span class="s1">'compress_threshold'</span> <span class="o">=&gt;</span> <span class="s1">'20480'</span><span class="p">,</span>
-                <span class="s1">'compression_lib'</span> <span class="o">=&gt;</span> <span class="s1">'gzip'</span><span class="p">,</span>
-            <span class="p">],</span>
-        <span class="p">],</span>
-    <span class="p">],</span>
-<span class="p">],</span>
-<span class="s1">'session'</span> <span class="o">=&gt;</span> <span class="p">[</span>
-    <span class="s1">'save'</span> <span class="o">=&gt;</span> <span class="s1">'redis'</span><span class="p">,</span>
-    <span class="s1">'redis'</span> <span class="o">=&gt;</span> <span class="p">[</span>
-        <span class="s1">'host'</span> <span class="o">=&gt;</span> <span class="s1">'127.0.0.1'</span><span class="p">,</span>
-        <span class="s1">'port'</span> <span class="o">=&gt;</span> <span class="s1">'6379'</span><span class="p">,</span>
-        <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="s1">''</span><span class="p">,</span>
-        <span class="s1">'timeout'</span> <span class="o">=&gt;</span> <span class="s1">'2.5'</span><span class="p">,</span>
-        <span class="s1">'persistent_identifier'</span> <span class="o">=&gt;</span> <span class="s1">''</span><span class="p">,</span>
-        <span class="s1">'database'</span> <span class="o">=&gt;</span> <span class="s1">'2'</span><span class="p">,</span>
-        <span class="s1">'compression_threshold'</span> <span class="o">=&gt;</span> <span class="s1">'2048'</span><span class="p">,</span>
-        <span class="s1">'compression_library'</span> <span class="o">=&gt;</span> <span class="s1">'gzip'</span><span class="p">,</span>
-        <span class="s1">'log_level'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
-        <span class="s1">'max_concurrency'</span> <span class="o">=&gt;</span> <span class="s1">'6'</span><span class="p">,</span>
-        <span class="s1">'break_after_frontend'</span> <span class="o">=&gt;</span> <span class="s1">'5'</span><span class="p">,</span>
-        <span class="s1">'break_after_adminhtml'</span> <span class="o">=&gt;</span> <span class="s1">'30'</span><span class="p">,</span>
-        <span class="s1">'first_lifetime'</span> <span class="o">=&gt;</span> <span class="s1">'600'</span><span class="p">,</span>
-        <span class="s1">'bot_first_lifetime'</span> <span class="o">=&gt;</span> <span class="s1">'60'</span><span class="p">,</span>
-        <span class="s1">'bot_lifetime'</span> <span class="o">=&gt;</span> <span class="s1">'7200'</span><span class="p">,</span>
-        <span class="s1">'disable_locking'</span> <span class="o">=&gt;</span> <span class="s1">'0'</span><span class="p">,</span>
-        <span class="s1">'min_lifetime'</span> <span class="o">=&gt;</span> <span class="s1">'60'</span><span class="p">,</span>
-        <span class="s1">'max_lifetime'</span> <span class="o">=&gt;</span> <span class="s1">'2592000'</span>
-    <span class="p">]</span>
-<span class="p">]</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- app/code/Vendor/CustomShipping/etc/adminhtml/system.xml --&gt;</span>
+<span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Config:etc/system_file.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;system&gt;</span>
+        <span class="nt">&lt;section</span> <span class="na">id=</span><span class="s">"carriers"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">"customshipping"</span> <span class="na">translate=</span><span class="s">"label"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">sortOrder=</span><span class="s">"90"</span> <span class="na">showInDefault=</span><span class="s">"1"</span> <span class="na">showInWebsite=</span><span class="s">"1"</span> <span class="na">showInStore=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;label&gt;</span>Custom Shipping<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;field</span> <span class="na">id=</span><span class="s">"active"</span> <span class="na">translate=</span><span class="s">"label"</span> <span class="na">type=</span><span class="s">"select"</span> <span class="na">sortOrder=</span><span class="s">"1"</span> <span class="na">showInDefault=</span><span class="s">"1"</span> <span class="na">showInWebsite=</span><span class="s">"1"</span> <span class="na">showInStore=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;label&gt;</span>Enable<span class="nt">&lt;/label&gt;</span>
+                    <span class="nt">&lt;source_model&gt;</span>Magento\Config\Model\Config\Source\Yesno<span class="nt">&lt;/source_model&gt;</span>
+                <span class="nt">&lt;/field&gt;</span>
+                <span class="nt">&lt;field</span> <span class="na">id=</span><span class="s">"title"</span> <span class="na">translate=</span><span class="s">"label"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">sortOrder=</span><span class="s">"2"</span> <span class="na">showInDefault=</span><span class="s">"1"</span> <span class="na">showInWebsite=</span><span class="s">"1"</span> <span class="na">showInStore=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;label&gt;</span>Title<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;/field&gt;</span>
+                <span class="nt">&lt;field</span> <span class="na">id=</span><span class="s">"name"</span> <span class="na">translate=</span><span class="s">"label"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">sortOrder=</span><span class="s">"3"</span> <span class="na">showInDefault=</span><span class="s">"1"</span> <span class="na">showInWebsite=</span><span class="s">"1"</span> <span class="na">showInStore=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;label&gt;</span>Method Name<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;/field&gt;</span>
+                <span class="nt">&lt;field</span> <span class="na">id=</span><span class="s">"price"</span> <span class="na">translate=</span><span class="s">"label"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">sortOrder=</span><span class="s">"4"</span> <span class="na">showInDefault=</span><span class="s">"1"</span> <span class="na">showInWebsite=</span><span class="s">"1"</span> <span class="na">showInStore=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;label&gt;</span>Shipping Price<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;/field&gt;</span>
+            <span class="nt">&lt;/group&gt;</span>
+        <span class="nt">&lt;/section&gt;</span>
+    <span class="nt">&lt;/system&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
 </code></pre></div></div>
 
-<p>This configuration sets Redis as the cache backend and session storage for your Magento 2 store.</p>
+<h3 id="step-3-define-shipping-method-in-configxml">Step 3: Define Shipping Method in <code class="language-plaintext highlighter-rouge">config.xml</code></h3>
 
-<h2 id="verifying-redis-configuration-in-magento-2">Verifying Redis Configuration in Magento 2</h2>
+<p>Next, configure your shipping method in <code class="language-plaintext highlighter-rouge">config.xml</code>, which helps Magento recognize your method and applies it to the checkout process.</p>
 
-<p>After configuring Redis with Magento 2, it’s essential to verify that everything is working correctly. Here’s how you can do that:</p>
-
-<h3 id="1-check-redis-connection">1. Check Redis Connection</h3>
-
-<p>You can use the <code class="language-plaintext highlighter-rouge">redis-cli</code> command to ensure that Redis is running and accepting connections:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>redis-cli ping
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- app/code/Vendor/CustomShipping/etc/config.xml --&gt;</span>
+<span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:App/etc/config.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;default&gt;</span>
+        <span class="nt">&lt;carriers&gt;</span>
+            <span class="nt">&lt;customshipping&gt;</span>
+                <span class="nt">&lt;active&gt;</span>1<span class="nt">&lt;/active&gt;</span>
+                <span class="nt">&lt;title&gt;</span>Custom Shipping Method<span class="nt">&lt;/title&gt;</span>
+                <span class="nt">&lt;name&gt;</span>Custom Shipping<span class="nt">&lt;/name&gt;</span>
+                <span class="nt">&lt;price&gt;</span>10<span class="nt">&lt;/price&gt;</span>
+                <span class="nt">&lt;sort_order&gt;</span>100<span class="nt">&lt;/sort_order&gt;</span>
+            <span class="nt">&lt;/customshipping&gt;</span>
+        <span class="nt">&lt;/carriers&gt;</span>
+    <span class="nt">&lt;/default&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
 </code></pre></div></div>
 
-<p>If Redis is working correctly, it should return <code class="language-plaintext highlighter-rouge">PONG</code>.</p>
+<h3 id="step-4-create-the-custom-shipping-model">Step 4: Create the Custom Shipping Model</h3>
 
-<h3 id="2-verify-magento-2-cache-backend">2. Verify Magento 2 Cache Backend</h3>
+<p>The heart of any custom shipping method is the model that calculates shipping rates. You’ll need to extend the Magento <code class="language-plaintext highlighter-rouge">CarrierInterface</code> to create a functional shipping method.</p>
 
-<p>To verify that Magento 2 is using Redis as the cache backend, you can use the Magento CLI:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="kn">namespace</span> <span class="nn">Vendor\CustomShipping\Model\Carrier</span><span class="p">;</span>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento cache:status
+<span class="kn">use</span> <span class="nc">Magento\Quote\Model\Quote\Address\RateRequest</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Shipping\Model\Carrier\AbstractCarrier</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Shipping\Model\Carrier\CarrierInterface</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">CustomShipping</span> <span class="kd">extends</span> <span class="nc">AbstractCarrier</span> <span class="kd">implements</span> <span class="nc">CarrierInterface</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$_code</span> <span class="o">=</span> <span class="s1">'customshipping'</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">collectRates</span><span class="p">(</span><span class="kt">RateRequest</span> <span class="nv">$request</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getConfigFlag</span><span class="p">(</span><span class="s1">'active'</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="nv">$result</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">_rateResultFactory</span><span class="o">-&gt;</span><span class="nf">create</span><span class="p">();</span>
+        <span class="nv">$method</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">_rateMethodFactory</span><span class="o">-&gt;</span><span class="nf">create</span><span class="p">();</span>
+
+        <span class="nv">$method</span><span class="o">-&gt;</span><span class="nf">setCarrier</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">_code</span><span class="p">);</span>
+        <span class="nv">$method</span><span class="o">-&gt;</span><span class="nf">setCarrierTitle</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getConfigData</span><span class="p">(</span><span class="s1">'title'</span><span class="p">));</span>
+
+        <span class="nv">$method</span><span class="o">-&gt;</span><span class="nf">setMethod</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">_code</span><span class="p">);</span>
+        <span class="nv">$method</span><span class="o">-&gt;</span><span class="nf">setMethodTitle</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getConfigData</span><span class="p">(</span><span class="s1">'name'</span><span class="p">));</span>
+
+        <span class="nv">$method</span><span class="o">-&gt;</span><span class="nf">setPrice</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getConfigData</span><span class="p">(</span><span class="s1">'price'</span><span class="p">));</span>
+        <span class="nv">$method</span><span class="o">-&gt;</span><span class="nf">setCost</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getConfigData</span><span class="p">(</span><span class="s1">'price'</span><span class="p">));</span>
+
+        <span class="nv">$result</span><span class="o">-&gt;</span><span class="nf">append</span><span class="p">(</span><span class="nv">$method</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="nv">$result</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getAllowedMethods</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">_code</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getConfigData</span><span class="p">(</span><span class="s1">'name'</span><span class="p">)];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
-<p>This command will display the status of the cache types. If Redis is configured correctly, the cache types should be active and managed by Redis.</p>
+<h3 id="step-5-test-and-verify">Step 5: Test and Verify</h3>
 
-<h3 id="3-monitor-redis-activity">3. Monitor Redis Activity</h3>
+<p>Once you’ve completed the code, clear the cache and reindex Magento:</p>
 
-<p>Redis provides built-in monitoring tools to check the current activity. You can monitor the real-time activity of Redis using:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>redis-cli monitor
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento setup:upgrade
+php bin/magento cache:flush
 </code></pre></div></div>
 
-<p>This will show you the commands that Redis is currently processing. If Magento 2 is actively using Redis, you should see entries related to cache reads and writes.</p>
+<p>Next, go to <strong>Stores &gt; Configuration &gt; Sales &gt; Shipping Methods</strong> and check if your custom shipping method appears. You can enable it and configure the price and title.</p>
 
-<h3 id="4-inspect-redis-data">4. Inspect Redis Data</h3>
+<h3 id="conclusion">Conclusion</h3>
 
-<p>To inspect the keys stored in Redis by Magento 2, you can use:</p>
+<p>Creating a custom shipping method in Magento 2 opens up a range of possibilities to offer unique shipping options tailored to your store’s requirements. Whether you want to create dynamic shipping prices, integrate with logistics APIs, or provide specialized shipping methods based on your product types, Magento’s flexibility allows you to do it all.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>redis-cli keys <span class="s1">'*'</span>
-</code></pre></div></div>
-
-<p>This command will display all the keys currently stored in Redis. Magento 2-related keys usually have prefixes like <code class="language-plaintext highlighter-rouge">mage-cache</code> or <code class="language-plaintext highlighter-rouge">sess</code>.</p>
-
-<h3 id="5-clear-magento-cache-and-recheck">5. Clear Magento Cache and Recheck</h3>
-
-<p>Finally, clear Magento’s cache and then monitor Redis to see if new cache entries are created:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento cache:clean
-</code></pre></div></div>
-
-<p>After clearing the cache, run <code class="language-plaintext highlighter-rouge">redis-cli monitor</code> again to see Redis activity as Magento repopulates the cache.</p>
-
-<p>If all these checks confirm Redis is being utilized, your Magento 2 setup is successfully using Redis.</p>
-
-<h1 id="installing-redis-on-ubuntu">Installing Redis on Ubuntu</h1>
-
-<p>To get started with Redis on your Ubuntu server, you’ll need to install it first. For a detailed guide on how to install Redis on Ubuntu, please refer to <a href="#">this blog post</a>.</p>
-
-<h2 id="conclusion">Conclusion</h2>
-
-<p>Redis is a powerful tool that can significantly enhance the performance and scalability of your Magento 2 store. By leveraging Redis for caching, session storage, and full-page caching, you can provide a faster and more reliable experience for your customers.</p>
-
-<p>Stay tuned for the next part of this series, where we’ll cover the detailed steps on how to install Redis on an Ubuntu server.</p>
+<p>Feel free to <a href="/contact-me">reach out</a> if you have any issues or need further assistance while creating custom shipping methods in Magento 2!</p>
 
 <hr />
 
@@ -484,7 +483,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-08-31T11:00:00+05:30">August 31, 2024</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-09-30T00:00:00+05:30">September 30, 2024</time></p>
 
       </footer>
       
@@ -546,31 +545,27 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=How+to+Optimize+Magento+2+Performance+with+Redis+Caching%20https%3A%2F%2Fwww.themagentoblog.com%2F2024%2F08%2F31%2Fredis-and-magento-2-enhancing-performance-and-scalability%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Magento+2+Shipping+Methods%3A+A+Step-by-Step+Guide+to+Custom+Shipping+Options%20https%3A%2F%2Fwww.themagentoblog.com%2F2024%2F09%2F30%2Fmagento-2-custom-shipping-method-guide%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.themagentoblog.com%2F2024%2F08%2F31%2Fredis-and-magento-2-enhancing-performance-and-scalability%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.themagentoblog.com%2F2024%2F09%2F30%2Fmagento-2-custom-shipping-method-guide%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.themagentoblog.com/2024/08/31/redis-and-magento-2-enhancing-performance-and-scalability/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.themagentoblog.com/2024/09/30/magento-2-custom-shipping-method-guide/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 
-  <a href="https://api.whatsapp.com/send?text=How+to+Optimize+Magento+2+Performance+with+Redis+Caching+https%3A%2F%2Fwww.themagentoblog.com%2F2024%2F08%2F31%2Fredis-and-magento-2-enhancing-performance-and-scalability%2F" class="btn btn--whatsapp" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on WhatsApp"><i class="fab fa-fw fa-whatsapp" aria-hidden="true"></i><span> WhatsApp</span></a>
+  <a href="https://api.whatsapp.com/send?text=Magento+2+Shipping+Methods%3A+A+Step-by-Step+Guide+to+Custom+Shipping+Options+https%3A%2F%2Fwww.themagentoblog.com%2F2024%2F09%2F30%2Fmagento-2-custom-shipping-method-guide%2F" class="btn btn--whatsapp" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on WhatsApp"><i class="fab fa-fw fa-whatsapp" aria-hidden="true"></i><span> WhatsApp</span></a>
 </section>
 
 
       
   <nav class="pagination post-pagination">
     
-      <a href="/2024/07/31/developing-custom-magento-2-widgets-a-complete-guide/" class="pagination--pager" title="Developing Custom Magento 2 Widgets: A Complete Guide
+      <a href="/2024/09/23/observers-vs-plugins-in-magento-2/" class="pagination--pager" title="Choosing Between Plugins and Observers in Magento 2: A Developer’s Guide
 ">
         <span class="meta-nav">&#8592; Previous</span>
-        <span class="post-title">Developing Custom Magento 2 Widgets: A Complete Guide</span>
+        <span class="post-title">Choosing Between Plugins and Observers in Magento 2: A Developer's Guide</span>
       </a>
     
     
-      <a href="/2024/08/31/installing-redis-on-ubuntu/" class="pagination--pager" title="Installing Redis on Ubuntu: A Step-by-Step Guide
-">
-        <span class="meta-nav">Next &#8594;</span>
-        <span class="post-title">Installing Redis on Ubuntu: A Step-by-Step Guide</span>
-      </a>
+      <a href="#" class="pagination--pager disabled">Next &#8594;</a>
     
   </nav>
 
@@ -586,33 +581,6 @@
   
   <h2 class="page__related-title">You may also like</h2>
   <div class="grid__wrapper">
-    
-      
-      
-
-
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/2024/09/30/magento-2-custom-shipping-method-guide/" rel="permalink">Magento 2 Shipping Methods: A Step-by-Step Guide to Custom Shipping Options
-</a>
-      
-    </h2>
-    
-
-
-    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2024-09-30T00:00:00+05:30">September 30, 2024</time></p>
-    
-      <p class="archive__item-excerpt" itemprop="description">Learn how to create custom shipping methods in Magento 2 with this step-by-step developer’s guide. Enhance your Magento store with personalized shipping opti...</p>
-    
-  </article>
-</div>
-
     
       
       
@@ -665,6 +633,33 @@
     
       <p class="archive__item-excerpt" itemprop="description">Step-by-step guide to installing Redis on Ubuntu. Learn how to set up Redis on your Ubuntu server for optimal performance and caching.
 </p>
+    
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024/08/31/redis-and-magento-2-enhancing-performance-and-scalability/" rel="permalink">How to Optimize Magento 2 Performance with Redis Caching
+</a>
+      
+    </h2>
+    
+
+
+    <p class="page__date-list"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i></strong> <time class="dt-published" datetime="2024-08-31T11:00:00+05:30">August 31, 2024</time></p>
+    
+      <p class="archive__item-excerpt" itemprop="description">Discover how to boost Magento 2 performance using Redis caching. Learn what Redis is, how it works, and how to configure it for enhanced speed and scalabilit...</p>
     
   </article>
 </div>
